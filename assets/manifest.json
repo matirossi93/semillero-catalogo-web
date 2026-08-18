@@ -1,0 +1,182 @@
+{
+ "balanceados": {
+  "hero": "hero/balanceados.webp",
+  "banner": "banner/balanceados.webp",
+  "fotos": [
+   "balanceados_28.webp",
+   "balanceados_30.webp",
+   "balanceados_34.webp",
+   "balanceados_38.webp",
+   "balanceados_39.webp",
+   "balanceados_40.webp",
+   "balanceados_43.webp",
+   "balanceados_53.webp"
+  ]
+ },
+ "perros": {
+  "hero": "hero/perros.webp",
+  "banner": "banner/perros.webp",
+  "fotos": [
+   "perros_63.webp",
+   "perros_65.webp",
+   "perros_69.webp",
+   "perros_74.webp",
+   "perros_76.webp",
+   "perros_81.webp",
+   "perros_85.webp",
+   "perros_89.webp",
+   "perros_101.webp",
+   "perros_103.webp",
+   "perros_107.webp"
+  ]
+ },
+ "gatos": {
+  "hero": "hero/gatos.webp",
+  "banner": "banner/gatos.webp",
+  "fotos": [
+   "gatos_119.webp",
+   "gatos_121.webp",
+   "gatos_123.webp",
+   "gatos_125.webp",
+   "gatos_127.webp",
+   "gatos_135.webp",
+   "gatos_137.webp",
+   "gatos_139.webp"
+  ]
+ },
+ "desayuno": {
+  "hero": "hero/desayuno.webp",
+  "banner": "banner/desayuno.webp",
+  "fotos": [
+   "desayuno_150.webp",
+   "desayuno_152.webp",
+   "desayuno_153.webp",
+   "desayuno_156.webp",
+   "desayuno_157.webp",
+   "desayuno_158.webp",
+   "desayuno_160.webp"
+  ]
+ },
+ "cereales": {
+  "hero": "hero/cereales.webp",
+  "banner": "banner/cereales.webp",
+  "fotos": [
+   "cereales_175.webp",
+   "cereales_176.webp"
+  ]
+ },
+ "forrajes": {
+  "hero": "hero/forrajes.webp",
+  "banner": "banner/forrajes.webp",
+  "fotos": [
+   "forrajes_188.webp",
+   "forrajes_189.webp",
+   "forrajes_190.webp",
+   "forrajes_191.webp",
+   "forrajes_192.webp",
+   "forrajes_195.webp",
+   "forrajes_196.webp",
+   "forrajes_197.webp",
+   "forrajes_198.webp",
+   "forrajes_199.webp",
+   "forrajes_200.webp",
+   "forrajes_201.webp",
+   "forrajes_202.webp"
+  ]
+ },
+ "legumbres": {
+  "hero": "hero/legumbres.webp",
+  "banner": "banner/legumbres.webp",
+  "fotos": [
+   "legumbres_212.webp",
+   "legumbres_213.webp",
+   "legumbres_214.webp",
+   "legumbres_215.webp",
+   "legumbres_216.webp"
+  ]
+ },
+ "condimentos": {
+  "hero": "hero/condimentos.webp",
+  "banner": "banner/condimentos.webp",
+  "fotos": [
+   "condimentos_227.webp",
+   "condimentos_228.webp",
+   "condimentos_229.webp",
+   "condimentos_230.webp",
+   "condimentos_231.webp"
+  ]
+ },
+ "frutos": {
+  "hero": "hero/frutos.webp",
+  "banner": "banner/frutos.webp",
+  "fotos": [
+   "frutos_241.webp"
+  ]
+ },
+ "snacks": {
+  "hero": "hero/snacks.webp",
+  "banner": "banner/snacks.webp",
+  "fotos": [
+   "snacks_254.webp"
+  ]
+ },
+ "venenos": {
+  "hero": "hero/venenos.webp",
+  "banner": "banner/venenos.webp",
+  "fotos": [
+   "venenos_271.webp",
+   "venenos_273.webp",
+   "venenos_277.webp",
+   "venenos_279.webp",
+   "venenos_281.webp",
+   "venenos_286.webp",
+   "venenos_288.webp",
+   "venenos_292.webp",
+   "venenos_294.webp",
+   "venenos_298.webp",
+   "venenos_300.webp",
+   "venenos_305.webp",
+   "venenos_307.webp",
+   "venenos_309.webp",
+   "venenos_311.webp"
+  ]
+ },
+ "accesorios": {
+  "hero": "hero/accesorios.webp",
+  "banner": "banner/accesorios.webp",
+  "fotos": [
+   "accesorios_322.webp",
+   "accesorios_327.webp",
+   "accesorios_334.webp",
+   "accesorios_336.webp",
+   "accesorios_340.webp",
+   "accesorios_347.webp",
+   "accesorios_349.webp",
+   "accesorios_351.webp",
+   "accesorios_353.webp",
+   "accesorios_359.webp",
+   "accesorios_361.webp",
+   "accesorios_363.webp",
+   "accesorios_365.webp",
+   "accesorios_370.webp",
+   "accesorios_372.webp",
+   "accesorios_374.webp",
+   "accesorios_376.webp",
+   "accesorios_381.webp",
+   "accesorios_383.webp",
+   "accesorios_385.webp",
+   "accesorios_390.webp",
+   "accesorios_392.webp",
+   "accesorios_394.webp",
+   "accesorios_396.webp",
+   "accesorios_398.webp",
+   "accesorios_403.webp",
+   "accesorios_405.webp",
+   "accesorios_407.webp",
+   "accesorios_412.webp",
+   "accesorios_414.webp",
+   "accesorios_416.webp",
+   "accesorios_418.webp"
+  ]
+ }
+}

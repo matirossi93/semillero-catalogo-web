@@ -1,0 +1,117 @@
+[
+ {
+  "pag": 9,
+  "proteina": 19,
+  "productos": [
+   "Mix x15 kg"
+  ]
+ },
+ {
+  "pag": 9,
+  "proteina": 21,
+  "productos": [
+   "Adulto x21 kg",
+   "Cachorro x10 kg"
+  ]
+ },
+ {
+  "pag": 9,
+  "proteina": 21,
+  "productos": [
+   "Mantenimiento x21 kg"
+  ]
+ },
+ {
+  "pag": 10,
+  "proteina": 24,
+  "productos": [
+   "Carne x15 kg",
+   "Pollo x15 kg",
+   "Cocktail x15 kg",
+   "Cachorro x15 kg *"
+  ]
+ },
+ {
+  "pag": 10,
+  "proteina": 25,
+  "productos": [
+   "Carne x15 kg",
+   "Pollo x15 kg",
+   "Vegetales x15 kg",
+   "Cachorro x15 kg *"
+  ]
+ },
+ {
+  "pag": 11,
+  "proteina": 18,
+  "productos": [
+   "Zimpi x15 kg"
+  ]
+ },
+ {
+  "pag": 11,
+  "proteina": 25,
+  "productos": [
+   "Cachorro x15 kg",
+   "Adulto rza. peq x20 kg",
+   "Adulto x20 kg"
+  ]
+ },
+ {
+  "pag": 11,
+  "proteina": 32,
+  "productos": [
+   "Adulto x15 kg / 21kg",
+   "Cachorro x15 kg / 21kg",
+   "Raza Pequeña x15kg"
+  ]
+ },
+ {
+  "pag": 12,
+  "proteina": 19,
+  "productos": [
+   "Adulto x15 kg",
+   "Cachorro x10 kg",
+   "Mix x15 kg"
+  ]
+ },
+ {
+  "pag": 12,
+  "proteina": 26,
+  "productos": [
+   "Adulto x18+3 kg",
+   "Cachorro x15 kg"
+  ]
+ },
+ {
+  "pag": 14,
+  "proteina": 26,
+  "productos": [
+   "Gatito x8 kg",
+   "Salmón y Atún x8 kg",
+   "Esterilizados x15 kg"
+  ]
+ },
+ {
+  "pag": 14,
+  "proteina": 26,
+  "productos": [
+   "Cocktail x10 kg",
+   "Pescado x10 kg"
+  ]
+ },
+ {
+  "pag": 14,
+  "proteina": 26,
+  "productos": [
+   "Gatos adultos x8 kg"
+  ]
+ },
+ {
+  "pag": 14,
+  "proteina": 28,
+  "productos": [
+   "Gatos x15 kg"
+  ]
+ }
+]

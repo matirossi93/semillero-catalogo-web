@@ -1,0 +1,1647 @@
+{
+ "ALIMENTO BALANCEADO ANIMAL|10|PAJARO 4 mm x 25 Kg - GANAVE": {
+  "img": "/images/wp/pajaro-4-mm.jpg",
+  "slug": "pajaro-4-mm",
+  "nombre_web": "PAJARO 4 MM",
+  "score": 0.95,
+  "local": "productos/10.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|63|PREINICIADOR X 40 KG Nutrimax": {
+  "img": "/images/products-hq/preiniciador-nutrimas-b91a1010-hq-v2.jpg",
+  "slug": "preiniciador-nutrimas",
+  "nombre_web": "Preiniciador Nutrimas",
+  "score": 0.95,
+  "local": "productos/63.webp"
+ },
+ "ALIMENTO PARA PERROS|172|BALANCED CACHORRO RAZA PEQ X 7,5KG": {
+  "img": "/images/products-hq/2024-10-balanced-cachorro-raza-pequena-x-75-kg-0b37750e-hq-v2.jpg",
+  "slug": "balanced-cachorro-raza-pequena-x-7-5kg",
+  "nombre_web": "BALANCED CACHORRO RAZA PEQUEÑA",
+  "score": 0.95,
+  "local": "productos/172.webp"
+ },
+ "ALIMENTO PARA PERROS|173|BALANCED CACHORRO RAZA MED X 20KG": {
+  "img": "/images/products-hq/2024-10-vitalcan-balanced-perro-cachorro-raza-mediana-0b1a7857-hq-v2.jpg",
+  "slug": "balanced-cachorro-raza-mediana-x-20kg",
+  "nombre_web": "BALANCED CACHORRO RAZA MEDIANA",
+  "score": 0.95,
+  "local": "productos/173.webp"
+ },
+ "ALIMENTO PARA PERROS|174|BALANCED CACHORRO RAZA GRANDE X 20KG": {
+  "img": "/images/products-hq/2024-10-balanced-puppy-large-0231a0fb-hq-v2.jpg",
+  "slug": "balanced-cachorro-raza-grande-x-20-kg",
+  "nombre_web": "BALANCED CACHORRO RAZA GRANDE",
+  "score": 0.95,
+  "local": "productos/174.webp"
+ },
+ "ALIMENTO PARA PERROS|175|BALANCED ADULTO RAZA PEQUEÑA X 7,5KG": {
+  "img": "/images/products-hq/2024-10-vital-can-balanced-perro-adulto-raza-pequena-777e6d72-hq-v2.jpg",
+  "slug": "balanced-adulto-raza-pequena-x-15-kg",
+  "nombre_web": "BALANCED ADULTO RAZA PEQUEÑA",
+  "score": 0.95,
+  "local": "productos/175.webp"
+ },
+ "ALIMENTO PARA PERROS|134|BELCAN ADULTO X 22KG": {
+  "img": "/images/products-hq/2024-10-belcan-adulto-353e44c9-hq-v2.jpg",
+  "slug": "belcan-adultos-x-22kg",
+  "nombre_web": "BELCAN ADULTOS",
+  "score": 0.95,
+  "local": "productos/134.webp"
+ },
+ "ALIMENTO PARA PERROS|135|BELCAN CACHORRO X 15KG": {
+  "img": "/images/products-hq/2024-10-belcan-cachorro-76f113f0-hq-v2.jpg",
+  "slug": "belcan-cachorro-x-15kg",
+  "nombre_web": "BELCAN CACHORRO",
+  "score": 0.95,
+  "local": "productos/135.webp"
+ },
+ "ALIMENTO PARA PERROS|168|COMPLETE PERRO ADULTO RAZA PEQ X 20KG": {
+  "img": "/images/products-hq/2024-10-complete-raza-pequena-1-10549dcf-hq-v2.jpg",
+  "slug": "complete-perro-adulto-raza-pequena-x-20-kg",
+  "nombre_web": "COMPLETE PERRO ADULTO RAZA PEQUEÑA",
+  "score": 0.95,
+  "local": "productos/168.webp"
+ },
+ "ALIMENTO PARA PERROS|169|COMPLETE PERRO ADULTO RAZA MED Y GDE X 20KG": {
+  "img": "/images/products-hq/2024-10-complete-raza-grande-y-mediana-a0b1e8dc-hq-v2.jpg",
+  "slug": "complete-perro-adulto-raza-mediana-y-grande-x-20-kg",
+  "nombre_web": "COMPLETE PERRO ADULTO RAZA MEDIANA Y GRANDE",
+  "score": 0.95,
+  "local": "productos/169.webp"
+ },
+ "ALIMENTO PARA PERROS|123|DS CRIADORES ADULTO X 21 KG": {
+  "img": "/images/products-hq/ds-criadores-adulto-a25ae750-hq-v2.jpg",
+  "slug": "ds-criadores-adulto",
+  "nombre_web": "DS Criadores Adulto",
+  "score": 0.95,
+  "local": "productos/123.webp"
+ },
+ "ALIMENTO PARA PERROS|152|DS CRIADORES ADULTO Cordero X 21 KG": {
+  "img": "/images/products-hq/ds-criadores-adulto-cordero-fe8c685b-hq-v2.jpg",
+  "slug": "ds-criadores-adulto-cordero",
+  "nombre_web": "DS Criadores Adulto Cordero",
+  "score": 0.95,
+  "local": "productos/152.webp"
+ },
+ "ALIMENTO PARA PERROS|146|DS CRIADORES CACHORRO X 8 KG": {
+  "img": "/images/products-hq/ds-criadores-cachorro-6bdff410-hq-v2.jpg",
+  "slug": "ds-criadores-cachorro",
+  "nombre_web": "DS Criadores Cachorro",
+  "score": 0.95,
+  "local": "productos/146.webp"
+ },
+ "ALIMENTO PARA PERROS|126|DS CRIADORES CACHORRO X 21 KG": {
+  "img": "/images/products-hq/ds-criadores-cachorro-6bdff410-hq-v2.jpg",
+  "slug": "ds-criadores-cachorro",
+  "nombre_web": "DS Criadores Cachorro",
+  "score": 0.95,
+  "local": "productos/126.webp"
+ },
+ "ALIMENTO PARA PERROS|125|DS CRIADORES CACHORRO X 15 KG": {
+  "img": "/images/products-hq/ds-criadores-cachorro-6bdff410-hq-v2.jpg",
+  "slug": "ds-criadores-cachorro",
+  "nombre_web": "DS Criadores Cachorro",
+  "score": 0.95,
+  "local": "productos/125.webp"
+ },
+ "ALIMENTO PARA PERROS|234|EXACT CRIADORES ADULTO X 20K": {
+  "img": "/images/products-hq/exact-criadores-adulto-30def433-hq-v2.jpg",
+  "slug": "exact-criadores-adulto",
+  "nombre_web": "Exact Criadores Adulto",
+  "score": 0.95,
+  "local": "productos/234.webp"
+ },
+ "ALIMENTO PARA PERROS|235|EXACT CRIADORES CACHORRO X 15K": {
+  "img": "/images/products-hq/exact-criadores-cachorro-2423b4ca-hq-v2.jpg",
+  "slug": "exact-criadores-cachorro",
+  "nombre_web": "Exact Criadores Cachorro",
+  "score": 0.95,
+  "local": "productos/235.webp"
+ },
+ "ALIMENTO PARA PERROS|164|FLECKY ADULTO MIX X 20 KG": {
+  "img": "2024-11-flecky-fondo-blanco-800-954d0667-hq-v2.jpg",
+  "slug": "flecky",
+  "nombre_web": "FLECKY ADULTO MIX X 20 KG",
+  "score": 1.0,
+  "local": "productos/flecky-verde-adulto.webp"
+ },
+ "ALIMENTO PARA PERROS|130|GRAN CAMPEON AD ROJO Carne y Pollo X 21 KG": {
+  "img": "/images/products-hq/gran-campeon-adulto-rojo-carne-y-pollo-f9e4fd80-hq-v2.jpg",
+  "slug": "gran-campeon-adulto-rojo-carne-y-pollo",
+  "nombre_web": "Gran Campeón Adulto Rojo Carne y Pollo",
+  "score": 0.95,
+  "local": "productos/130.webp"
+ },
+ "ALIMENTO PARA PERROS|138|GRAN CAMPEON AD AZUL Carne y Vegetal X 21 KG": {
+  "img": "/images/products-hq/2024-11-gran-campeon-tradicional-800-e4ebba9d-hq-v2.jpg",
+  "slug": "gran-campeon-adulto-azul-carne-y-vegetal",
+  "nombre_web": "Gran Campeón Adulto Azul Carne y Vegetal",
+  "score": 0.95,
+  "local": "productos/138.webp"
+ },
+ "ALIMENTO PARA PERROS|131|GRAN CAMPEON CACHORRO X 10 KG": {
+  "img": "/images/products-hq/2024-11-gran-campeon-cachorro-6f7f82bb-hq-v2.jpg",
+  "slug": "gran-campeon-cachorro",
+  "nombre_web": "Gran Campeón Cachorro",
+  "score": 0.95,
+  "local": "productos/131.webp"
+ },
+ "ALIMENTO PARA PERROS|140|GRAN CAMPEON MANTENIMIENTO X 21 KG": {
+  "img": "/images/products-hq/gran-campeon-mantenimiento-90c8981f-hq-v2.jpg",
+  "slug": "gran-campeon-mantenimiento",
+  "nombre_web": "Gran Campeón Mantenimiento",
+  "score": 0.95,
+  "local": "productos/140.webp"
+ },
+ "ALIMENTO PARA PERROS|132|PACHA MIX X 15 KG": {
+  "img": "/images/products-hq/2024-11-pacha-mix-fbdec27f-hq-v2.jpg",
+  "slug": "pacha-mix",
+  "nombre_web": "PACHA MIX",
+  "score": 0.95,
+  "local": "productos/132.webp"
+ },
+ "ALIMENTO PARA PERROS|133|PACHA MIX X 22 KG": {
+  "img": "/images/products-hq/2024-11-pacha-mix-fbdec27f-hq-v2.jpg",
+  "slug": "pacha-mix",
+  "nombre_web": "PACHA MIX",
+  "score": 0.95,
+  "local": "productos/133.webp"
+ },
+ "ALIMENTO PARA PERROS|177|PREMIUM CACHORRO X 15KG": {
+  "img": "/images/products-hq/2024-11-premium-cachorro-ced9a107-hq-v2.jpg",
+  "slug": "premium-cachorro",
+  "nombre_web": "PREMIUM CACHORRO",
+  "score": 0.95,
+  "local": "productos/177.webp"
+ },
+ "ALIMENTO PARA PERROS|184|PREMIUM CACHORRO X 20KG": {
+  "img": "/images/products-hq/2024-11-premium-cachorro-ced9a107-hq-v2.jpg",
+  "slug": "premium-cachorro",
+  "nombre_web": "PREMIUM CACHORRO",
+  "score": 0.95,
+  "local": "productos/184.webp"
+ },
+ "ALIMENTO PARA PERROS|178|PREMIUM PERRO ADULTO RAZA PEQ X 20KG": {
+  "img": "/images/products-hq/premium-perro-adulto-raza-pequena-f3619c48-hq-v2.jpg",
+  "slug": "premium-perro-adulto-raza-pequena",
+  "nombre_web": "Premium Perro Adulto Raza Pequeña",
+  "score": 0.95,
+  "local": "productos/178.webp"
+ },
+ "ALIMENTO PARA PERROS|179|PREMIUM PERRO ADULTO X 20KG": {
+  "img": "/images/products-hq/premium-perro-adulto-c780e623-hq-v2.jpg",
+  "slug": "premium-perro-adulto",
+  "nombre_web": "Premium Perro Adulto",
+  "score": 0.95,
+  "local": "productos/179.webp"
+ },
+ "ALIMENTO PARA PERROS|105|ROSCO CACHORRO x 15 KG": {
+  "img": "/images/products-hq/2024-11-rosco-cachorro-1-62f9ca84-hq-v2.jpg",
+  "slug": "rosco-cachorro",
+  "nombre_web": "ROSCO CACHORRO",
+  "score": 0.95,
+  "local": "productos/105.webp"
+ },
+ "ALIMENTO PARA PERROS|100|ROSCO CARNE x 15 KG": {
+  "img": "/images/products-hq/2024-11-rosco-carne-f7fd6ca6-hq-v2.jpg",
+  "slug": "rosco-carne",
+  "nombre_web": "ROSCO CARNE",
+  "score": 0.95,
+  "local": "productos/100.webp"
+ },
+ "ALIMENTO PARA PERROS|101|ROSCO CARNE x 20 KG": {
+  "img": "/images/products-hq/2024-11-rosco-carne-f7fd6ca6-hq-v2.jpg",
+  "slug": "rosco-carne",
+  "nombre_web": "ROSCO CARNE",
+  "score": 0.95,
+  "local": "productos/101.webp"
+ },
+ "ALIMENTO PARA PERROS|103|ROSCO COCK x 15 KG": {
+  "img": "/images/products-hq/2024-11-rosco-cocktail-15-b34078dc-hq-v2.jpg",
+  "slug": "rosco-cocktail",
+  "nombre_web": "ROSCO COCKTAIL",
+  "score": 0.95,
+  "local": "productos/103.webp"
+ },
+ "ALIMENTO PARA PERROS|104|ROSCO COCK x 22 KG": {
+  "img": "/images/products-hq/2024-11-rosco-cocktail-15-b34078dc-hq-v2.jpg",
+  "slug": "rosco-cocktail",
+  "nombre_web": "ROSCO COCKTAIL",
+  "score": 0.95,
+  "local": "productos/104.webp"
+ },
+ "ALIMENTO PARA PERROS|102|ROSCO POLLO x 15 KG": {
+  "img": "/images/products-hq/2024-11-rosco-pollo-2a56d28f-hq-v2.jpg",
+  "slug": "rosco-pollo",
+  "nombre_web": "ROSCO POLLO",
+  "score": 0.95,
+  "local": "productos/102.webp"
+ },
+ "ALIMENTO PARA PERROS|150|ZIMPI X 15 KG": {
+  "img": "/images/wp/2024-11-zimpi.jpg",
+  "slug": "zimpi",
+  "nombre_web": "ZIMPI",
+  "score": 0.95,
+  "local": "productos/150.webp"
+ },
+ "ALIMENTO PARA PERROS|151|ZIMPI X 25 KG": {
+  "img": "/images/wp/2024-11-zimpi.jpg",
+  "slug": "zimpi",
+  "nombre_web": "ZIMPI",
+  "score": 0.95,
+  "local": "productos/151.webp"
+ },
+ "ALIMENTO PARA GATOS|210|9 LIVES  CARNE  x 15 KG": {
+  "img": "/images/products-hq/2024-11-9-lives-carne-3545eed1-hq-v2.jpg",
+  "slug": "9-lives-carne",
+  "nombre_web": "9 LIVES CARNE",
+  "score": 0.95,
+  "local": "productos/210.webp"
+ },
+ "ALIMENTO PARA GATOS|211|9 LIVES SALMON Y ATUN x 15 KG": {
+  "img": "/images/products-hq/2024-11-9-lives-64153bf1-hq-v2.jpg",
+  "slug": "9-lives-salmon-y-atun",
+  "nombre_web": "9 LIVES SALMON Y ATUN",
+  "score": 0.95,
+  "local": "productos/211.webp"
+ },
+ "ALIMENTO PARA GATOS|212|9 LIVES GATITO x 8 KG": {
+  "img": "/images/products-hq/2024-11-9-lives-gatito-4b68ccf3-hq-v2.jpg",
+  "slug": "9-lives-gatito",
+  "nombre_web": "9 LIVES GATITO",
+  "score": 0.95,
+  "local": "productos/212.webp"
+ },
+ "ALIMENTO PARA GATOS|214|9 LIVES SALMON Y ATUN x 8 KG": {
+  "img": "/images/products-hq/2024-11-9-lives-64153bf1-hq-v2.jpg",
+  "slug": "9-lives-salmon-y-atun",
+  "nombre_web": "9 LIVES SALMON Y ATUN",
+  "score": 0.95,
+  "local": "productos/214.webp"
+ },
+ "ALIMENTO PARA GATOS|186|BALANCED GATO ADULTO X 7,5KG": {
+  "img": "/images/products-hq/balanced-gato-adulto-35a2a9ab-hq-v2.jpg",
+  "slug": "balanced-gato-adulto",
+  "nombre_web": "Balanced Gato Adulto",
+  "score": 0.95,
+  "local": "productos/186.webp"
+ },
+ "ALIMENTO PARA GATOS|136|BELCAT X 10 KG": {
+  "img": "/images/products-hq/2024-10-belcat-1550d973-hq-v2.jpg",
+  "slug": "belcat-x-10kg",
+  "nombre_web": "BELCAT",
+  "score": 0.95,
+  "local": "productos/136.webp"
+ },
+ "ALIMENTO PARA GATOS|242|CHEF CAT GATOS ADULTOS X 8 KGR": {
+  "img": "/images/products-hq/2024-11-chef-cat-efdd4dec-hq-v2.jpg",
+  "slug": "chef-cat-gatos-adultos",
+  "nombre_web": "Chef Cat Gatos Adultos",
+  "score": 0.95,
+  "local": "productos/242.webp"
+ },
+ "ALIMENTO PARA GATOS|243|CHEF CAT GATOS ADULTOS X 15 KGR": {
+  "img": "/images/products-hq/2024-11-chef-cat-efdd4dec-hq-v2.jpg",
+  "slug": "chef-cat-gatos-adultos",
+  "nombre_web": "Chef Cat Gatos Adultos",
+  "score": 0.95,
+  "local": "productos/243.webp"
+ },
+ "ALIMENTO PARA GATOS|170|COMPLETE GATO ADULTO X 15KG": {
+  "img": "/images/products-hq/2024-11-complete-gato-senior-cc98006d-hq-v2.jpg",
+  "slug": "complete-gato-adulto",
+  "nombre_web": "Complete Gato Adulto",
+  "score": 0.95,
+  "local": "productos/170.webp"
+ },
+ "ALIMENTO PARA GATOS|171|COMPLETE GATO CASTRADO X 7,5KG": {
+  "img": "/images/products-hq/2024-11-complete-gato-castrado-6529dcd0-hq-v2.jpg",
+  "slug": "complete-gato-castrado",
+  "nombre_web": "Complete Gato Castrado",
+  "score": 0.95,
+  "local": "productos/171.webp"
+ },
+ "ALIMENTO PARA GATOS|233|EXACT PREMIUM GATO URINARIO 8KG": {
+  "img": "/images/products-hq/exact-premium-gato-urinario-1130e487-hq-v2.jpg",
+  "slug": "exact-premium-gato-urinario",
+  "nombre_web": "Exact Premium Gato Urinario",
+  "score": 0.95,
+  "local": "productos/233.webp"
+ },
+ "ALIMENTO PARA GATOS|236|EXACT CRIADORES GATO X 10K": {
+  "img": "/images/products-hq/exact-criadores-gato-10c68e4c-hq-v2.jpg",
+  "slug": "exact-criadores-gato",
+  "nombre_web": "Exact Criadores Gato",
+  "score": 0.95,
+  "local": "productos/236.webp"
+ },
+ "ALIMENTO PARA GATOS|137|GRAN CAMPEON GATO X 10 KG": {
+  "img": "/images/products-hq/2024-11-gran-campeon-gato-495ea4db-hq-v2.jpg",
+  "slug": "gran-campeon-gato",
+  "nombre_web": "GRAN CAMPEON GATO",
+  "score": 0.95,
+  "local": "productos/137.webp"
+ },
+ "ALIMENTO PARA GATOS|189|KEN-L RATION GATO AD X 7,5 KG": {
+  "img": "/images/products-hq/ken-l-ration-gato-adulto-ced4804c-hq-v2.jpg",
+  "slug": "ken-l-ration-gato-adulto",
+  "nombre_web": "Ken-L Ration Gato Adulto 7,5 kg",
+  "score": 1.0,
+  "local": "productos/189.webp"
+ },
+ "ALIMENTO PARA GATOS|180|PREMIUM GATO ADULTO X 7,5KG": {
+  "img": "/images/products-hq/2024-11-vital-can-premium-gato-adulto-a667aeca-hq-v2.jpg",
+  "slug": "premium-gato-adulto",
+  "nombre_web": "Premium Gato Adulto",
+  "score": 0.95,
+  "local": "productos/180.webp"
+ },
+ "ALIMENTO PARA GATOS|200|ROSCO GATO PESCADO x 10 KG": {
+  "img": "/images/products-hq/2024-11-rosco-gato-pescado-x-10-kg-1-e6dbc136-hq-v2.jpg",
+  "slug": "rosco-gato-pescado",
+  "nombre_web": "Rosco Gato Pescado",
+  "score": 0.95,
+  "local": "productos/200.webp"
+ },
+ "ALIMENTO PARA GATOS|201|ROSCO GATO COCK x 10 KG": {
+  "img": "/images/products-hq/2024-11-rosco-gato-cocktail-bc4fef2e-hq-v2.jpg",
+  "slug": "rosco-gato-cocktail",
+  "nombre_web": "Rosco Gato Cocktail",
+  "score": 0.95,
+  "local": "productos/201.webp"
+ },
+ "ALIMENTO PARA GATOS|270|TIERNITOS GATO X 10 KG": {
+  "img": "/images/wp/2024-11-tiernitos-gato.webp",
+  "slug": "tiernitos-gato",
+  "nombre_web": "Tiernitos Gato",
+  "score": 0.95,
+  "local": "productos/270.webp"
+ },
+ "ALIMENTO PARA GATOS|185|ZIMPI GATO X 15 KG": {
+  "img": "/images/wp/zimpi-gato.png",
+  "slug": "zimpi-gato",
+  "nombre_web": "Zimpi Gato",
+  "score": 0.95,
+  "local": "productos/185.webp"
+ },
+ "ALIMENTO PARA GATOS|995|PIEDRAS SANITARIAS MI NINO X 12,5 KG": {
+  "img": "/images/products-hq/2024-12-piedra-sanitaria-minino-e46a9270-hq-v2.jpg",
+  "slug": "piedras-sanitarias-mi-nino-x-125-kg",
+  "nombre_web": "PIEDRAS SANITARIAS MI NINO X 12,5 KG",
+  "score": 1.0,
+  "local": "productos/995.webp"
+ },
+ "ALIMENTO PARA GATOS|961|PIEDRAS SANITARIAS X 25 KG": {
+  "img": "/images/products-hq/2024-11-piedras-mineral-x-25-kg-b82fdb87-hq-v2.jpg",
+  "slug": "piedras-sanitarias-x-25-kg",
+  "nombre_web": "PIEDRAS SANITARIAS X 25 KG",
+  "score": 1.0,
+  "local": "productos/961.webp"
+ },
+ "CEREALES PARA DESAYUNO|301|ALMOHADITA DE FRUTILLA X 2.5 KG": {
+  "img": "/images/products-hq/2024-11-almohaditas-de-frutilla-c124aa02-hq-v2.jpg",
+  "slug": "almohadita-de-frutilla",
+  "nombre_web": "ALMOHADITA DE FRUTILLA",
+  "score": 0.95,
+  "local": "productos/301.webp"
+ },
+ "CEREALES PARA DESAYUNO|302|ALMOHADITA DE LIMON X 2.5 KG": {
+  "img": "/images/products-hq/2024-11-almohaditas-de-limon-d27a9e3f-hq-v2.jpg",
+  "slug": "almohadita-de-limon",
+  "nombre_web": "ALMOHADITA DE LIMON",
+  "score": 0.95,
+  "local": "productos/302.webp"
+ },
+ "CEREALES PARA DESAYUNO|310|ANILLOS DE MIEL X 2.5 KG": {
+  "img": "/images/products-hq/2024-11-arito-con-miel-90859606-hq-v2.jpg",
+  "slug": "anillos-de-miel",
+  "nombre_web": "ANILLOS DE MIEL",
+  "score": 0.95,
+  "local": "productos/310.webp"
+ },
+ "CEREALES PARA DESAYUNO|311|ANILLOS FRUTADOS x 2.5 Kg": {
+  "img": "/images/products-hq/2024-11-aritos-frutados-granix-2-44672607-hq-v2.jpg",
+  "slug": "anillos-frutados",
+  "nombre_web": "ANILLOS FRUTADOS",
+  "score": 0.95,
+  "local": "productos/311.webp"
+ },
+ "CEREALES PARA DESAYUNO|320|BOLITAS DE CHOCOLATE x 2.5 Kg": {
+  "img": "/images/products-hq/2024-11-bolitas-con-chocolate-1-12630e0d-hq-v2.jpg",
+  "slug": "bolitas-de-chocolate",
+  "nombre_web": "BOLITAS DE CHOCOLATE",
+  "score": 0.95,
+  "local": "productos/320.webp"
+ },
+ "CEREALES PARA DESAYUNO|330|CEREAL CON AZUCAR x 2.5 Kg": {
+  "img": "/images/products-hq/2024-11-leone-10-cd5cc597-hq-v2.jpg",
+  "slug": "cereal-con-azucar",
+  "nombre_web": "CEREAL CON AZUCAR",
+  "score": 0.95,
+  "local": "productos/330.webp"
+ },
+ "CEREALES PARA DESAYUNO|331|CEREAL INTEGRAL x 2.5 Kg": {
+  "img": "/images/products-hq/2024-11-copos-integrales-1-61699579-hq-v2.jpg",
+  "slug": "cereal-integral",
+  "nombre_web": "CEREAL INTEGRAL",
+  "score": 0.95,
+  "local": "productos/331.webp"
+ },
+ "CEREALES PARA DESAYUNO|332|CEREAL SIN AZUCAR X 2.5 KG": {
+  "img": "/images/products-hq/2024-11-d-792841-mla51425182409-092022-c-010e0144-hq-v2.jpg",
+  "slug": "cereal-sin-azucar",
+  "nombre_web": "CEREAL SIN AZUCAR",
+  "score": 0.95,
+  "local": "productos/332.webp"
+ },
+ "CEREALES PARA DESAYUNO|340|FIBRAS DE SALVADO x 1 Kg": {
+  "img": "/images/products-hq/2024-11-cereales-baston-de-salvado-250gr-1-fb316139-hq-v2.jpg",
+  "slug": "fibras-de-salvado",
+  "nombre_web": "FIBRAS DE SALVADO",
+  "score": 0.95,
+  "local": "productos/340.webp"
+ },
+ "CEREALES PARA DESAYUNO|351|GRANOLA MIX X 1 KG": {
+  "img": "/images/products-hq/2024-11-granola-mix-ae0fcf0c-hq-v2.jpg",
+  "slug": "granola-mix",
+  "nombre_web": "GRANOLA MIX",
+  "score": 0.95,
+  "local": "productos/351.webp"
+ },
+ "CEREALES PARA DESAYUNO|352|GRANOLA MIX X 1,5 KG": {
+  "img": "/images/products-hq/2024-11-granola-mix-ae0fcf0c-hq-v2.jpg",
+  "slug": "granola-mix",
+  "nombre_web": "GRANOLA MIX",
+  "score": 0.95,
+  "local": "productos/352.webp"
+ },
+ "CEREALES PARA DESAYUNO|350|GRANOLA CHOCOLATE X 1 KG": {
+  "img": "/images/products-hq/2024-11-granola-chocolate-509de18e-hq-v2.jpg",
+  "slug": "granola-de-chocolate",
+  "nombre_web": "GRANOLA DE CHOCOLATE",
+  "score": 0.95,
+  "local": "productos/350.webp"
+ },
+ "CEREALES PARA DESAYUNO|353|GRANOLA 5 SEMILLAS X 1KG": {
+  "img": "/images/products-hq/2024-11-granola-5-semillas-f6e4f5f2-hq-v2.jpg",
+  "slug": "granola-5-semillas",
+  "nombre_web": "GRANOLA 5 SEMILLAS",
+  "score": 0.95,
+  "local": "productos/353.webp"
+ },
+ "CEREALES PARA DESAYUNO|361|OSITOS DE FRUTILLA x 2.5 Kg": {
+  "img": "/images/products-hq/2024-11-ositos-de-frutilla-356be049-hq-v2.jpg",
+  "slug": "ositos-de-frutilla",
+  "nombre_web": "OSITOS DE FRUTILLA",
+  "score": 0.95,
+  "local": "productos/361.webp"
+ },
+ "CEREALES PARA DESAYUNO|362|OSITOS DE MIEL x 2.5 Kg": {
+  "img": "/images/products-hq/2024-11-ositos-de-miel-a18ed3a8-hq-v2.jpg",
+  "slug": "ositos-de-miel",
+  "nombre_web": "OSITOS DE MIEL",
+  "score": 0.95,
+  "local": "productos/362.webp"
+ },
+ "CEREALES|400|ALPISTE": {
+  "img": "/images/products-hq/2024-11-alpiste-b206ebe7-hq-v2.jpg",
+  "slug": "alpiste",
+  "nombre_web": "ALPISTE",
+  "score": 1.0,
+  "local": "productos/400.webp"
+ },
+ "CEREALES|401|LINO": {
+  "img": "/images/products-hq/2024-11-lino-c4c1a30c-hq-v2.jpg",
+  "slug": "lino",
+  "nombre_web": "LINO",
+  "score": 1.0,
+  "local": "productos/401.webp"
+ },
+ "CEREALES|402|MIJO": {
+  "img": "/images/products-hq/2024-11-mijo-5c15bc70-hq-v2.jpg",
+  "slug": "mijo",
+  "nombre_web": "Mijo",
+  "score": 1.0,
+  "local": "productos/402.webp"
+ },
+ "CEREALES|406|MIX SEMILLAS": {
+  "img": "/images/products-hq/2024-11-mix-de-semillas-x-1kg-d38798a6-hq-v2.jpg",
+  "slug": "mix-semillas",
+  "nombre_web": "MIX SEMILLAS",
+  "score": 1.0,
+  "local": "productos/406.webp"
+ },
+ "CEREALES|407|QUINOA": {
+  "img": "/images/products-hq/2024-11-quinoa-9b380e87-hq-v2.jpg",
+  "slug": "quinoa",
+  "nombre_web": "QUINOA",
+  "score": 1.0,
+  "local": "productos/407.webp"
+ },
+ "CEREALES|409|SALVADO DE AVENA": {
+  "img": "/images/products-hq/2024-11-salvado-de-avena-6bf4e1be-hq-v2.jpg",
+  "slug": "salvado-de-avena",
+  "nombre_web": "SALVADO DE AVENA",
+  "score": 1.0,
+  "local": "productos/409.webp"
+ },
+ "CEREALES|405|SESAMO": {
+  "img": "/images/products-hq/2024-11-semillas-de-sesamo-blanco-fbd8653a-hq-v2.jpg",
+  "slug": "sesamo",
+  "nombre_web": "Sésamo",
+  "score": 1.0,
+  "local": "productos/405.webp"
+ },
+ "CEREALES|404|SOJA": {
+  "img": "/images/products-hq/2024-11-soja-da26629f-hq-v2.jpg",
+  "slug": "soja",
+  "nombre_web": "SOJA",
+  "score": 1.0,
+  "local": "productos/404.webp"
+ },
+ "FORRAJES|451|AFRECHO X 30KG": {
+  "img": "/images/products-hq/2024-11-afrecho-1-e1741870910452-79aa06c2-hq-v2.jpg",
+  "slug": "afrecho",
+  "nombre_web": "AFRECHO",
+  "score": 0.95,
+  "local": "productos/451.webp"
+ },
+ "FORRAJES|452|ARVEJA PARTIDA": {
+  "img": "/images/products-hq/2024-11-arveja-partia-e1741871305575-56e4b680-hq-v2.jpg",
+  "slug": "arveja-partida",
+  "nombre_web": "ARVEJA PARTIDA",
+  "score": 1.0,
+  "local": "productos/452.webp"
+ },
+ "FORRAJES|453|AVENA FORRAJERA X KG": {
+  "img": "/images/products-hq/2024-11-avena-forrajera-1-6461826c-hq-v2.jpg",
+  "slug": "avena-forrajera",
+  "nombre_web": "AVENA FORRAJERA",
+  "score": 1.0,
+  "local": "productos/453.webp"
+ },
+ "FORRAJES|454|AVENA PELADA": {
+  "img": "/images/products-hq/2024-11-avena-pelada-d31403ab-hq-v2.jpg",
+  "slug": "avena-pelada",
+  "nombre_web": "AVENA PELADA",
+  "score": 1.0,
+  "local": "productos/454.webp"
+ },
+ "FORRAJES|483|CABALLO PREMIUM X 30 KG": {
+  "img": "(pdf)",
+  "slug": "mezcla",
+  "nombre_web": "Mezcla Caballo Premium",
+  "score": 1.0,
+  "local": "productos/483.webp"
+ },
+ "FORRAJES|455|CARTAMO": {
+  "img": "/images/products-hq/2024-11-cartamo-5a198822-hq-v2.jpg",
+  "slug": "cartamo",
+  "nombre_web": "CARTAMO",
+  "score": 1.0,
+  "local": "productos/455.webp"
+ },
+ "FORRAJES|456|COLZA": {
+  "img": "/images/products-hq/2024-11-colza-9cdfcbb9-hq-v2.jpg",
+  "slug": "colza",
+  "nombre_web": "COLZA",
+  "score": 1.0,
+  "local": "productos/456.webp"
+ },
+ "FORRAJES|457|GIRASOL CHICO": {
+  "img": "/images/products-hq/2024-11-girasol-chico-a8ae5df5-hq-v2.jpg",
+  "slug": "girasol-chico",
+  "nombre_web": "GIRASOL CHICO",
+  "score": 1.0,
+  "local": "productos/457.webp"
+ },
+ "FORRAJES|458|GIRASOL GRANDE": {
+  "img": "/images/products-hq/2024-11-girasol-grande-e1741875146647-c3f9c5b5-hq-v2.jpg",
+  "slug": "girasol-grande",
+  "nombre_web": "GIRASOL GRANDE",
+  "score": 1.0,
+  "local": "productos/458.webp"
+ },
+ "FORRAJES|459|GIRASOL PELADO": {
+  "img": "/images/products-hq/2024-11-girasol-pelado-64b0d747-hq-v2.jpg",
+  "slug": "girasol-pelado",
+  "nombre_web": "GIRASOL PELADO",
+  "score": 1.0,
+  "local": "productos/459.webp"
+ },
+ "FORRAJES|460|MAIZ": {
+  "img": "/images/products-hq/2024-11-maiz-53a3a2a1-hq-v2.jpg",
+  "slug": "maiz",
+  "nombre_web": "MAIZ",
+  "score": 1.0,
+  "local": "productos/460.webp"
+ },
+ "FORRAJES|479|MEZCLA CON PUNTILLA": {
+  "img": "(pdf)",
+  "slug": "mezcla",
+  "nombre_web": "Mezcla con puntilla",
+  "score": 1.0,
+  "local": "productos/479.webp"
+ },
+ "FORRAJES|464|MEZCLA GALLO CON AVENA PELADA": {
+  "img": "(pdf)",
+  "slug": "mezcla",
+  "nombre_web": "Mezcla gallo con avena pelada",
+  "score": 1.0,
+  "local": "productos/464.webp"
+ },
+ "FORRAJES|491|MEZCLA GALLO PREMIUM": {
+  "img": "(pdf)",
+  "slug": "mezcla",
+  "nombre_web": "Mezcla Gallo Premium",
+  "score": 1.0,
+  "local": "productos/491.webp"
+ },
+ "FORRAJES|468|MEZCLA GRUESA/MEDIANA": {
+  "img": "(pdf)",
+  "slug": "mezcla",
+  "nombre_web": "Mezcla gruesa/mediana",
+  "score": 1.0,
+  "local": "productos/468.webp"
+ },
+ "FORRAJES|470|MEZCLA P/PAJARO": {
+  "img": "(pdf)",
+  "slug": "mezcla",
+  "nombre_web": "Mezcla p/pajaro",
+  "score": 1.0,
+  "local": "productos/470.webp"
+ },
+ "FORRAJES|485|PELLET DE ALFA": {
+  "img": "/images/products-hq/2024-11-pellet-de-alfa-51b45288-hq-v2.jpg",
+  "slug": "pellet-de-alfa",
+  "nombre_web": "PELLET DE ALFA",
+  "score": 1.0,
+  "local": "productos/485.webp"
+ },
+ "FORRAJES|403|SORGO": {
+  "img": "/images/products-hq/2024-11-sorgo-d55f349a-hq-v2.jpg",
+  "slug": "sorgo",
+  "nombre_web": "SORGO",
+  "score": 1.0,
+  "local": "productos/403.webp"
+ },
+ "FORRAJES|473|TRIGO FORRAJERO X KG": {
+  "img": "/images/wp/trigo-forrajero.jpg",
+  "slug": "trigo-forrajero",
+  "nombre_web": "TRIGO FORRAJERO",
+  "score": 1.0,
+  "local": "productos/473.webp"
+ },
+ "LEGUMBRES|700|ARROZ": {
+  "img": "/images/products-hq/2024-11-arroz-e1742500404940-4da6d53a-hq-v2.jpg",
+  "slug": "arroz",
+  "nombre_web": "ARROZ",
+  "score": 1.0,
+  "local": "productos/700.webp"
+ },
+ "LEGUMBRES|701|ARROZ INTEGRAL": {
+  "img": "/images/products-hq/2024-11-arroz-integral-c3b2accd-hq-v2.jpg",
+  "slug": "arroz-integral",
+  "nombre_web": "ARROZ INTEGRAL",
+  "score": 1.0,
+  "local": "productos/701.webp"
+ },
+ "LEGUMBRES|702|ARROZ YAMANI": {
+  "img": "/images/products-hq/2024-11-arroz-yamani-d99b4cea-hq-v2.jpg",
+  "slug": "arroz-yamani",
+  "nombre_web": "ARROZ YAMANI",
+  "score": 1.0,
+  "local": "productos/702.webp"
+ },
+ "LEGUMBRES|703|AVENA ARROLLADA": {
+  "img": "/images/products-hq/2024-11-avena-forrajera-75006f3d-hq-v2.jpg",
+  "slug": "avena-arrollada",
+  "nombre_web": "AVENA ARROLLADA",
+  "score": 1.0,
+  "local": "productos/703.webp"
+ },
+ "LEGUMBRES|704|AVENA INSTANTANEA": {
+  "img": "/images/products-hq/2024-11-avena-instantanea-e1742498766997-d4981bda-hq-v2.jpg",
+  "slug": "avena-instantanea",
+  "nombre_web": "AVENA INSTANTANEA",
+  "score": 1.0,
+  "local": "productos/704.webp"
+ },
+ "LEGUMBRES|705|BURGOL FINO": {
+  "img": "/images/products-hq/2024-11-burgol-fino-8f7b7eea-hq-v2.jpg",
+  "slug": "burgol-fino",
+  "nombre_web": "BURGOL FINO",
+  "score": 1.0,
+  "local": "productos/705.webp"
+ },
+ "LEGUMBRES|726|FECULA DE MANDIOCA": {
+  "img": "/images/products-hq/2024-11-fecula-mandioca-80c59b43-hq-v2.jpg",
+  "slug": "fecula-de-mandioca",
+  "nombre_web": "FECULA DE MANDIOCA",
+  "score": 1.0,
+  "local": "productos/726.webp"
+ },
+ "LEGUMBRES|710|GARBANZO": {
+  "img": "/images/products-hq/2024-11-garbanzo-5550aa5c-hq-v2.jpg",
+  "slug": "garbanzo",
+  "nombre_web": "GARBANZO",
+  "score": 1.0,
+  "local": "productos/710.webp"
+ },
+ "LEGUMBRES|715|HARINA DE TRIGO INTEGRAL": {
+  "img": "/images/wp/harina-de-trigo-integral.webp",
+  "slug": "harina-de-trigo-integral",
+  "nombre_web": "HARINA DE TRIGO INTEGRAL",
+  "score": 1.0,
+  "local": "productos/715.webp"
+ },
+ "LEGUMBRES|717|LENTEJA": {
+  "img": "/images/products-hq/2024-11-lentejas-bdc71403-hq-v2.jpg",
+  "slug": "lenteja",
+  "nombre_web": "LENTEJA",
+  "score": 1.0,
+  "local": "productos/717.webp"
+ },
+ "LEGUMBRES|718|MAICENA": {
+  "img": "/images/products-hq/2024-11-maicena-d0fd7d53-hq-v2.jpg",
+  "slug": "maicena",
+  "nombre_web": "MAICENA",
+  "score": 1.0,
+  "local": "productos/718.webp"
+ },
+ "LEGUMBRES|719|MAIZ MOLIDO AMARILLO": {
+  "img": "/images/products-hq/2024-11-maiz-molido-ea2a293c-hq-v2.jpg",
+  "slug": "maiz-molido-amarillo",
+  "nombre_web": "MAIZ MOLIDO AMARILLO",
+  "score": 1.0,
+  "local": "productos/719.webp"
+ },
+ "LEGUMBRES|720|MAIZ MOLIDO BLANCO": {
+  "img": "/images/products-hq/2024-11-maiz-molido-blanco-2ab85c31-hq-v2.jpg",
+  "slug": "maiz-molido-blanco",
+  "nombre_web": "MAIZ MOLIDO BLANCO",
+  "score": 1.0,
+  "local": "productos/720.webp"
+ },
+ "LEGUMBRES|722|POLENTA": {
+  "img": "/images/products-hq/2024-11-polenta-c2aa7509-hq-v2.jpg",
+  "slug": "polenta",
+  "nombre_web": "POLENTA",
+  "score": 1.0,
+  "local": "productos/722.webp"
+ },
+ "LEGUMBRES|723|POROTO ALUBIA": {
+  "img": "/images/products-hq/2024-11-poroto-alubia-6e8da7b0-hq-v2.jpg",
+  "slug": "poroto-alubia",
+  "nombre_web": "POROTO ALUBIA",
+  "score": 1.0,
+  "local": "productos/723.webp"
+ },
+ "LEGUMBRES|724|POROTO PALLARES": {
+  "img": "/images/products-hq/2024-11-poroto-pallar-08d3416b-hq-v2.jpg",
+  "slug": "poroto-pallares",
+  "nombre_web": "POROTO PALLARES",
+  "score": 1.0,
+  "local": "productos/724.webp"
+ },
+ "LEGUMBRES|725|TRIGO PARA LOCRO": {
+  "img": "/images/wp/trigo-para-locro.webp",
+  "slug": "trigo-para-locro",
+  "nombre_web": "TRIGO PARA LOCRO",
+  "score": 1.0,
+  "local": "productos/725.webp"
+ },
+ "CONDIMENTOS|500|ADOBO P/CARNE": {
+  "img": "/images/products-hq/2024-11-adobo-para-carne-4cabe6fe-hq-v2.jpg",
+  "slug": "adobo-para-carne",
+  "nombre_web": "ADOBO PARA CARNE",
+  "score": 1.0,
+  "local": "productos/500.webp"
+ },
+ "CONDIMENTOS|501|ADOBO P/PIZZA": {
+  "img": "/images/products-hq/2024-11-adobo-para-pizza-e1742413764967-302ddc90-hq-v2.jpg",
+  "slug": "adobo-para-pizza",
+  "nombre_web": "ADOBO PARA PIZZA",
+  "score": 1.0,
+  "local": "productos/501.webp"
+ },
+ "CONDIMENTOS|502|AJI CAYENA": {
+  "img": "/images/products-hq/2024-11-aji-cayena-e1742399242927-58036af1-hq-v2.jpg",
+  "slug": "aji-cayena",
+  "nombre_web": "AJI CAYENA",
+  "score": 1.0,
+  "local": "productos/502.webp"
+ },
+ "CONDIMENTOS|503|AJI ROJO": {
+  "img": "/images/products-hq/2024-11-aji-rojo-e1742413877433-a6de67ab-hq-v2.jpg",
+  "slug": "aji-rojo",
+  "nombre_web": "AJI ROJO",
+  "score": 1.0,
+  "local": "productos/503.webp"
+ },
+ "CONDIMENTOS|504|ANIS EN GRANO": {
+  "img": "/images/products-hq/2024-11-anis-en-grano-79d9477f-hq-v2.jpg",
+  "slug": "anis-en-grano",
+  "nombre_web": "ANIS EN GRANO",
+  "score": 1.0,
+  "local": "productos/504.webp"
+ },
+ "CONDIMENTOS|505|AZUCAR IMPALPABLE": {
+  "img": "/images/products-hq/2024-11-azucar-impalpable-1e409b4a-hq-v2.jpg",
+  "slug": "azucar-impalpable",
+  "nombre_web": "AZUCAR IMPALPABLE",
+  "score": 1.0,
+  "local": "productos/505.webp"
+ },
+ "CONDIMENTOS|506|AZUCAR MASCABO": {
+  "img": "/images/products-hq/2024-11-aucar-mascabo-e308f398-hq-v2.jpg",
+  "slug": "azucar-mascabo",
+  "nombre_web": "AZUCAR MASCABO",
+  "score": 1.0,
+  "local": "productos/506.webp"
+ },
+ "CONDIMENTOS|507|BICARBONATO": {
+  "img": "/images/products-hq/2024-11-bicarbonato-aed299ad-hq-v2.jpg",
+  "slug": "bicarbonato",
+  "nombre_web": "BICARBONATO",
+  "score": 1.0,
+  "local": "productos/507.webp"
+ },
+ "CONDIMENTOS|523|CHIMICHURRI": {
+  "img": "/images/products-hq/2024-11-chimichurri-955f0efd-hq-v2.jpg",
+  "slug": "chimichurri",
+  "nombre_web": "CHIMICHURRI",
+  "score": 1.0,
+  "local": "productos/523.webp"
+ },
+ "CONDIMENTOS|508|COCO RALLADO": {
+  "img": "/images/products-hq/2024-11-coco-rallado-1811x1280-c7ca6958-hq-v2.jpg",
+  "slug": "coco-rallado",
+  "nombre_web": "COCO RALLADO",
+  "score": 1.0,
+  "local": "productos/508.webp"
+ },
+ "CONDIMENTOS|509|COMINO COMUN": {
+  "img": "/images/products-hq/2024-11-comino-comun-b079b133-hq-v2.jpg",
+  "slug": "comino-comun",
+  "nombre_web": "COMINO COMUN",
+  "score": 1.0,
+  "local": "productos/509.webp"
+ },
+ "CONDIMENTOS|510|COMINO EN GRANO": {
+  "img": "/images/products-hq/2024-11-comino-en-grano-c5ab440b-hq-v2.jpg",
+  "slug": "comino-en-grano",
+  "nombre_web": "COMINO EN GRANO",
+  "score": 1.0,
+  "local": "productos/510.webp"
+ },
+ "CONDIMENTOS|511|CONDIMENTO P/ARROZ": {
+  "img": "/images/products-hq/2024-11-condimento-para-arroz-688ed19d-hq-v2.jpg",
+  "slug": "condimento-para-arroz",
+  "nombre_web": "CONDIMENTO PARA ARROZ",
+  "score": 1.0,
+  "local": "productos/511.webp"
+ },
+ "CONDIMENTOS|512|CURCUMA": {
+  "img": "/images/products-hq/2024-11-curcuma-c9f7996b-hq-v2.jpg",
+  "slug": "curcuma",
+  "nombre_web": "CURCUMA",
+  "score": 1.0,
+  "local": "productos/512.webp"
+ },
+ "CONDIMENTOS|513|CURRY": {
+  "img": "/images/products-hq/2024-11-curry-829c3a3f-hq-v2.jpg",
+  "slug": "curry",
+  "nombre_web": "CURRY",
+  "score": 1.0,
+  "local": "productos/513.webp"
+ },
+ "CONDIMENTOS|515|OREGANO": {
+  "img": "/images/products-hq/2024-11-oregano-57f99b4b-hq-v2.jpg",
+  "slug": "oregano",
+  "nombre_web": "OREGANO",
+  "score": 1.0,
+  "local": "productos/515.webp"
+ },
+ "CONDIMENTOS|524|PIMENTON ESPAÑOL": {
+  "img": "/images/products-hq/2024-11-pimenton-espanol-1-6d064ed1-hq-v2.jpg",
+  "slug": "pimenton-comun",
+  "nombre_web": "PIMENTON ESPAÑOL",
+  "score": 1.0,
+  "local": "productos/524.webp"
+ },
+ "CONDIMENTOS|525|PIMENTON MORRON": {
+  "img": "/images/products-hq/2024-11-pimenton-espanol-e1742394560925-9a68c04b-hq-v2.jpg",
+  "slug": "pimenton-premium",
+  "nombre_web": "PIMENTON MORRON",
+  "score": 1.0,
+  "local": "productos/525.webp"
+ },
+ "CONDIMENTOS|527|PIMIENTA BLANCA": {
+  "img": "/images/products-hq/2024-11-pimienta-molida-72836515-hq-v2.jpg",
+  "slug": "pimienta-blanca",
+  "nombre_web": "PIMIENTA BLANCA",
+  "score": 1.0,
+  "local": "productos/527.webp"
+ },
+ "CONDIMENTOS|520|POLVO PARA HORNEAR": {
+  "img": "/images/wp/polvo-para-hornear.webp",
+  "slug": "polvo-para-hornear",
+  "nombre_web": "POLVO PARA HORNEAR",
+  "score": 1.0,
+  "local": "productos/520.webp"
+ },
+ "CONDIMENTOS|521|PROVENZAL": {
+  "img": "/images/products-hq/2024-11-provenzal-65da7a48-hq-v2.jpg",
+  "slug": "provenzal",
+  "nombre_web": "PROVENZAL",
+  "score": 1.0,
+  "local": "productos/521.webp"
+ },
+ "FRUTOS SECOS|600|ALMENDRAS": {
+  "img": "/images/products-hq/2024-12-almendras-c01ecb48-hq-v2.jpg",
+  "slug": "almendras",
+  "nombre_web": "ALMENDRAS",
+  "score": 1.0,
+  "local": "productos/600.webp"
+ },
+ "FRUTOS SECOS|601|BANANA": {
+  "img": "/images/products-hq/2024-12-banana-chip-aef7e51d-hq-v2.jpg",
+  "slug": "banana",
+  "nombre_web": "BANANA",
+  "score": 1.0,
+  "local": "productos/601.webp"
+ },
+ "FRUTOS SECOS|606|FRUTA ABRILLANTADA": {
+  "img": "/images/products-hq/2024-12-fruta-abrillantada-27f5de51-hq-v2.jpg",
+  "slug": "fruta-abrillantada",
+  "nombre_web": "FRUTA ABRILLANTADA",
+  "score": 1.0,
+  "local": "productos/606.webp"
+ },
+ "FRUTOS SECOS|607|HIGOS": {
+  "img": "/images/wp/higos.webp",
+  "slug": "higos",
+  "nombre_web": "HIGOS",
+  "score": 1.0,
+  "local": "productos/607.webp"
+ },
+ "FRUTOS SECOS|608|MEDALLONES": {
+  "img": "/images/wp/medallones.jpg",
+  "slug": "medallones",
+  "nombre_web": "MEDALLONES",
+  "score": 1.0,
+  "local": "productos/608.webp"
+ },
+ "FRUTOS SECOS|613|PASAS DE UVA CON SEMILLA": {
+  "img": "/images/products-hq/2024-12-pasas-de-uva-c18a1442-hq-v2.jpg",
+  "slug": "pasas-con-semilla-y-sin-semilla",
+  "nombre_web": "PASAS CON SEMILLA Y SIN SEMILLA",
+  "score": 0.67,
+  "local": "productos/613.webp"
+ },
+ "FRUTOS SECOS|614|PASAS DE UVA SIN SEMILLA": {
+  "img": "/images/products-hq/2024-12-pasas-de-uva-c18a1442-hq-v2.jpg",
+  "slug": "pasas-con-semilla-y-sin-semilla",
+  "nombre_web": "PASAS CON SEMILLA Y SIN SEMILLA",
+  "score": 0.75,
+  "local": "productos/614.webp"
+ },
+ "FRUTOS SECOS|615|PELONES": {
+  "img": "/images/products-hq/2024-12-pelones-424a8c82-hq-v2.jpg",
+  "slug": "pelones",
+  "nombre_web": "PELONES",
+  "score": 1.0,
+  "local": "productos/615.webp"
+ },
+ "FRUTOS SECOS|616|PERAS": {
+  "img": "/images/wp/peras.webp",
+  "slug": "peras",
+  "nombre_web": "PERAS",
+  "score": 1.0,
+  "local": "productos/616.webp"
+ },
+ "SNACKS|3002|GALLETAS PITUSAS CHOCOLATE 160gr x 30u": {
+  "img": "/images/products-hq/galletas-pitusas-chocolate-9f947f5d-hq-v2.jpg",
+  "slug": "galletas-pitusas-chocolate",
+  "nombre_web": "Galletas Pitusas Chocolate",
+  "score": 0.7,
+  "local": "productos/3002.webp"
+ },
+ "SNACKS|3004|GALLETAS PITUSAS MOUSSE 160gr x 30u": {
+  "img": "/images/products-hq/galletas-pitusas-mousse-4236a3b4-hq-v2.jpg",
+  "slug": "galletas-pitusas-mousse",
+  "nombre_web": "Galletas Pitusas Mousse",
+  "score": 0.7,
+  "local": "productos/3004.webp"
+ },
+ "SNACKS|3005|GALLETAS PITUSAS FRUTILLA 160gr x 30u": {
+  "img": "/images/products-hq/galletas-pitusas-frutilla-80540ecb-hq-v2.jpg",
+  "slug": "galletas-pitusas-frutilla",
+  "nombre_web": "Galletas Pitusas Frutilla",
+  "score": 0.7,
+  "local": "productos/3005.webp"
+ },
+ "SNACKS|3007|GALLETAS PITUSAS JALEA 140gr x 30u": {
+  "img": "/images/products-hq/galletas-pitusas-jalea-09d59916-hq-v2.jpg",
+  "slug": "galletas-pitusas-jalea",
+  "nombre_web": "Galletas Pitusas Jalea",
+  "score": 0.7,
+  "local": "productos/3007.webp"
+ },
+ "SNACKS|3008|GALLETAS PITUSAS MERENGUE 120gr x 30u": {
+  "img": "/images/products-hq/galletas-pitusas-merengue-45e7efd8-hq-v2.jpg",
+  "slug": "galletas-pitusas-merengue",
+  "nombre_web": "Galletas Pitusas Merengue",
+  "score": 0.7,
+  "local": "productos/3008.webp"
+ },
+ "SNACKS|3009|GALLETAS PITUSAS BLACK 130gr x 30u": {
+  "img": "/images/products-hq/galletas-pitusas-black-55b08ff5-hq-v2.jpg",
+  "slug": "galletas-pitusas-black",
+  "nombre_web": "Galletas Pitusas Black",
+  "score": 0.7,
+  "local": "productos/3009.webp"
+ },
+ "SNACKS|650|MANI CON CHOCOLATE": {
+  "img": "/images/products-hq/2025-01-mani-chocolate-milk1-dbd6237c4fdfcba71115862969545040-640-0-020b5b11-hq-v2.jpg",
+  "slug": "mani-con-chocolate",
+  "nombre_web": "MANI CON CHOCOLATE",
+  "score": 1.0,
+  "local": "productos/650.webp"
+ },
+ "SNACKS|654|MANI SIN SAL": {
+  "img": "/images/products-hq/2025-01-mani-sin-sal-53a4f8a7-hq-v2.jpg",
+  "slug": "mani-sin-sal",
+  "nombre_web": "MANI SIN SAL",
+  "score": 1.0,
+  "local": "productos/654.webp"
+ },
+ "SNACKS|655|PALITO SALADO": {
+  "img": "/images/wp/palito-salado.webp",
+  "slug": "palito-salado",
+  "nombre_web": "PALITO SALADO",
+  "score": 1.0,
+  "local": "productos/655.webp"
+ },
+ "SNACKS|10672|MANI SALADO X KG - Mani King": {
+  "img": "(pdf-2024)",
+  "slug": "mani-king",
+  "nombre_web": "MANI SALADO X KG - Mani King",
+  "score": 1.0,
+  "local": "productos/10672.webp"
+ },
+ "SNACKS|10670|MANI SIN SAL X KG - Mani King": {
+  "img": "/images/products-hq/2025-01-mani-sin-sal-53a4f8a7-hq-v2.jpg",
+  "slug": "mani-sin-sal",
+  "nombre_web": "MANI SIN SAL",
+  "score": 1.0,
+  "local": "productos/10670.webp"
+ },
+ "SNACKS|10669|MANI TOSTADO C/ CASCARA X KG - Mani King": {
+  "img": "/images/products-hq/2025-01-mani-tostado-con-cascara-70cbf177-hq-v2.jpg",
+  "slug": "mani-tostado-con-cascara-5kg",
+  "nombre_web": "MANI TOSTADO CON CASCARA (5KG)",
+  "score": 1.0,
+  "local": "productos/10669.webp"
+ },
+ "SNACKS|661|PASTA DE MANI NATURAL X 485GR X 12U- Mani King": {
+  "img": "(pdf-2024)",
+  "slug": "mani-king",
+  "nombre_web": "PASTA DE MANI NATURAL X 485GR X 12U- Mani King",
+  "score": 1.0,
+  "local": "productos/661.webp"
+ },
+ "SNACKS|685|PASTA DE MANI NATURAL X 4K x 2U- Mani King": {
+  "img": "/images/products-hq/2025-01-pasta-de-mani-king-natural-485-gr-1-a14d2d37-hq-v2.jpg",
+  "slug": "pasta-de-mani-natural",
+  "nombre_web": "PASTA DE MANI NATURAL",
+  "score": 0.7,
+  "local": "productos/685.webp"
+ },
+ "VENENOS|1936|FORMIX CEBO X 100 GR": {
+  "img": "/images/products-hq/2024-12-gemini-generated-image-d42de6d42de6d42d-80db381d-hq-v2.jpg",
+  "slug": "formix-cebo-x-100-gr-200-gr-y-500-gr",
+  "nombre_web": "FORMIX CEBO X 100 GR, 200 GR Y 500 GR",
+  "score": 1.0,
+  "local": "productos/1936.webp"
+ },
+ "VENENOS|1938|FORMIX CEBO X 500 GR": {
+  "img": "/images/products-hq/2024-12-gemini-generated-image-d42de6d42de6d42d-80db381d-hq-v2.jpg",
+  "slug": "formix-cebo-x-100-gr-200-gr-y-500-gr",
+  "nombre_web": "FORMIX CEBO X 100 GR, 200 GR Y 500 GR",
+  "score": 1.0,
+  "local": "productos/1938.webp"
+ },
+ "VENENOS|1939|GLACOXAN E. LIQ X 60 GR": {
+  "img": "/images/products-hq/glacoxan-e-liquido-60-g-1d9c76d0-hq-v2.jpg",
+  "slug": "glacoxan-e-liquido-60-g",
+  "nombre_web": "Glacoxan E Líquido 60 g",
+  "score": 1.0,
+  "local": "productos/1939.webp"
+ },
+ "VENENOS|1983|MYRMEC X 100 GR": {
+  "img": "/images/products-hq/2024-12-myrmec-87044413-hq-v2.jpg",
+  "slug": "myrmec-x-100-gr-y-200-gr",
+  "nombre_web": "MYRMEC X 100 GR Y 200 GR",
+  "score": 1.0,
+  "local": "productos/1983.webp"
+ },
+ "VENENOS|1941|MYRMEC X 200 GR": {
+  "img": "/images/products-hq/2024-12-myrmec-87044413-hq-v2.jpg",
+  "slug": "myrmec-x-100-gr-y-200-gr",
+  "nombre_web": "MYRMEC X 100 GR Y 200 GR",
+  "score": 1.0,
+  "local": "productos/1941.webp"
+ },
+ "VENENOS|1943|TALQUERA FORMIX X 250 GR": {
+  "img": "/images/products-hq/2024-12-talquera-f23ae0fc-hq-v2.jpg",
+  "slug": "formix-talquera-x-250-gr-y-por-1-kg",
+  "nombre_web": "FORMIX TALQUERA X 250 GR Y POR 1 KG",
+  "score": 1.0,
+  "local": "productos/1943.webp"
+ },
+ "VENENOS|1944|TALQUERA GLACOXAN X 250 GR": {
+  "img": "/images/products-hq/talquera-glacoxan-278f3d9e-hq-v2.jpg",
+  "slug": "talquera-glacoxan",
+  "nombre_web": "Talquera Glacoxan",
+  "score": 0.95,
+  "local": "productos/1944.webp"
+ },
+ "VENENOS|1945|TALQUERA HORTAL X 250 GR": {
+  "img": "/images/products-hq/talquera-hortal-9d864bdf-hq-v2.jpg",
+  "slug": "talquera-hortal",
+  "nombre_web": "Talquera Hortal",
+  "score": 0.95,
+  "local": "productos/1945.webp"
+ },
+ "VENENOS|1974|VELOZAN LIQ X 60 CC": {
+  "img": "/images/wp/velozan-liquido-60cc.jpg",
+  "slug": "velozan-liquido-60cc",
+  "nombre_web": "Velozan Líquido 60 cc",
+  "score": 1.0,
+  "local": "productos/1974.webp"
+ },
+ "VENENOS|1957|BRUMOLINE CEBO X 50 GR": {
+  "img": "/images/products-hq/brumoline-cebo-e767cea9-hq-v2.jpg",
+  "slug": "brumoline-cebo",
+  "nombre_web": "Brumoline Cebo",
+  "score": 0.95,
+  "local": "productos/1957.webp"
+ },
+ "VENENOS|1968|ULTRA RATICIDA 30 SOBRES X 50 GR": {
+  "img": "/images/wp/2024-12-raticida-ultra-unidad-sobre-50-gr-lab-binka-.jpg",
+  "slug": "ultra-raticida-30-sobres-x-50-gr",
+  "nombre_web": "ULTRA RATICIDA 30 SOBRES X 50 GR",
+  "score": 1.0,
+  "local": "productos/1968.webp"
+ },
+ "VENENOS|1950|GERMANI GEL JERINGA X 5 GR": {
+  "img": "/images/products-hq/germani-gel-jeringa-5g-b0fffdd8-hq-v2.jpg",
+  "slug": "germani-gel-jeringa-5g",
+  "nombre_web": "Germani Gel en Jeringa 5 g",
+  "score": 1.0,
+  "local": "productos/1950.webp"
+ },
+ "VENENOS|1984|GLACOXAN FIPROFENO X 60 CC": {
+  "img": "/images/products-hq/glacoxan-fiprofeno-60-cc-7b2190fd-hq-v2.jpg",
+  "slug": "glacoxan-fiprofeno-60-cc",
+  "nombre_web": "Glacoxan Fiprofeno 60 cc",
+  "score": 1.0,
+  "local": "productos/1984.webp"
+ },
+ "VENENOS|1975|ULTRA JERINGA X 6 GR": {
+  "img": "/images/wp/2024-12-ultra-jeringa.jpg",
+  "slug": "ultra-jeringa-x-6-gr",
+  "nombre_web": "ULTRA JERINGA X 6 GR",
+  "score": 1.0,
+  "local": "productos/1975.webp"
+ },
+ "VENENOS|1951|K-OTHRINA X 15 CC": {
+  "img": "/images/products-hq/2024-12-kothrina-800-76579cdc-hq-v2.jpg",
+  "slug": "k-othrina-x-15-cc",
+  "nombre_web": "K-OTHRINA X 15 CC",
+  "score": 1.0,
+  "local": "productos/1951.webp"
+ },
+ "VENENOS|1953|SUPER FLOW X 60 CC": {
+  "img": "/images/products-hq/2024-12-super-flow-4a24c62e-hq-v2.jpg",
+  "slug": "super-flow-x-15-y-60-cc",
+  "nombre_web": "SUPER FLOW X 15 Y 60 CC",
+  "score": 0.92,
+  "local": "productos/1953.webp"
+ },
+ "ACCESORIOS|750|ANTICLORO BONAQUA x 80cc": {
+  "img": "/images/products-hq/2024-12-bonacqua-80cc-sl-jpg-d54d78d6-hq-v2.jpg",
+  "slug": "anticloro-bonaqua-x-80-cc-2",
+  "nombre_web": "ANTICLORO BONAQUA X 80 CC",
+  "score": 1.0,
+  "local": "productos/750.webp"
+ },
+ "ACCESORIOS|751|AZUL DE METILENO x 50 cc": {
+  "img": "/images/products-hq/2024-11-azul-de-metileno-800-83e9dee4-hq-v2.jpg",
+  "slug": "azul-de-metileno-x-50-cc",
+  "nombre_web": "AZUL DE METILENO X 50 CC",
+  "score": 1.0,
+  "local": "productos/751.webp"
+ },
+ "ACCESORIOS|761|PIEDRAS MULTICOLORES x 500 GR": {
+  "img": "/images/products-hq/2024-11-piedras-multicolores-d3456ec7-hq-v2.jpg",
+  "slug": "piedras-multicolores-x-500-gr",
+  "nombre_web": "PIEDRAS MULTICOLORES X 500 GR",
+  "score": 1.0,
+  "local": "productos/761.webp"
+ },
+ "ACCESORIOS|766|SHULET AGUA FRIA X 1 KG": {
+  "img": "/images/products-hq/2024-12-shulet-0adcf6df-hq-v2.jpg",
+  "slug": "shulet-agua-fria-x-9-gr-20-gr-40-gr-1-kg",
+  "nombre_web": "SHULET AGUA FRIA X 9 GR, 20 GR, 40 GR, 1 KG",
+  "score": 1.0,
+  "local": "productos/766.webp"
+ },
+ "ACCESORIOS|767|SHULET AGUA FRIA X 20 GR": {
+  "img": "/images/products-hq/2024-12-shulet-0adcf6df-hq-v2.jpg",
+  "slug": "shulet-agua-fria-x-9-gr-20-gr-40-gr-1-kg",
+  "nombre_web": "SHULET AGUA FRIA X 9 GR, 20 GR, 40 GR, 1 KG",
+  "score": 1.0,
+  "local": "productos/767.webp"
+ },
+ "ACCESORIOS|768|SHULET AGUA FRIA X 40 GR": {
+  "img": "/images/products-hq/2024-12-shulet-0adcf6df-hq-v2.jpg",
+  "slug": "shulet-agua-fria-x-9-gr-20-gr-40-gr-1-kg",
+  "nombre_web": "SHULET AGUA FRIA X 9 GR, 20 GR, 40 GR, 1 KG",
+  "score": 1.0,
+  "local": "productos/768.webp"
+ },
+ "ACCESORIOS|769|SHULET AGUA FRIA X 9 GR": {
+  "img": "/images/products-hq/2024-12-shulet-0adcf6df-hq-v2.jpg",
+  "slug": "shulet-agua-fria-x-9-gr-20-gr-40-gr-1-kg",
+  "nombre_web": "SHULET AGUA FRIA X 9 GR, 20 GR, 40 GR, 1 KG",
+  "score": 1.0,
+  "local": "productos/769.webp"
+ },
+ "ACCESORIOS|807|BASE PLASTICA BEBEDERO": {
+  "img": "/images/products-hq/2024-11-base-plastica-bebedero-800-ca46795b-hq-v2.jpg",
+  "slug": "base-plastica-bebedero",
+  "nombre_web": "BASE PLASTICA BEBEDERO",
+  "score": 1.0,
+  "local": "productos/807.webp"
+ },
+ "ACCESORIOS|814|BEBEDERO MEDIA CAÐA": {
+  "img": "/images/products-hq/2024-11-bebedero-media-cana-0ffac029-hq-v2.jpg",
+  "slug": "bebedero-media-cana",
+  "nombre_web": "BEBEDERO MEDIA CAÑA",
+  "score": 1.0,
+  "local": "productos/814.webp"
+ },
+ "ACCESORIOS|815|BEBEDERO PLASTICO X 3 LT": {
+  "img": "/images/products-hq/2024-11-bebedero-3lt-aves-5bc50722-hq-v2.jpg",
+  "slug": "bebedero-plastico-x-3-lt",
+  "nombre_web": "BEBEDERO PLASTICO X 3 LT",
+  "score": 1.0,
+  "local": "productos/815.webp"
+ },
+ "ACCESORIOS|823|COMEDERO PARA GALLO": {
+  "img": "/images/products-hq/2024-11-comedero-para-gallo-834e0b7a-hq-v2.jpg",
+  "slug": "comedero-para-gallo",
+  "nombre_web": "COMEDERO PARA GALLO",
+  "score": 1.0,
+  "local": "productos/823.webp"
+ },
+ "ACCESORIOS|824|COMEDERO PLASTICO X 3 LT": {
+  "img": "/images/products-hq/comedero-plastico-x-3-lt-d8ab615d-hq-v2.jpg",
+  "slug": "comedero-plastico-x-3-lt",
+  "nombre_web": "COMEDERO PLASTICO X 3 LT",
+  "score": 1.0,
+  "local": "productos/824.webp"
+ },
+ "ACCESORIOS|825|GUGUI PASTON AL HUEVO X KG": {
+  "img": "/images/products-hq/2024-11-gugui-paston-800-zoom-d4a7bdf2-hq-v2.jpg",
+  "slug": "gugui-paston-al-huevo",
+  "nombre_web": "GUGUI PASTON AL HUEVO",
+  "score": 1.0,
+  "local": "productos/825.webp"
+ },
+ "ACCESORIOS|844|NIDO EXTERNO ALAMBRE": {
+  "img": "/images/products-hq/2024-11-nido-externo-alambre-1855c349-hq-v2.jpg",
+  "slug": "nido-externo-alambre",
+  "nombre_web": "NIDO EXTERNO ALAMBRE",
+  "score": 1.0,
+  "local": "productos/844.webp"
+ },
+ "ACCESORIOS|845|NIDO INTERNO PLASTICO": {
+  "img": "/images/products-hq/2024-11-nido-interno-plastico-bedc569e-hq-v2.jpg",
+  "slug": "nido-interno-plastico",
+  "nombre_web": "NIDO INTERNO PLASTICO",
+  "score": 1.0,
+  "local": "productos/845.webp"
+ },
+ "ACCESORIOS|1969|BEBEDERO HAMSTER - PLASTICO": {
+  "img": "/images/products-hq/2024-11-bebedero-hamster-89856ce2-hq-v2.jpg",
+  "slug": "bebedero-hamster-plastico",
+  "nombre_web": "BEBEDERO HAMSTER",
+  "score": 1.0,
+  "local": "productos/1969.webp"
+ },
+ "ACCESORIOS|1970|BEBEDERO HAMSTER - VIDRIO": {
+  "img": "/images/products-hq/2024-11-bebedero-hamster-89856ce2-hq-v2.jpg",
+  "slug": "bebedero-hamster-plastico",
+  "nombre_web": "BEBEDERO HAMSTER",
+  "score": 1.0,
+  "local": "productos/1970.webp"
+ },
+ "ACCESORIOS|1971|HAMSTERA c/ BANDEJA - ROLLER": {
+  "img": "/images/products-hq/2024-11-hamstera-800-zoom-ff0aa490-hq-v2.jpg",
+  "slug": "hamstera-con-bandeja",
+  "nombre_web": "HAMSTERA CON BANDEJA",
+  "score": 1.0,
+  "local": "productos/1971.webp"
+ },
+ "ACCESORIOS|906|BAÐO GLACOXAN x  120 cc": {
+  "img": "/images/products-hq/2024-11-glacoxan-633a62d3-hq-v2.jpg",
+  "slug": "bano-glacoxan-x-70-cc",
+  "nombre_web": "BAÑO GLACOXAN X 70 CC Y POR 120 CC",
+  "score": 1.0,
+  "local": "productos/906.webp"
+ },
+ "ACCESORIOS|907|BAÐO GLACOXAN x 70 cc": {
+  "img": "/images/products-hq/2024-11-glacoxan-633a62d3-hq-v2.jpg",
+  "slug": "bano-glacoxan-x-70-cc",
+  "nombre_web": "BAÑO GLACOXAN X 70 CC Y POR 120 CC",
+  "score": 1.0,
+  "local": "productos/907.webp"
+ },
+ "ACCESORIOS|903|BANDEJA SANITARIA": {
+  "img": "/images/products-hq/2024-11-bandeja-sanitaria-934a3889-hq-v2.jpg",
+  "slug": "bandeja-sanitaria",
+  "nombre_web": "BANDEJA SANITARIA",
+  "score": 1.0,
+  "local": "productos/903.webp"
+ },
+ "ACCESORIOS|908|BLISTER FINO P/ GATO x 12": {
+  "img": "/images/products-hq/2024-11-blister-fino-gato-6b5a08d7-hq-v2.jpg",
+  "slug": "blister-fino-para-gato-x-12",
+  "nombre_web": "BLISTER FINO PARA GATO X 12",
+  "score": 1.0,
+  "local": "productos/908.webp"
+ },
+ "ACCESORIOS|913|CARDINA PLASTICA MEDIANA": {
+  "img": "/images/products-hq/2024-11-cardina-cepillo-7fe5576b-hq-v2.jpg",
+  "slug": "cardina-plastica-mediana",
+  "nombre_web": "CARDINA PLASTICA MEDIANA",
+  "score": 1.0,
+  "local": "productos/913.webp"
+ },
+ "ACCESORIOS|948|ECTHOL x 70 CC": {
+  "img": "/images/products-hq/2024-11-ecthol-x-70-y-120-267f20d4-hq-v2.jpg",
+  "slug": "ecthol-x-70-cc",
+  "nombre_web": "ECTHOL X 70 CC",
+  "score": 1.0,
+  "local": "productos/948.webp"
+ },
+ "ACCESORIOS|954|LOCION X 130 CC": {
+  "img": "/images/wp/locion-x-130-cc.webp",
+  "slug": "locion-x-130-cc",
+  "nombre_web": "LOCION X 130 CC",
+  "score": 1.0,
+  "local": "productos/954.webp"
+ },
+ "ACCESORIOS|955|LOCION X 50 CC": {
+  "img": "/images/wp/locion-x-50-cc.webp",
+  "slug": "locion-x-50-cc",
+  "nombre_web": "LOCION X 50 CC",
+  "score": 1.0,
+  "local": "productos/955.webp"
+ },
+ "ACCESORIOS|958|PALITA SANITARIA": {
+  "img": "/images/products-hq/2024-12-palita-sanitaria-a8aed7c0-hq-v2.jpg",
+  "slug": "palita-sanitaria-2",
+  "nombre_web": "PALITA SANITARIA",
+  "score": 1.0,
+  "local": "productos/958.webp"
+ },
+ "ACCESORIOS|985|REPELENTE CON GATILLO": {
+  "img": "/images/products-hq/2024-12-repelente-generico-rojo-800-1-1a17c0a2-hq-v2.jpg",
+  "slug": "repelente-con-gatillo",
+  "nombre_web": "REPELENTE CON GATILLO",
+  "score": 1.0,
+  "local": "productos/985.webp"
+ },
+ "ACCESORIOS|986|REPELENTE SIN GATILLO - REPUESTO": {
+  "img": "/images/products-hq/2024-12-repelente-generico-rojo-800-1-1a17c0a2-hq-v2.jpg",
+  "slug": "repelente-con-gatillo",
+  "nombre_web": "REPELENTE CON GATILLO",
+  "score": 0.67,
+  "local": "productos/986.webp"
+ },
+ "ACCESORIOS|987|SHAMPOO OSSPRET  2 EN 1 X 250 CC": {
+  "img": "/images/products-hq/2024-12-osspret-2-en-1-b3edeef8-hq-v2.jpg",
+  "slug": "shampoo-osspret-2-en-1-x-250-cc",
+  "nombre_web": "SHAMPOO OSSPRET 2 EN 1 X 250 CC",
+  "score": 1.0,
+  "local": "productos/987.webp"
+ },
+ "ACCESORIOS|989|SHAMPOO OSSPRET CACHORRO X 250 CC": {
+  "img": "/images/products-hq/2024-12-osspret-cachorro-bc3a76a9-hq-v2.jpg",
+  "slug": "shampoo-osspret-cachorro-x-250-cc",
+  "nombre_web": "SHAMPOO OSSPRET CACHORRO X 250 CC",
+  "score": 1.0,
+  "local": "productos/989.webp"
+ },
+ "ACCESORIOS|990|SHAMPOO OSSPRET TONALIZADOR X 250 CC": {
+  "img": "/images/products-hq/2024-12-osspret-maximo-color-5705da53-hq-v2.jpg",
+  "slug": "shampoo-osspret-tonalizador-x-250-cc",
+  "nombre_web": "SHAMPOO OSSPRET TONALIZADOR X 250 CC",
+  "score": 1.0,
+  "local": "productos/990.webp"
+ },
+ "ACCESORIOS|1012|BOLS N░ 12": {
+  "img": "/images/products-hq/2024-12-maceta-bols-monaco-4ec4a984-hq-v2.jpg",
+  "slug": "bols-n-12-al-n-26",
+  "nombre_web": "BOLS N° 12 AL N° 26",
+  "score": 0.6,
+  "local": "productos/1012.webp"
+ },
+ "ACCESORIOS|1903|FERTIFOX FLORACION x 200 cc": {
+  "img": "/images/products-hq/fertifox-floracion-200-cc-8cfb2114-hq-v2.jpg",
+  "slug": "fertifox-floracion-200-cc",
+  "nombre_web": "Fertifox Floración 200 cc",
+  "score": 1.0,
+  "local": "productos/1903.webp"
+ },
+ "ACCESORIOS|1904|FERTIFOX FOLLAJE 200 cc": {
+  "img": "/images/products-hq/fertifox-follaje-200-cc-51112ac8-hq-v2.jpg",
+  "slug": "fertifox-follaje-200-cc",
+  "nombre_web": "Fertifox Follaje 200 cc",
+  "score": 1.0,
+  "local": "productos/1904.webp"
+ },
+ "ACCESORIOS|1907|FERTILIZANTE TRIPLE 15 X 1 KG": {
+  "img": "/images/wp/fertilizante-triple-15-x-500-gr-y-1-kg.webp",
+  "slug": "fertilizante-triple-15-x-500-gr-y-1-kg",
+  "nombre_web": "FERTILIZANTE TRIPLE 15 X 500 GR Y 1 KG",
+  "score": 1.0,
+  "local": "productos/1907.webp"
+ },
+ "ACCESORIOS|1908|FERTILIZANTE TRIPLE 15 X 500 GR": {
+  "img": "/images/wp/fertilizante-triple-15-x-500-gr-y-1-kg.webp",
+  "slug": "fertilizante-triple-15-x-500-gr-y-1-kg",
+  "nombre_web": "FERTILIZANTE TRIPLE 15 X 500 GR Y 1 KG",
+  "score": 1.0,
+  "local": "productos/1908.webp"
+ },
+ "ACCESORIOS|1915|SEMILLA CESPED 9 VARIEDADES X 500 GR": {
+  "img": "/images/products-hq/2024-12-cesped-800-1-e4847b5d-hq-v2.jpg",
+  "slug": "semilla-cesped-9-variedades-x-500-gr",
+  "nombre_web": "SEMILLA CESPED 9 VARIEDADES X 500 GR",
+  "score": 1.0,
+  "local": "productos/1915.webp"
+ },
+ "ACCESORIOS|1920|TIERRA": {
+  "img": "/images/wp/2024-12-TIERRA.jpg",
+  "slug": "tierra",
+  "nombre_web": "TIERRA",
+  "score": 1.0,
+  "local": "productos/1920.webp"
+ },
+ "ACCESORIOS|12451|LIQUIDO P/ LAMPAZOS CLARO 9 X 980CC": {
+  "img": "/images/products-hq/liquido-lampazos-claro-980cc-9ed77365-hq-v2.jpg",
+  "slug": "liquido-lampazos-claro-980cc",
+  "nombre_web": "Líquido para Lampazos Claro 9 980 cc",
+  "score": 1.0,
+  "local": "productos/12451.webp"
+ },
+ "ACCESORIOS|12454|POLVO LIMPIADOR CARBOCAL 12 X 300GR": {
+  "img": "/images/products-hq/polvo-limpiador-carbocal-300g-c0f46c3e-hq-v2.jpg",
+  "slug": "polvo-limpiador-carbocal-300g",
+  "nombre_web": "Polvo Limpiador Carbocal 300 g",
+  "score": 1.0,
+  "local": "productos/12454.webp"
+ },
+ "FORRAJES|466|MEZCLA CON VIT. (CANARIO)": {
+  "img": "(pdf)",
+  "slug": "mezcla",
+  "nombre_web": "Mezcla con vitamina (canario)",
+  "score": 1.0,
+  "local": "productos/466.webp"
+ },
+ "FORRAJES|482|MEZCLA FINA ESPECIAL (CARDENAL)": {
+  "img": "(pdf)",
+  "slug": "mezcla",
+  "nombre_web": "Mezcla Fina Especial (Cardenal)",
+  "score": 1.0,
+  "local": "productos/482.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|1|BEBE x 25 Kg": {
+  "img": "(pdf)",
+  "slug": "pdf",
+  "nombre_web": "BEBE x 25 Kg",
+  "score": 1.0,
+  "local": "productos/1.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|6|CONEJO X 25 KG - CONECAR": {
+  "img": "(pdf)",
+  "slug": "pdf",
+  "nombre_web": "CONEJO X 25 KG - CONECAR",
+  "score": 1.0,
+  "local": "productos/6.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|7|CONEJO X 25 KG - GEPSA": {
+  "img": "(pdf)",
+  "slug": "pdf",
+  "nombre_web": "CONEJO X 25 KG - GEPSA",
+  "score": 1.0,
+  "local": "productos/7.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|50|CABALLO X 40 KG": {
+  "img": "(pdf)",
+  "slug": "pdf",
+  "nombre_web": "CABALLO X 40 KG",
+  "score": 1.0,
+  "local": "productos/50.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|51|CERDO X 40 KG": {
+  "img": "(pdf)",
+  "slug": "pdf",
+  "nombre_web": "CERDO X 40 KG",
+  "score": 1.0,
+  "local": "productos/51.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|53|LECHON X 40 KG": {
+  "img": "(pdf)",
+  "slug": "pdf",
+  "nombre_web": "LECHON X 40 KG",
+  "score": 1.0,
+  "local": "productos/53.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|54|PONEDORA 0-6 SEMANAS X 40 KG Nutrimax": {
+  "img": "(pdf)",
+  "slug": "pdf",
+  "nombre_web": "PONEDORA 0-6 SEMANAS X 40 KG Nutrimax",
+  "score": 1.0,
+  "local": "productos/54.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|59|INICIADOR X 40 KG Nutrimax": {
+  "img": "(pdf)",
+  "slug": "pdf",
+  "nombre_web": "INICIADOR X 40 KG Nutrimax",
+  "score": 1.0,
+  "local": "productos/59.webp"
+ },
+ "SNACKS|671|FRAC. PANCETA MANI CHEFF  MK 15X80 GR": {
+  "img": "(pdf-2024)",
+  "slug": "mani-king",
+  "nombre_web": "FRAC. PANCETA MANI CHEFF  MK 15X80 GR",
+  "score": 1.0,
+  "local": "productos/671.webp"
+ },
+ "SNACKS|674|FRAC. CROCANTE JAMON MANI 15X80 GR": {
+  "img": "(pdf-2024)",
+  "slug": "mani-king",
+  "nombre_web": "FRAC. CROCANTE JAMON MANI 15X80 GR",
+  "score": 1.0,
+  "local": "productos/674.webp"
+ },
+ "SNACKS|675|FRAC. CROCANTE PIZZA MANI 15X80 GR": {
+  "img": "(pdf-2024)",
+  "slug": "mani-king",
+  "nombre_web": "FRAC. CROCANTE PIZZA MANI 15X80 GR",
+  "score": 1.0,
+  "local": "productos/675.webp"
+ },
+ "ALIMENTO PARA PERROS|165|FLECKY ADULTO CARNE  X 15 KG": {
+  "img": "2024-11-flecky-fondo-blanco-800-954d0667-hq-v2.jpg",
+  "slug": "flecky",
+  "nombre_web": "FLECKY ADULTO CARNE  X 15 KG",
+  "score": 1.0,
+  "local": "productos/flecky-verde-adulto.webp"
+ },
+ "ALIMENTO PARA PERROS|166|FLECKY ADULTO CARNE  X 20 KG": {
+  "img": "2024-11-flecky-fondo-blanco-800-954d0667-hq-v2.jpg",
+  "slug": "flecky",
+  "nombre_web": "FLECKY ADULTO CARNE  X 20 KG",
+  "score": 1.0,
+  "local": "productos/flecky-verde-adulto.webp"
+ },
+ "ALIMENTO PARA PERROS|167|FLECKY CACHORRO CARNE FRESCA X 15 KG": {
+  "img": "(foto Mati 11/08)",
+  "slug": "flecky-fresca",
+  "nombre_web": "FLECKY CACHORRO CARNE FRESCA X 15 KG",
+  "score": 1.0,
+  "local": "productos/flecky-carne-fresca.webp"
+ },
+ "ALIMENTO PARA PERROS|284|FLECKY AD \"NUEVO\" CARNE  FRESCA X 15 KG": {
+  "img": "(foto Mati 11/08)",
+  "slug": "flecky-fresca",
+  "nombre_web": "FLECKY AD \"NUEVO\" CARNE  FRESCA X 15 KG",
+  "score": 1.0,
+  "local": "productos/flecky-carne-fresca.webp"
+ },
+ "ALIMENTO PARA PERROS|285|FLECKY AD \"NUEVO\" CARNE  FRESCA X 20 KG": {
+  "img": "(foto Mati 11/08)",
+  "slug": "flecky-fresca",
+  "nombre_web": "FLECKY AD \"NUEVO\" CARNE  FRESCA X 20 KG",
+  "score": 1.0,
+  "local": "productos/flecky-carne-fresca.webp"
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "_como_se_usa": "Se evalúa 'por_producto' en orden y gana la PRIMERA regla que matchea (las más específicas van arriba). Si ninguna aplica, se usa 'por_marca'. Si no hay dato, el producto va sin badge: preferimos no mostrar nada antes que un número equivocado.",
+ "_fuentes": {
+  "pdf": "Badges 'PROTEÍNAS xx%' del catálogo PDF (pág. 9-15), con la marca asignada cruzando las píldoras de cada foto contra la tabla de esa página.",
+  "delypet": "Ficha de producto de delypet.com.ar, abierta una por una (no del resumen del buscador). Publica el análisis garantizado por variante.",
+  "_conflicto_resuelto": "El PDF marcaba PREMIUM 25% pero la ficha de 'Vitalcan Premium Perro Adulto' dice 24%. Como el PDF agrupaba cachorro + adulto + raza pequeña bajo un mismo badge, se usa 24% para el adulto (dato específico y actual) y se deja el 25% del PDF para el resto de la línea.",
+  "_ojo": "Dentro de una misma marca el % cambia por variante (Balanced raza grande 25% vs raza pequeña 27%) y entre líneas (Gran Campeón Esencial 18% vs Maintenance 21%). Por eso cada regla lleva 'excluye': sin eso, 'BALANCED RAZA GRANDE' le pegaba el 25% del adulto al CACHORRO raza grande.",
+  "envase": "Leído del análisis impreso en la bolsa (foto del envase en la web): Flecky adulto 19%, Flecky cachorro 25%. Es la fuente más confiable de todas."
+ },
+ "_no_aplica": "VITALFUN no lleva badge: es arena sanitaria, no alimento. Lo mismo PIEDRAS SANITARIAS, SNACK/SALSAS TIERNITOS y los accesorios.",
+ "_pendiente": "Sin dato confiable todavía: Compinche, Belcan, Flecky carne fresca, Exact Criadores, Exact Premium gato urinario, Belcat, Tiernitos gato, Gran Campeón gato, 9 Lives castrado, y las variantes cachorro de Balanced/Premium/Complete. De Belcat circula 27% pero la fuente es chilena (otra formulación posible), así que no se carga. Salen de la etiqueta de la bolsa o de la ficha del proveedor.",
+ "por_producto": [
+  {
+   "sec": "ALIMENTO PARA PERROS",
+   "contiene": [
+    "FLECKY",
+    "CACHORRO"
+   ],
+   "prot": 25,
+   "fuente": "envase"
+  },
+  {
+   "sec": "ALIMENTO PARA PERROS",
+   "contiene": [
+    "FLECKY",
+    "ADULTO"
+   ],
+   "excluye": [
+    "FRESCA"
+   ],
+   "prot": 19,
+   "fuente": "envase"
+  },
+  {
+   "sec": "ALIMENTO PARA PERROS",
+   "contiene": [
+    "BALANCED",
+    "ADULTO",
+    "RAZA GRANDE"
+   ],
+   "prot": 25,
+   "fuente": "delypet"
+  },
+  {
+   "sec": "ALIMENTO PARA PERROS",
+   "contiene": [
+    "BALANCED",
+    "ADULTO",
+    "RAZA PEQUE"
+   ],
+   "prot": 27,
+   "fuente": "delypet"
+  },
+  {
+   "sec": "ALIMENTO PARA PERROS",
+   "contiene": [
+    "PREMIUM",
+    "PERRO ADULTO"
+   ],
+   "excluye": [
+    "RAZA PEQ",
+    "CACHORRO"
+   ],
+   "prot": 24,
+   "fuente": "delypet"
+  },
+  {
+   "sec": "ALIMENTO PARA PERROS",
+   "contiene": [
+    "COMPLETE",
+    "PERRO ADULTO",
+    "RAZA PEQ"
+   ],
+   "prot": 23,
+   "fuente": "delypet"
+  },
+  {
+   "sec": "ALIMENTO PARA PERROS",
+   "contiene": [
+    "KEN-L",
+    "ADULTOS"
+   ],
+   "excluye": [
+    "RP",
+    "CACHORRO"
+   ],
+   "prot": 24,
+   "fuente": "delypet"
+  },
+  {
+   "sec": "ALIMENTO PARA GATOS",
+   "contiene": [
+    "PREMIUM",
+    "GATO ADULTO"
+   ],
+   "excluye": [
+    "URINARY",
+    "URINARIO"
+   ],
+   "prot": 30,
+   "fuente": "delypet"
+  },
+  {
+   "sec": "ALIMENTO PARA GATOS",
+   "contiene": [
+    "BALANCED",
+    "GATO ADULTO"
+   ],
+   "prot": 30,
+   "fuente": "delypet"
+  },
+  {
+   "sec": "ALIMENTO PARA GATOS",
+   "contiene": [
+    "COMPLETE",
+    "GATO ADULTO"
+   ],
+   "excluye": [
+    "CASTRADO"
+   ],
+   "prot": 30,
+   "fuente": "delypet"
+  }
+ ],
+ "por_marca": {
+  "ALIMENTO PARA PERROS": {
+   "PACHA": 19,
+   "GRAN CAMPEON": 21,
+   "ROSCO": 24,
+   "TIERNITOS": 25,
+   "ZIMPI": 18,
+   "PREMIUM": 25,
+   "DOG SELECCIÓN": 32,
+   "FLECKY": 19,
+   "EXACT PREMIUM": 26
+  },
+  "ALIMENTO PARA GATOS": {
+   "9 LIVES": 26,
+   "ROSCO": 26,
+   "CHEF CAT": 26,
+   "ZIMPI": 28,
+   "FULLCAT": 19
+  }
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "_que_es": "Las hojas de explicación de ALIMENTO BALANCEADO ANIMAL, tal cual están en el PDF original (páginas 6 y 7). Son páginas SIN tabla: la marca, el producto y un párrafo contándole al cliente de qué se trata, con una foto de ambiente al costado.",
+ "ALIMENTO BALANCEADO ANIMAL": {
+  "familia": "PROD. PROPIA SEMILLERO",
+  "paginas": [
+   [
+    {
+     "nombre": "Caballo x 40 kg",
+     "texto": "Nuestro balanceado se adapta a las necesidades específicas de los caballos en diferentes etapas de su vida y actividad, desde potrillos en crecimiento hasta caballos adultos en entrenamiento o competición.",
+     "bullets": []
+    },
+    {
+     "nombre": "Cerdo x 40 kg",
+     "texto": "El balanceado para cerdos está diseñado para satisfacer las necesidades específicas de de engorde. Nos aseguramos de que cada lote de alimento producido cumpla con los más altos estándares de calidad y seguridad alimentaria, para proporcionar a nuestros cerdos una dieta consistente y confiable que promueva su salud y bienestar.",
+     "bullets": []
+    },
+    {
+     "nombre": "Lechon x 40 kg",
+     "texto": "La formulación de nuestro alimento balanceado para lechones se adapta a las necesidades específicas de esta etapa crítica de crecimiento, asegurando una transición suave desde la lactancia hasta la alimentación sólida.",
+     "bullets": []
+    },
+    {
+     "nombre": "Lactancia x 40 kg",
+     "texto": "Nuestro alimento balanceado para madres lactantes está formulado para mejorar la calidad de la leche y favorecer el desarrollo saludable de los lechones desde sus primeros días.",
+     "bullets": []
+    }
+   ],
+   [
+    {
+     "nombre": "Ponedora 0-6 semanas x 40 kg nutrimax",
+     "texto": "La elaboración de nuestro alimento balanceado se adapta a las necesidades específicas de las gallinas ponedoras en cada etapa de su vida y producción de huevos. Desde la fase de crecimiento y desarrollo hasta la fase de puesta de huevos, ajustamos cuidadosamente la composición de los nutrientes para garantizar un rendimiento óptimo y una producción de huevos constante y de alta calidad.",
+     "bullets": []
+    },
+    {
+     "nombre": "Ponedora 15-17 semanas x 40 kg nutrimax",
+     "texto": "La formulación de nuestro alimento balanceado se adapta específicamente a las necesidades nutricionales de los pollos parrilleros en su etapa inicial de vida, garantizando una absorción óptima de los nutrientes y un crecimiento uniforme y saludable. Además, nos comprometemos a utilizar ingredientes de la más alta calidad y a seguir estrictos estándares de producción para garantizar la frescura y la seguridad de nuestro producto.",
+     "bullets": []
+    }
+   ],
+   [
+    {
+     "nombre": "Preiniciador para pollito",
+     "texto": "Nuestro alimento balanceado de producción propia para pollos parrilleros – etapa de preiniciación está formulado para cubrir las necesidades nutricionales críticas de los primeros días de vida del ave. Con una alta concentración de proteínas, energía y micronutrientes esenciales, favorece:",
+     "bullets": [
+      "Un arranque rápido y uniforme del lote.",
+      "El correcto desarrollo del sistema digestivo e inmunológico.",
+      "La construcción de una base sólida para alcanzar el máximo potencial productivo."
+     ]
+    },
+    {
+     "nombre": "Iniciador x 40 kg nutrimax",
+     "texto": "La formulación de nuestro alimento balanceado se adapta específicamente a las necesidades nutricionales de los pollos parrilleros en su etapa inicial de vida, garantizando una absorción óptima de los nutrientes y un crecimiento uniforme y saludable. Además, nos comprometemos a utilizar ingredientes de la más alta calidad y a seguir estrictos estándares de producción para garantizar la frescura y la seguridad de nuestro producto.",
+     "bullets": []
+    },
+    {
+     "nombre": "Terminador x 40 kg nutrimax",
+     "texto": "Éste alimento balanceado para pollos parrilleros en etapa de finalización se compone de una cuidadosa mezcla de ingredientes de alta calidad, seleccionados por su capacidad para promover un crecimiento eficiente y una carne de alta calidad. Los cereales seleccionados proporcionan la energía necesaria para mantener la actividad metabólica y el crecimiento muscular durante esta etapa final de crecimiento.",
+     "bullets": []
+    }
+   ]
+  ]
+ }
+}

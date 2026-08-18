@@ -1,0 +1,16 @@
+# Todo esto se regenera solo con `python build.py`
+index.html
+_preview.html
+reporte_sheet.txt
+cobertura.txt
+
+# Cache del Sheet: se baja en cada build
+mayorista.csv
+
+# Dumps para cruces puntuales, no son fuente
+articulos_im.json
+sin_foto.json
+inv_drive.json
+
+__pycache__/
+.claude/
