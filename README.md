@@ -40,22 +40,46 @@ Google Fonts, son las mismas del PDF.
 - **El botón "VER LOS PRECIOS" ahora funciona.** En el PDF está dibujado en las 46
   páginas pero no es un hipervínculo: el archivo no tiene ni un link ni una anotación.
   Acá apunta a `precios.semilleroelmanantial.com.ar`.
-- **623 productos** contra 517 del PDF, en 52 páginas contra 46.
+- **623 productos** contra 517 del PDF, en 49 páginas contra 46.
 - El índice numera las páginas solo; si crece una sección, se renumera todo.
 - Escala a cualquier pantalla sin perder el diseño (medidas en `cqw` sobre el
   contenedor de 1080 px, no píxeles fijos).
 
+## El marco web (lo que no está en el PDF)
+
+Las 49 hojas son la réplica exacta y no se tocan. Alrededor va lo único que el papel
+no puede dar, tomado del rediseño hecho en Claude Design:
+
+- **Barra fija** con las 12 secciones (ícono, color y número de página) para saltar a
+  cualquiera sin hojear, más WhatsApp y "VER LOS PRECIOS" siempre a la vista.
+- **Vista BUSCAR**: los 623 productos en grilla, con búsqueda instantánea y filtros
+  encadenados por sección → marca → peso (las marcas y los pesos que se ofrecen salen
+  de lo que ya quedó filtrado, así ningún filtro da cero). Ordena con foto primero,
+  porque sólo 236 la tienen. Cada tarjeta tiene su **"Consultar" por WhatsApp** con el
+  producto ya escrito en el mensaje.
+- **Pie** con dirección, WhatsApp y lista de precios, y botón de volver arriba.
+
+Corre sin frameworks y sin backend: los productos viajan embebidos en el HTML
+(`window.CAT`, lo arma `datos_buscador()`), así el catálogo sigue siendo **un solo
+archivo estático**. El buscador ignora tildes ("maiz" encuentra "maíz").
+
+El agrupador de pesos (`peso_de()`) lee la presentación del texto del producto porque
+la planilla no tiene columna de peso.
+
 ## Publicado
 
-**https://semilleroelmanantial.com.ar/catalogo** — estático, servido por nginx desde
-`/var/www/semillero-catalogo/catalogo` en el VPS de la empresa (165.1.123.161).
+**https://semilleroelmanantial.com.ar/catalogo**
 
-Se regenera solo: `/opt/catalogo/actualizar.sh` corre por cron **todos los días a las
-6:30** (hora de Tucumán), baja el Sheet, rearma las 52 páginas y publica. Si el Sheet
-no responde, deja el catálogo anterior en vez de publicar uno vacío.
-Log en `/opt/catalogo/logs/actualizar.log`.
+⚠️ **Producción se mudó.** El VPS de la empresa (165.1.123.161) está caído desde el
+18/08/2026 y con él se cayó el cron de las 6:30 que regeneraba el catálogo. Hoy lo
+sirve **Vercel**, como archivos estáticos dentro de `web-semillero-fresh/public/catalogo/`.
+Publicar mientras tanto es copiar `index.html` + `assets/` ahí y pushear.
 
-Para publicar a mano desde acá: `./deploy.sh`.
+`deploy.sh` sigue apuntando al VPS: **no sirve hasta que vuelva**. Cuando vuelva, el
+cron era `/opt/catalogo/actualizar.sh` (log en `/opt/catalogo/logs/actualizar.log`),
+que si el Sheet no responde deja el catálogo anterior en vez de publicar uno vacío.
+
+Para volver al catálogo previo al marco web, ver `_backup/LEEME.md` (tag `pre-buscador`).
 
 ## Integrado con
 

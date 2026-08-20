@@ -11,7 +11,7 @@ consume la app precios.semilleroelmanantial.com.ar).
     python build.py            # baja el sheet y genera index.html
     python build.py --cache    # usa mayorista.csv local (sin red)
 """
-import csv, io, json, os, re, sys, unicodedata, urllib.request
+import csv, io, json, os, re, sys, unicodedata, urllib.parse, urllib.request
 from datetime import date
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -965,8 +965,8 @@ body{{background:#e6ded3;font-family:'Roboto Condensed','Arial Narrow','Liberati
 .barra-pie{{position:absolute;left:{q(98)};right:{q(102)};bottom:{q(-12)};height:{q(68)};
   background:var(--c);border-radius:{q(8)} {q(8)} 0 0}}
 
-@media (max-width:700px){{body{{padding:0;gap:{q(10)}}}}}
-"""
+@media (max-width:700px){{main.revista{{padding:0;gap:{q(10)}}}}}
+""" + css_web()
 
 
 def proteina_de(sec, marca, desc, prot):
@@ -1125,6 +1125,472 @@ def fotos_de(bloques, sec, mapa, prot, reserva=None):
     return elegidas
 
 
+# ---------------------------------------------------------------- chrome web
+# Lo que la web puede dar y el PDF no: saltar a una sección, BUSCAR entre los 600
+# productos y escribir por WhatsApp. Todo esto vive fuera de las páginas: las
+# hojas siguen siendo la réplica exacta del PDF, esto las envuelve.
+WA_TEL = "5493813315389"
+WA_ROTULO = "0381 331-5389"
+WA_SALUDO = "Hola! Quiero hacer una consulta del catálogo mayorista."
+DIRECCION = "SAN MARTIN 105, BANDA DE RÍO SALÍ, TUCUMÁN, ARGENTINA"
+
+SVG_WA = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-'
+          '.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223'
+          '-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018'
+          '-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025'
+          '-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-'
+          '.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 '
+          '3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871'
+          '.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-'
+          '.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-'
+          '.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 '
+          '6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297'
+          'A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L'
+          '.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893'
+          'a11.821 11.821 0 00-3.48-8.413Z"></path></svg>')
+SVG_ARRIBA = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"></path></svg>')
+
+
+def wa_url(texto):
+    return f"https://wa.me/{WA_TEL}?text={urllib.parse.quote(texto)}"
+
+
+def peso_de(desc):
+    """Agrupa la presentación para poder filtrarla en el buscador.
+
+    Sale del texto del producto porque el sheet no tiene columna de peso: es la
+    misma lectura que hace el cliente cuando mira "x 20 kg" en la lista.
+    """
+    n = limpiar(desc)
+    if re.search(r"x\s*kgs?\b", n, re.I) and not re.search(r"\d\s*kgs?\b", n, re.I):
+        return "Suelto x kg"
+    m = re.search(r"(\d+[,.]?\d*)\s*(?:kgr|kgs|kg|k)\b", n, re.I)
+    if m:
+        v = float(m.group(1).replace(",", "."))
+        return ("Hasta 1 kg" if v <= 1 else "1 a 10 kg" if v <= 10 else
+                "10 a 20 kg" if v <= 20 else "Más de 20 kg")
+    if re.search(r"\d+\s*(?:grs|gr|g)\b", n, re.I):
+        return "Fraccionado gr"
+    if re.search(r"\d+\s*(?:cc|ml|lts|lt|l)\b", n, re.I):
+        return "Líquidos"
+    if re.search(r"x\s*\d+\s*u", n, re.I):
+        return "Por unidad"
+    return "Otros"
+
+
+def datos_buscador(datos, mapa_fotos, proteinas, indice):
+    """Los mismos productos de la revista, planos, para que el buscador filtre.
+
+    Van embebidos en el HTML como JSON: son ~600 filas, pesa poco y así el
+    buscador anda sin backend ni un segundo pedido de red.
+    """
+    secs, prods = [], []
+    for nombre, slug, color, _p, _t, corto in SECCIONES:
+        if not datos.get(nombre):
+            continue
+        secs.append({"id": slug, "n": corto, "c": color, "t": txt_sobre(color),
+                     "p": f"{indice.get(nombre, 0):02d}"})
+        for grupo, items in datos[nombre].items():
+            marca = abreviar_grupo(grupo)
+            for it in items:
+                hit = mapa_fotos.get(f"{nombre}|{it['cod']}|{it['desc']}")
+                prods.append({
+                    "n": sin_marca(it["desc"], marca),
+                    "d": linda(it["desc"]),
+                    "m": marca,
+                    "s": slug,
+                    "f": hit["local"] if hit else "",
+                    "p": proteina_de(nombre, marca, it["desc"], proteinas) or "",
+                    "w": peso_de(it["desc"]),
+                })
+    return secs, prods
+
+
+def barra_top(indice):
+    """Barra fija: identidad, cambio de vista, WhatsApp y salto por sección."""
+    chips = []
+    for nombre, slug, color, _p, _t, corto in SECCIONES:
+        if nombre not in indice:
+            continue
+        chips.append(f'<a class="navchip" href="#{slug}"><img src="assets/iconos/{slug}.webp" alt="">'
+                     f'<span>{esc(corto)}</span><i style="background:{color}"></i>'
+                     f'<b>{indice[nombre]:02d}</b></a>')
+    return f"""
+<div class="topbar">
+  <header class="tapa">
+    <div class="tapa-in">
+      <a class="tapa-logo" href="{URL_WEB}" target="_blank" rel="noopener">
+        <img src="assets/iconos/logo.webp" alt="Semillero El Manantial S.R.L."></a>
+      <span class="tapa-tit">CATÁLOGO MAYORISTA</span>
+      <span class="empuje"></span>
+      <div class="tabs">
+        <button class="tab on" data-vista="revista" type="button">REVISTA</button>
+        <button class="tab" data-vista="buscar" type="button">BUSCAR</button>
+      </div>
+      <a class="wa" href="{wa_url(WA_SALUDO)}" target="_blank" rel="noopener">
+        {SVG_WA}<span>{WA_ROTULO}</span></a>
+      <a class="tapa-precios" href="{URL_PRECIOS}" target="_blank" rel="noopener">
+        <i>$</i><span>VER LOS PRECIOS</span></a>
+    </div>
+  </header>
+  <nav class="secnav"><div class="secnav-in">{''.join(chips)}</div></nav>
+</div>"""
+
+
+def vista_buscar():
+    """El armazón del buscador. Las tarjetas y los chips los pinta el JS."""
+    return """
+<main class="buscar">
+  <div class="bus-caja">
+    <input id="q" type="search" autocomplete="off" spellcheck="false"
+           placeholder="Buscar producto, marca o presentación…" aria-label="Buscar en el catálogo">
+    <span id="conteo"></span>
+    <button id="limpiar" type="button">LIMPIAR</button>
+  </div>
+  <div class="filtros">
+    <div class="fila-f"><span class="rot">SECCIÓN</span><div class="chips" id="f-sec"></div></div>
+    <div class="fila-f"><span class="rot">MARCA</span><div class="chips" id="f-marca"></div></div>
+    <div class="fila-f"><span class="rot">PESO</span><div class="chips" id="f-peso"></div></div>
+  </div>
+  <div class="grilla" id="res"></div>
+  <div class="mas" id="mas" hidden><button id="btn-mas" type="button"></button></div>
+  <div class="vacio" id="vacio" hidden>
+    <b>SIN RESULTADOS</b><span>Probá con menos filtros o buscá por marca.</span>
+  </div>
+</main>"""
+
+
+def pie():
+    return f"""
+<footer class="pie">
+  <div class="pie-in">
+    <span class="pie-logo"><img src="assets/iconos/logo.webp" alt="Semillero El Manantial S.R.L."></span>
+    <div class="pie-datos">
+      <b>SEMILLERO EL MANANTIAL S.R.L.</b>
+      <a class="pie-wa" href="{wa_url(WA_SALUDO)}" target="_blank" rel="noopener">
+        {SVG_WA}{WA_ROTULO} · WhatsApp</a>
+      <span>{DIRECCION}</span>
+      <a href="{URL_WEB}" target="_blank" rel="noopener">WWW.SEMILLEROELMANANTIAL.COM.AR</a>
+    </div>
+    <span class="empuje"></span>
+    <a class="pie-precios" href="{URL_PRECIOS}" target="_blank" rel="noopener">$ LISTA DE PRECIOS</a>
+  </div>
+</footer>"""
+
+
+# El marco de la web. Va aparte de css() a propósito: css() está lleno de medidas
+# del PDF en cqw y llaves escapadas de f-string; esto es CSS común, en px, y no
+# toca ni una línea de las hojas.
+def css_web():
+    return """
+/* ================== marco de la web (no existe en el PDF) ================== */
+/* La revista es la réplica exacta; esto es lo que la web suma: saltar a una
+   sección, buscar entre los 600 productos y escribir por WhatsApp. */
+html{scroll-behavior:smooth}
+body{align-items:stretch;gap:0;padding:0;min-height:100vh}
+main.revista{display:flex;flex-direction:column;align-items:center;gap:2.6vw;padding:2.6vw 0 40px}
+.pag{scroll-margin-top:var(--barra,152px)}
+body[data-vista="buscar"] main.revista{display:none}
+body[data-vista="revista"] main.buscar{display:none}
+.empuje{flex:1 1 20px}
+
+/* ---------- barra fija ---------- */
+.topbar{position:sticky;top:0;z-index:30}
+.tapa{background:#14562A;color:var(--crema)}
+.tapa-in,.secnav-in,.pie-in{max-width:1180px;margin:0 auto;width:100%}
+.tapa-in{padding:9px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.tapa-logo{background:var(--crema);border-radius:3px;padding:6px 10px;display:flex}
+.tapa-logo img{height:28px;width:auto;display:block}
+.tapa-tit{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.1em;color:#fff;line-height:1}
+.tabs{display:flex;gap:4px;background:#0d3d1e;padding:4px;border-radius:999px}
+.tab{border:0;cursor:pointer;padding:7px 18px;border-radius:999px;background:transparent;
+  color:#a9c6b4;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.12em}
+.tab.on{background:#F5A63C;color:#14562A}
+.wa{display:flex;align-items:center;gap:7px;background:#25D366;border-radius:999px;
+  padding:6px 14px 6px 9px;white-space:nowrap;text-decoration:none}
+.wa:hover{background:#1FBE5A}
+.wa svg{width:17px;height:17px;flex:none;fill:#fff}
+.wa span{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.06em;color:#fff}
+.tapa-precios{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;
+  padding:6px 16px 6px 6px;white-space:nowrap;text-decoration:none}
+.tapa-precios i{width:26px;height:26px;border-radius:50%;background:#14562A;color:#fff;font-style:normal;
+  display:grid;place-items:center;font-weight:700;font-size:15px}
+.tapa-precios span{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.06em;color:#333}
+.secnav{background:var(--crema);border-top:4px solid var(--marco);border-bottom:1px solid #e0cfba}
+.secnav-in{padding:7px 16px;display:flex;gap:6px;overflow-x:auto}
+.navchip{display:flex;align-items:center;gap:7px;padding:5px 11px 5px 6px;border:1px solid #e0cfba;
+  border-radius:999px;background:#fffdf9;white-space:nowrap;flex:0 0 auto;text-decoration:none}
+.navchip img{width:22px;height:22px;object-fit:contain;border-radius:50%;display:block}
+.navchip span{font-size:14px;color:var(--gris)}
+.navchip i{width:16px;height:4px;border-radius:2px;display:block}
+.navchip b{font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--verde);font-weight:400}
+
+/* ---------- buscador ---------- */
+main.buscar{max-width:1180px;margin:0 auto;width:100%;padding:20px 16px 70px}
+.bus-caja{background:var(--crema);border:1px solid var(--marco);border-radius:6px;padding:14px 16px;
+  display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.bus-caja input{flex:1 1 300px;min-width:0;border:0;border-bottom:2px solid var(--verde);
+  background:transparent;font:inherit;font-size:20px;padding:7px 2px;outline:none;color:#3a3330}
+#conteo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.06em;color:var(--verde)}
+#limpiar{border:1px solid #e0cfba;background:#F3E7D7;cursor:pointer;padding:8px 14px;border-radius:4px;
+  font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.1em;color:var(--gris)}
+.filtros{display:flex;flex-direction:column;gap:8px;padding:16px 0 6px}
+.fila-f{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.rot{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.16em;color:#a1917f;flex:0 0 74px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;flex:1 1 300px}
+.chip{cursor:pointer;padding:6px 12px;border-radius:999px;font:inherit;font-size:13.5px;
+  border:1px solid #e0cfba;background:#fffdf9;color:var(--gris)}
+.chip.on{background:#14562A;border-color:#14562A;color:var(--crema)}
+.chip.mas{border-style:dashed;border-color:#cbb9a2;background:transparent;color:#8d7a68}
+
+.grilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:12px;padding-top:14px}
+.tar{background:var(--crema);border:1px solid var(--marco);border-radius:6px;overflow:hidden;
+  display:flex;flex-direction:column}
+.tar-foto{position:relative;background:#fffdf9;aspect-ratio:1/1;overflow:hidden;
+  border-bottom:1px solid var(--marco)}
+.tar-foto img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);
+  object-fit:contain;display:block}
+.tar-foto img.ico{inset:0;width:100%;height:100%;padding:30%;opacity:.28}
+.prot-mini{position:absolute;left:8px;top:8px;width:46px;height:46px;border-radius:50%;
+  background:#2B2B2B;color:var(--crema);display:grid;place-items:center;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;line-height:1}
+.prot-mini u{text-decoration:none;font-size:.62em}
+.tar-txt{padding:10px 12px 12px;display:flex;flex-direction:column;gap:5px;flex:1}
+.tar-n{font-size:15px;line-height:1.22;color:#3a3330}
+.tar-m{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.1em;color:var(--verde)}
+.tar-pie{margin-top:auto;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tar-sec{cursor:pointer;border:0;font:inherit;font-size:11.5px;letter-spacing:.04em;
+  padding:4px 8px;border-radius:999px}
+.tar-w{font-size:11.5px;color:#a1917f;white-space:nowrap}
+.tar-wa{margin-left:auto;display:inline-flex;align-items:center;gap:5px;background:#25D366;color:#fff;
+  padding:4px 10px 4px 7px;border-radius:999px;font-size:11.5px;font-weight:700;text-decoration:none}
+.tar-wa:hover{background:#1FBE5A}
+.tar-wa svg{width:13px;height:13px;flex:none;fill:#fff}
+.mas{display:flex;justify-content:center;padding:22px 0 0}
+.mas[hidden]{display:none}
+#btn-mas{cursor:pointer;border:1px solid #e0cfba;background:var(--crema);border-radius:999px;
+  padding:11px 26px;font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.12em;color:var(--verde)}
+.vacio{padding:60px 20px;text-align:center;border:1px dashed #d5c3ab;border-radius:6px;margin-top:14px}
+.vacio[hidden]{display:none}
+.vacio b{display:block;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.1em;
+  color:var(--verde);font-weight:400}
+.vacio span{font-size:15px;color:#8d7a68}
+
+/* ---------- pie y volver arriba ---------- */
+.pie{margin-top:auto;background:#14562A;color:#cfe0d5;padding:26px 16px 34px}
+.pie-in{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.pie-logo{background:var(--crema);border-radius:3px;padding:10px 14px;display:flex}
+.pie-logo img{height:38px;width:auto;display:block}
+.pie-datos{display:flex;flex-direction:column;gap:4px;font-size:14px}
+.pie-datos b{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.1em;color:#fff;font-weight:400}
+.pie-datos a{color:#a9c6b4;text-decoration:none;letter-spacing:.04em}
+.pie-wa{display:inline-flex;align-items:center;gap:6px;color:#7CE8A5}
+.pie-wa svg{width:15px;height:15px;flex:none;fill:#25D366;background:#fff;border-radius:50%;padding:1px}
+.pie-precios{background:#F5A63C;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.1em;
+  padding:12px 18px;border-radius:4px;white-space:nowrap;text-decoration:none}
+.pie-in .pie-precios{color:#14562A}
+.btn-arriba{position:fixed;right:18px;bottom:18px;z-index:40;width:46px;height:46px;border-radius:50%;
+  border:0;cursor:pointer;background:#14562A;box-shadow:0 4px 14px #0005;display:grid;place-items:center}
+.btn-arriba[hidden]{display:none}
+.btn-arriba:hover{background:#0d3d1e}
+.btn-arriba svg{width:20px;height:20px;fill:none;stroke:var(--crema);stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:760px){
+  .tapa-in{padding:8px 10px;gap:9px}
+  .tapa-tit{display:none}
+  .wa{padding:7px 10px}
+  .wa span{display:none}
+  .tapa-precios{padding:5px 12px 5px 5px}
+  .tapa-precios span{font-size:13px}
+  main.buscar{padding:14px 10px 60px}
+  .rot{flex:0 0 100%}
+  /* En el celular los chips envueltos comían media pantalla antes del primer
+     producto: acá se deslizan de costado, como la barra de secciones. */
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:3px}
+  .chip{flex:0 0 auto}
+  .grilla{grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px}
+  .tar-foto{padding:8px}
+}
+"""
+
+
+# El buscador corre entero en el navegador: los productos ya viajan en el HTML
+# (window.CAT), así que filtrar no le pide nada a nadie. Sin frameworks a propósito:
+# el catálogo se sirve como HTML estático desde nginx y así sigue siendo un archivo.
+_JS = r"""
+(function () {
+  var D = window.CAT, SEC = {};
+  D.sec.forEach(function (s) { SEC[s.id] = s; });
+
+  var $ = function (s) { return document.querySelector(s); };
+  var norm = function (s) {
+    return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  };
+  var MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return MAP[c]; }); };
+  var WA_SVG = '__SVG_WA__';
+  var wa = function (t) { return 'https://wa.me/' + D.tel + '?text=' + encodeURIComponent(t); };
+
+  // Un solo campo normalizado por producto: se arma una vez y después cada tecla
+  // es un indexOf, no un normalize() por fila.
+  D.prod.forEach(function (p) { p.b = norm(p.n + ' ' + p.d + ' ' + p.m + ' ' + SEC[p.s].n); });
+
+  var PASO = 180;
+  var st = { q: '', sec: 'todas', marca: 'todas', peso: 'todos', tope: PASO, verMarcas: false };
+
+  function chip(txt, activo, fn, clase) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip' + (activo ? ' on' : '') + (clase ? ' ' + clase : '');
+    b.textContent = txt;
+    b.onclick = fn;
+    return b;
+  }
+
+  function poner(cont, botones) {
+    cont.textContent = '';
+    botones.forEach(function (b) { cont.appendChild(b); });
+  }
+
+  function tarjeta(p) {
+    var s = SEC[p.s];
+    var foto = p.f
+      ? '<img src="assets/' + esc(p.f) + '" alt="' + esc(p.n) + '" loading="lazy">'
+      : '<img class="ico" src="assets/iconos/' + esc(p.s) + '.webp" alt="" loading="lazy">';
+    var prot = p.p ? '<span class="prot-mini">' + esc(p.p) + '<u>%</u></span>' : '';
+    return '<article class="tar">' +
+      '<div class="tar-foto">' + foto + prot + '</div>' +
+      '<div class="tar-txt">' +
+        '<span class="tar-n">' + esc(p.n) + '</span>' +
+        '<span class="tar-m">' + esc(p.m) + '</span>' +
+        '<div class="tar-pie">' +
+          '<button type="button" class="tar-sec" data-ir="' + esc(p.s) + '" style="background:' +
+            s.c + ';color:' + s.t + '">' + esc(s.n) + '</button>' +
+          '<span class="tar-w">' + esc(p.w) + '</span>' +
+          '<a class="tar-wa" target="_blank" rel="noopener" title="Consultar por WhatsApp" href="' +
+            esc(wa('Hola! Quiero consultar por: ' + p.d + ' (' + p.m + ')')) + '">' +
+            WA_SVG + 'Consultar</a>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  }
+
+  function pintar() {
+    var q = norm(st.q.trim());
+    var porSec = st.sec === 'todas' ? D.prod : D.prod.filter(function (p) { return p.s === st.sec; });
+    var porTxt = q ? porSec.filter(function (p) { return p.b.indexOf(q) >= 0; }) : porSec;
+
+    // Las marcas y los pesos salen de lo que quedó filtrado, no de la lista entera:
+    // si no, se ofrecen filtros que dan cero resultados.
+    var marcas = [], pesos = [];
+    porTxt.forEach(function (p) { if (marcas.indexOf(p.m) < 0) marcas.push(p.m); });
+    marcas.sort();
+    var porMarca = st.marca === 'todas' ? porTxt : porTxt.filter(function (p) { return p.m === st.marca; });
+    porMarca.forEach(function (p) { if (pesos.indexOf(p.w) < 0) pesos.push(p.w); });
+    pesos.sort();
+    var res = st.peso === 'todos' ? porMarca : porMarca.filter(function (p) { return p.w === st.peso; });
+
+    // Con foto primero: sólo 235 de los 623 tienen, y el que busca quiere ver.
+    res = res.slice().sort(function (a, b) { return (b.f ? 1 : 0) - (a.f ? 1 : 0); });
+
+    poner($('#f-sec'), [chip('Todas', st.sec === 'todas', function () {
+      st.sec = 'todas'; st.marca = 'todas'; st.peso = 'todos'; st.tope = PASO; pintar();
+    })].concat(D.sec.map(function (s) {
+      return chip(s.n, st.sec === s.id, function () {
+        st.sec = s.id; st.marca = 'todas'; st.peso = 'todos'; st.tope = PASO; pintar();
+      });
+    })));
+
+    var todas = st.verMarcas || marcas.length <= 15;
+    var visibles = todas ? marcas : marcas.slice(0, 14);
+    var bm = [chip('Todas', st.marca === 'todas', function () {
+      st.marca = 'todas'; st.peso = 'todos'; st.tope = PASO; pintar();
+    })].concat(visibles.map(function (m) {
+      return chip(m, st.marca === m, function () {
+        st.marca = m; st.peso = 'todos'; st.tope = PASO; pintar();
+      });
+    }));
+    if (!todas) {
+      bm.push(chip('+ ' + (marcas.length - visibles.length) + ' marcas', false,
+        function () { st.verMarcas = true; pintar(); }, 'mas'));
+    }
+    poner($('#f-marca'), bm);
+
+    poner($('#f-peso'), [chip('Todos', st.peso === 'todos', function () {
+      st.peso = 'todos'; st.tope = PASO; pintar();
+    })].concat(pesos.map(function (w) {
+      return chip(w, st.peso === w, function () { st.peso = w; st.tope = PASO; pintar(); });
+    })));
+
+    $('#res').innerHTML = res.slice(0, st.tope).map(tarjeta).join('');
+    $('#vacio').hidden = res.length > 0;
+    var faltan = res.length - st.tope;
+    $('#mas').hidden = faltan <= 0;
+    if (faltan > 0) {
+      $('#btn-mas').textContent = 'VER ' + Math.min(faltan, PASO) + ' MÁS  (' + faltan + ' restantes)';
+    }
+    $('#conteo').textContent = res.length === D.prod.length
+      ? D.prod.length + ' PRODUCTOS'
+      : res.length + ' DE ' + D.prod.length;
+  }
+
+  function vista(v) {
+    document.body.dataset.vista = v;
+    Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
+      t.classList.toggle('on', t.dataset.vista === v);
+    });
+    if (v === 'buscar') { window.scrollTo({ top: 0 }); $('#q').focus(); }
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
+    t.onclick = function () { vista(t.dataset.vista); };
+  });
+  // Ir a una sección desde el nav o desde una tarjeta implica volver a la revista.
+  document.querySelector('.secnav').addEventListener('click', function () { vista('revista'); });
+  $('#res').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-ir]');
+    if (!b) return;
+    vista('revista');
+    setTimeout(function () { location.hash = '#' + b.dataset.ir; }, 30);
+  });
+
+  var t = null;
+  $('#q').addEventListener('input', function (e) {
+    st.q = e.target.value; st.marca = 'todas'; st.peso = 'todos'; st.tope = PASO;
+    clearTimeout(t); t = setTimeout(pintar, 90);
+  });
+  $('#limpiar').onclick = function () {
+    st = { q: '', sec: 'todas', marca: 'todas', peso: 'todos', tope: PASO, verMarcas: false };
+    $('#q').value = ''; pintar(); $('#q').focus();
+  };
+  $('#btn-mas').onclick = function () { st.tope += PASO; pintar(); };
+
+  // La barra fija tapa el arranque de la hoja al saltar a una sección: se mide
+  // en vivo porque en mobile envuelve y cambia de alto.
+  var barra = document.querySelector('.topbar');
+  function medir() {
+    document.documentElement.style.setProperty('--barra', (barra.offsetHeight + 14) + 'px');
+  }
+  window.addEventListener('resize', medir);
+  medir();
+
+  var arriba = $('#arriba');
+  arriba.onclick = function () { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+  window.addEventListener('scroll', function () {
+    arriba.hidden = window.scrollY < 600;
+  }, { passive: true });
+
+  if (location.hash === '#buscar') vista('buscar');
+  pintar();
+})();
+"""
+
+
+def js_buscador():
+    return _JS.replace("__SVG_WA__", SVG_WA)
+
+
 def main():
     usar_cache = "--cache" in sys.argv
     datos = separar_mani_king(separar_granolas(separar_mezclas(parsear(bajar_csv(usar_cache)))))
@@ -1209,6 +1675,10 @@ def main():
                                         n0 + 1 + len(paginas) + j, ban_ext, fp))
 
     total_prod = sum(len(v) for g in datos.values() for v in g.values())
+    secs_js, prods_js = datos_buscador(datos, mapa_fotos, proteinas, indice)
+    # "</" adentro de un <script> cierra la etiqueta: hay que escaparlo.
+    cat_json = json.dumps({"tel": WA_TEL, "sec": secs_js, "prod": prods_js},
+                          ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     doc = f"""<!doctype html>
 <html lang="es">
 <head>
@@ -1219,8 +1689,16 @@ def main():
 <link rel="stylesheet" href="assets/fonts/fuentes.css">
 <style>{css()}</style>
 </head>
-<body>
+<body data-vista="revista">
+{barra_top(indice)}
+<main class="revista">
 {''.join(html)}
+</main>
+{vista_buscar()}
+{pie()}
+<button class="btn-arriba" id="arriba" type="button" hidden aria-label="Volver arriba">{SVG_ARRIBA}</button>
+<script>window.CAT={cat_json};</script>
+<script>{js_buscador()}</script>
 </body>
 </html>
 """
