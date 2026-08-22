@@ -2467,5 +2467,957 @@
   "score": 1.0,
   "local": "productos/1201.webp",
   "fuente": "20260822-relleno"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|25|CONEJO Madre y Gazapo x 25 KG - CONECAR": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/conecar-conejo-madre-y-gazapo-1ab3d15e-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Conecar Conejo Madre y Gazapo",
+  "score": 0.92,
+  "local": "productos/25.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA PERROS|160|ARROZ PARA PERRO LUMPY": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-10-arroz-lumpy-15-kg-90a0c59c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "ARROZ PARA PERRO LUMPPY",
+  "score": 0.92,
+  "local": "productos/160.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA PERROS|117|TIERNITO CACHO x 22 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/2024-11-Tiernitos-Cachorro.jpg",
+  "slug": "",
+  "nombre_web": "TIERNITOS CACHORRO",
+  "score": 0.92,
+  "local": "productos/117.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA PERROS|116|TIERNITO CACHOx 15 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/2024-11-Tiernitos-Cachorro.jpg",
+  "slug": "",
+  "nombre_web": "TIERNITOS CACHORRO",
+  "score": 0.92,
+  "local": "productos/116.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA PERROS|118|TIERNITO RP ADULTO x 15 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/tiernitos-rp-adulto.webp",
+  "slug": "",
+  "nombre_web": "Tiernitos RP Adulto",
+  "score": 0.92,
+  "local": "productos/118.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA PERROS|147|TIERNITO RP ADULTO x 21 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/tiernitos-rp-adulto.webp",
+  "slug": "",
+  "nombre_web": "Tiernitos RP Adulto",
+  "score": 0.92,
+  "local": "productos/147.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA PERROS|112|TIERNITO POLLO x 15 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/2024-11-tiernitos-pollo.webp",
+  "slug": "",
+  "nombre_web": "TIERNITOS POLLO",
+  "score": 0.92,
+  "local": "productos/112.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA PERROS|114|TIERNITO VEGET x 15 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/tiernitos-carne-y-vegetales.jpg",
+  "slug": "",
+  "nombre_web": "Tiernitos Carne y Vegetales",
+  "score": 0.92,
+  "local": "productos/114.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA PERROS|191|SNACK TIERNITO DENTAL R. PEQUEÑA X 30U": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/snack-tiernitos-dental-raza-pequena-3b87150b-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Snack Tiernitos Dental Raza Pequeña",
+  "score": 0.92,
+  "local": "productos/191.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA GATOS|1016|ARENA SANITARIA VITALFUN X 6K": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/arena-sanitaria-vital-fun-6-kg-9ad3ac96-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Arena Sanitaria Vital Fun 6 kg",
+  "score": 0.92,
+  "local": "productos/1016.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA GATOS|1009|PIEDRAS SANITARIAS X 20 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-piedras-mineral-x-25-kg-b82fdb87-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "PIEDRAS SANITARIAS X 25 KG",
+  "score": 1.0,
+  "local": "productos/1009.webp",
+  "origen": "web"
+ },
+ "CEREALES PARA DESAYUNO|374|FRAC. ALMOHADITA FRUTILLA NF 20 X 180GR": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/almohaditas-frac-frutilla-20x180g-4b60767c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Almohaditas Frac Frutilla 20x180 g",
+  "score": 0.92,
+  "local": "productos/374.webp",
+  "origen": "web"
+ },
+ "CONDIMENTOS|514|NUEZ MOSCADA": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-nuez-moscada-entera-bote-25gr-324f5dbe-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "NUEZ MOSCADA EN GRANO",
+  "score": 0.92,
+  "local": "productos/514.webp",
+  "origen": "web"
+ },
+ "CONDIMENTOS|519|PIMIENTA BLANCA PREMIUM": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-pimienta-molida-72836515-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "PIMIENTA BLANCA",
+  "score": 0.92,
+  "local": "productos/519.webp",
+  "origen": "web"
+ },
+ "FRUTOS SECOS|604|CIRUELA PRESIDENTA": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-ciruela-f58a965c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CIRUELA COMUN Y SIN CAROZO",
+  "score": 0.92,
+  "local": "productos/604.webp",
+  "origen": "web"
+ },
+ "FRUTOS SECOS|605|CIRUELA SIN CAROZO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-ciruela-f58a965c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CIRUELA COMUN Y SIN CAROZO",
+  "score": 0.92,
+  "local": "productos/605.webp",
+  "origen": "web"
+ },
+ "SNACKS|3001|GALLETAS MINI CHIPIS 120gr x 30u": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/galletas-mini-chipis-40a39f54-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Galletitas Mini Chipis 120 g",
+  "score": 0.92,
+  "local": "productos/3001.webp",
+  "origen": "web"
+ },
+ "SNACKS|3003|GALLETAS PITUSAS VINILLA 160gr x 30u": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/galletas-pitusas-vainilla-cc7dd050-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Galletas Pitusas Vainilla",
+  "score": 0.92,
+  "local": "productos/3003.webp",
+  "origen": "web"
+ },
+ "SNACKS|695|MONKY NEGRA X18 UDS": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/barrita-monky-negra-cc2ba030-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Monky Negra x18 Unidades",
+  "score": 0.92,
+  "local": "productos/695.webp",
+  "origen": "web"
+ },
+ "SNACKS|696|MONKY BLANCA X18UDS": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/barrita-monky-blanca-27166d93-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Monky Blanca x18 Unidades",
+  "score": 0.92,
+  "local": "productos/696.webp",
+  "origen": "web"
+ },
+ "SNACKS|698|MONKY KIDS ROCKLET BLANCA X18UDS": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/barrita-monky-kids-rocklet-blanca-62b5d2dd-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Monky Kids Rocklets Blanca x18 Unidades",
+  "score": 0.92,
+  "local": "productos/698.webp",
+  "origen": "web"
+ },
+ "SNACKS|699|MONKY KIDS ROCKELT NEGRA X18UDS": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/barrita-monky-kids-rocklet-negra-fed31823-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Monky Kids Rockelt Negra x18 Unidades",
+  "score": 0.92,
+  "local": "productos/699.webp",
+  "origen": "web"
+ },
+ "SNACKS|652|MANI SABORIZADO JAMON": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2025-01-mani-sabores-800-985fb442-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "mani saborizado",
+  "score": 0.92,
+  "local": "productos/652.webp",
+  "origen": "web"
+ },
+ "SNACKS|772|MANI SABORIZADO PIZZA": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2025-01-mani-sabores-800-985fb442-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "mani saborizado",
+  "score": 0.92,
+  "local": "productos/772.webp",
+  "origen": "web"
+ },
+ "SNACKS|773|MANI SABORIZADO QUESO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2025-01-mani-sabores-800-985fb442-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "mani saborizado",
+  "score": 0.92,
+  "local": "productos/773.webp",
+  "origen": "web"
+ },
+ "SNACKS|774|MANI SABORIZADO SALAME": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2025-01-mani-sabores-800-985fb442-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "mani saborizado",
+  "score": 0.92,
+  "local": "productos/774.webp",
+  "origen": "web"
+ },
+ "SNACKS|775|MANI SABORIZADO PANCETA": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2025-01-mani-sabores-800-985fb442-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "mani saborizado",
+  "score": 0.92,
+  "local": "productos/775.webp",
+  "origen": "web"
+ },
+ "SNACKS|653|MANI SALADO CON PIEL": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/mani-salado-frito-con-piel-cd51f96b-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Maní Salado Frito con Piel",
+  "score": 0.92,
+  "local": "productos/653.webp",
+  "origen": "web"
+ },
+ "SNACKS|10671|PRALINE X KG - Mani King": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2025-01-mani-praline-ebdaa8f5-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MANI PRALINE",
+  "score": 0.92,
+  "local": "productos/10671.webp",
+  "origen": "web"
+ },
+ "SNACKS|689|PASTA DE MANI NATURAL BORIS X 400G X 12U": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/pasta-de-mani-boris-400-g-59b40c43-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Pasta de Maní Boris 400 g",
+  "score": 0.76,
+  "local": "productos/689.webp",
+  "origen": "web"
+ },
+ "SNACKS|690|PASTA DE MANI NATURAL BORIS X 800G X 6U": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/pasta-de-mani-boris-400-g-59b40c43-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Pasta de Maní Boris 400 g",
+  "score": 0.76,
+  "local": "productos/690.webp",
+  "origen": "web"
+ },
+ "SNACKS|691|PASTA DE MANI NATURAL BORIS X 4k": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/pasta-de-mani-boris-400-g-59b40c43-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Pasta de Maní Boris 400 g",
+  "score": 0.76,
+  "local": "productos/691.webp",
+  "origen": "web"
+ },
+ "VENENOS|1946|TALQUERA ROLLER MAX X 250 GR": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-talquera-f23ae0fc-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "FORMIX TALQUERA X 250 GR Y POR 1 KG",
+  "score": 0.92,
+  "local": "productos/1946.webp",
+  "origen": "web"
+ },
+ "VENENOS|1959|RATISADA LIQ. X 1 LT": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/ratisada-liquida-b352e4f7-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Ratisada Líquida",
+  "score": 0.92,
+  "local": "productos/1959.webp",
+  "origen": "web"
+ },
+ "VENENOS|1960|RATISADA LIQ. X 500 CC": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/ratisada-liquida-b352e4f7-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Ratisada Líquida",
+  "score": 0.92,
+  "local": "productos/1960.webp",
+  "origen": "web"
+ },
+ "VENENOS|1961|TERMIXAN BLOQUES X 1 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/2024-12-termixan.png",
+  "slug": "",
+  "nombre_web": "TERMIXAN – BLOQUES Y GRANULARES",
+  "score": 0.92,
+  "local": "productos/1961.webp",
+  "origen": "web"
+ },
+ "VENENOS|1962|TERMIXAN BLOQUES X 90 GR": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/2024-12-termixan.png",
+  "slug": "",
+  "nombre_web": "TERMIXAN – BLOQUES Y GRANULARES",
+  "score": 0.92,
+  "local": "productos/1962.webp",
+  "origen": "web"
+ },
+ "VENENOS|1963|TERMIXAN X 25 KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/2024-12-termixan.png",
+  "slug": "",
+  "nombre_web": "TERMIXAN – BLOQUES Y GRANULARES",
+  "score": 0.92,
+  "local": "productos/1963.webp",
+  "origen": "web"
+ },
+ "VENENOS|1948|CUCAXAN CEBADERA X 6 UN": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/cucaxan-cebadera-99f76a65-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Cucaxan Cebadera",
+  "score": 0.92,
+  "local": "productos/1948.webp",
+  "origen": "web"
+ },
+ "VENENOS|1949|CUCAXAN JERINGA X 6 GR": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/cucaxan-gel-jeringa-f0f480f1-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Cucaxan Gel en Jeringa",
+  "score": 0.92,
+  "local": "productos/1949.webp",
+  "origen": "web"
+ },
+ "VENENOS|946|CURABICHERA PLATA AM NORT": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-curabichera-da2749e9-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CURABICHERA",
+  "score": 0.92,
+  "local": "productos/946.webp",
+  "origen": "web"
+ },
+ "VENENOS|1922|FLUIDO TRIUNFO X 1 LT": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/fluido-triunfo-71e23446-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Fluido Desinfectante Triunfo",
+  "score": 0.92,
+  "local": "productos/1922.webp",
+  "origen": "web"
+ },
+ "VENENOS|1923|FLUIDO TRIUNFO X 500 CC": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/fluido-triunfo-71e23446-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Fluido Desinfectante Triunfo",
+  "score": 0.92,
+  "local": "productos/1923.webp",
+  "origen": "web"
+ },
+ "VENENOS|1924|FUMIXAN 50 GR X 1 PAST": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/fumixan-pastilla-50-g-02d454c1-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Fumixan Pastilla Fumígena 50 g",
+  "score": 0.92,
+  "local": "productos/1924.webp",
+  "origen": "web"
+ },
+ "VENENOS|1952|SUPER FLOW X 15 CC": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-super-flow-4a24c62e-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "SUPER FLOW X 15 Y 60 CC",
+  "score": 0.92,
+  "local": "productos/1952.webp",
+  "origen": "web"
+ },
+ "VENENOS|1978|VELOXAN BTI LAVARCIDA X 30 CC": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/2024-12-veloxan.jpg",
+  "slug": "",
+  "nombre_web": "VELOXAN BTI LARVICIDA X 30 CC",
+  "score": 0.92,
+  "local": "productos/1978.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|808|BEBEDERO CON ALETA N░ 1": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-con-aleta-1-95dc5f15-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO CON ALETA",
+  "score": 0.92,
+  "local": "productos/808.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|809|BEBEDERO CON ALETA N░ 2": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-con-aleta-1-95dc5f15-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO CON ALETA",
+  "score": 0.92,
+  "local": "productos/809.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|810|BEBEDERO CON ALETA N░ 3": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-con-aleta-1-95dc5f15-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO CON ALETA",
+  "score": 0.92,
+  "local": "productos/810.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|811|BEBEDERO CON GANCHO N░ 1": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-con-gancho-1169b7ad-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO CON GANCHO",
+  "score": 0.92,
+  "local": "productos/811.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|812|BEBEDERO CON GANCHO N░ 2": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-con-gancho-1169b7ad-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO CON GANCHO",
+  "score": 0.92,
+  "local": "productos/812.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|813|BEBEDERO CON GANCHO N░ 3": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-con-gancho-1169b7ad-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO CON GANCHO",
+  "score": 0.92,
+  "local": "productos/813.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|817|BEBEDERO TUBO N░ 1": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-tubo-1-ecfd4471-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO TUBO",
+  "score": 0.92,
+  "local": "productos/817.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|818|BEBEDERO TUBO N░ 2": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-tubo-1-ecfd4471-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO TUBO",
+  "score": 0.92,
+  "local": "productos/818.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|819|BEBEDERO TUBO N░ 3": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-tubo-1-ecfd4471-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO TUBO",
+  "score": 0.92,
+  "local": "productos/819.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|820|BEBEDERO TUBO N░ 4": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-bebedero-tubo-1-ecfd4471-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BEBEDERO TUBO",
+  "score": 0.92,
+  "local": "productos/820.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|909|CADENA DE VAREO FINA": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-cadenas-de-vareo-c1c371a8-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CADENAS DE VAREO (FINA, MEDIANA, GRUESA)",
+  "score": 0.92,
+  "local": "productos/909.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|910|CADENA DE VAREO GRUESA": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-cadenas-de-vareo-c1c371a8-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CADENAS DE VAREO (FINA, MEDIANA, GRUESA)",
+  "score": 0.92,
+  "local": "productos/910.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|918|COLLAR AHORQUE CHICO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-collar-de-ahorque-3000c62e-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "COLLARES DE AHORQUE",
+  "score": 0.92,
+  "local": "productos/918.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|919|COLLAR AHORQUE GRANDE": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-collar-de-ahorque-3000c62e-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "COLLARES DE AHORQUE",
+  "score": 0.92,
+  "local": "productos/919.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|920|COLLAR AHORQUE MEDIANO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-collar-de-ahorque-3000c62e-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "COLLARES DE AHORQUE",
+  "score": 0.92,
+  "local": "productos/920.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|921|COLLAR ANTIPULGAS CHICO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-collar-antipulga-9f4a8a1c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "COLLARES ANTIPULGAS",
+  "score": 0.92,
+  "local": "productos/921.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|922|COLLAR ANTIPULGAS GATO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-collar-antipulga-9f4a8a1c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "COLLARES ANTIPULGAS",
+  "score": 0.92,
+  "local": "productos/922.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|923|COLLAR ANTIPULGAS GRANDE": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-collar-antipulga-9f4a8a1c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "COLLARES ANTIPULGAS",
+  "score": 0.92,
+  "local": "productos/923.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|924|COLLAR ANTIPULGAS MEDIANO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-collar-antipulga-9f4a8a1c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "COLLARES ANTIPULGAS",
+  "score": 0.92,
+  "local": "productos/924.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|940|CONJUNTO CHICO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-conjunto-perros-800-7b271aa4-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CONJUNTOS PARA PERROS",
+  "score": 0.92,
+  "local": "productos/940.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|941|CONJUNTO MEDIANO": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-conjunto-perros-800-7b271aa4-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CONJUNTOS PARA PERROS",
+  "score": 0.92,
+  "local": "productos/941.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|942|CORREA N░ 1": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-correa-perro-33ed9c24-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CORREAS PARA PERROS",
+  "score": 0.92,
+  "local": "productos/942.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|943|CORREA N░ 2": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-correa-perro-33ed9c24-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CORREAS PARA PERROS",
+  "score": 0.92,
+  "local": "productos/943.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|944|CORREA N░ 3": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-11-correa-perro-33ed9c24-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "CORREAS PARA PERROS",
+  "score": 0.92,
+  "local": "productos/944.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|962|PIPETA CHICA": {
+  "img": "/home/mati/Work/semillero/catalogo-web/_faltantes/drive_folleto/pipeta chica.jpeg",
+  "slug": "",
+  "nombre_web": "pipeta chica",
+  "score": 0.92,
+  "local": "productos/962.webp",
+  "origen": "drive"
+ },
+ "ACCESORIOS|963|PIPETA EXTRA GRANDE": {
+  "img": "/home/mati/Work/semillero/catalogo-web/_faltantes/drive_folleto/pipeta extra grande.jpeg",
+  "slug": "",
+  "nombre_web": "pipeta extra grande",
+  "score": 0.92,
+  "local": "productos/963.webp",
+  "origen": "drive"
+ },
+ "ACCESORIOS|964|PIPETA GATO": {
+  "img": "/home/mati/Work/semillero/catalogo-web/_faltantes/drive_folleto/pipeta gato.jpeg",
+  "slug": "",
+  "nombre_web": "pipeta gato",
+  "score": 0.92,
+  "local": "productos/964.webp",
+  "origen": "drive"
+ },
+ "ACCESORIOS|965|PIPETA GRANDE": {
+  "img": "/home/mati/Work/semillero/catalogo-web/_faltantes/drive_folleto/pipeta grande.jpeg",
+  "slug": "",
+  "nombre_web": "pipeta grande",
+  "score": 0.92,
+  "local": "productos/965.webp",
+  "origen": "drive"
+ },
+ "ACCESORIOS|966|PIPETA MEDIANA": {
+  "img": "/home/mati/Work/semillero/catalogo-web/_faltantes/drive_folleto/pipeta mediana.jpeg",
+  "slug": "",
+  "nombre_web": "pipeta mediana",
+  "score": 0.92,
+  "local": "productos/966.webp",
+  "origen": "drive"
+ },
+ "ACCESORIOS|992|SHAMPOO OSSPRET TRAD. X 250 CC": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-osspret-shampoo-tradicional-b146feef-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "SHAMPOO OSSPRET TRADICIONAL X 250 CC",
+  "score": 0.92,
+  "local": "productos/992.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1015|BOLS N░ 15": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-bols-monaco-4ec4a984-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BOLS N° 12 AL N° 26",
+  "score": 0.92,
+  "local": "productos/1015.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1018|BOLS N░ 18": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-bols-monaco-4ec4a984-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BOLS N° 12 AL N° 26",
+  "score": 0.92,
+  "local": "productos/1018.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1021|BOLS N░ 21": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-bols-monaco-4ec4a984-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BOLS N° 12 AL N° 26",
+  "score": 0.92,
+  "local": "productos/1021.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1024|BOLS N░ 24": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-bols-monaco-4ec4a984-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "BOLS N° 12 AL N° 26",
+  "score": 0.92,
+  "local": "productos/1024.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1900|D-SIST GLACOXAN x 30 cc x 24 u": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/glacoxan-d-sist-bf79614c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Glacoxan D-Sist",
+  "score": 0.92,
+  "local": "productos/1900.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1901|D-SIST GLACOXAN x 60 cc x 24 u": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/glacoxan-d-sist-bf79614c-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Glacoxan D-Sist",
+  "score": 0.92,
+  "local": "productos/1901.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1905|FERTIFOX HORM. ENRAIZAR x 75 gr": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-fortifox-0cb52893-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "FERTIFOX HORMONAS ENRAIZAR X 75 GR",
+  "score": 0.92,
+  "local": "productos/1905.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1982|FUNGOXAN funguicida sist. x30cc": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/fungoxan-funguicida-sistemico-a6ef2db0-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Fungoxan Funguicida Sistémico",
+  "score": 0.92,
+  "local": "productos/1982.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1909|FUNGOXAN funguicida sist. x60cc": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/fungoxan-funguicida-sistemico-a6ef2db0-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "Fungoxan Funguicida Sistémico",
+  "score": 0.92,
+  "local": "productos/1909.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1120|JARDINERA MINI N░ 20": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-jardinera-mini-4428edcf-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "JARDINERAS MINI",
+  "score": 0.92,
+  "local": "productos/1120.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1136|JARDINERA MINI N░ 36": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-jardinera-mini-4428edcf-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "JARDINERAS MINI",
+  "score": 0.92,
+  "local": "productos/1136.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1170|JARDINERA OWEN N░ 35": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/jardineras-owen.jpg",
+  "slug": "",
+  "nombre_web": "JARDINERAS OWEN",
+  "score": 0.92,
+  "local": "productos/1170.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1312|MACETA CONICA N░ 12": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-conica-matri-color-ba8aa224-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CONICAS",
+  "score": 0.92,
+  "local": "productos/1312.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1316|MACETA CONICA N░ 16": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-conica-matri-color-ba8aa224-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CONICAS",
+  "score": 0.92,
+  "local": "productos/1316.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1320|MACETA CONICA N░ 20": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-conica-matri-color-ba8aa224-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CONICAS",
+  "score": 0.92,
+  "local": "productos/1320.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1308|MACETA CONICA N░ 8": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-conica-matri-color-ba8aa224-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CONICAS",
+  "score": 0.92,
+  "local": "productos/1308.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1410|MACETA CUADRADA N░ 10": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-cuadrada-6-color-6b002417-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CUADRADAS",
+  "score": 0.92,
+  "local": "productos/1410.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1412|MACETA CUADRADA N░ 12": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-cuadrada-6-color-6b002417-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CUADRADAS",
+  "score": 0.92,
+  "local": "productos/1412.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1414|MACETA CUADRADA N░ 14": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-cuadrada-6-color-6b002417-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CUADRADAS",
+  "score": 0.92,
+  "local": "productos/1414.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1406|MACETA CUADRADA N░ 6": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-cuadrada-6-color-6b002417-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CUADRADAS",
+  "score": 0.92,
+  "local": "productos/1406.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1408|MACETA CUADRADA N░ 8": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-cuadrada-6-color-6b002417-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS CUADRADAS",
+  "score": 0.92,
+  "local": "productos/1408.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1512|MACETA DECORATIVA N░ 12": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-macetas-decorativas-800-ca885b41-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS DECORATIVAS",
+  "score": 0.92,
+  "local": "productos/1512.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1514|MACETA DECORATIVA N░ 14": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-macetas-decorativas-800-ca885b41-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS DECORATIVAS",
+  "score": 0.92,
+  "local": "productos/1514.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1516|MACETA DECORATIVA N░ 16": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-macetas-decorativas-800-ca885b41-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS DECORATIVAS",
+  "score": 0.92,
+  "local": "productos/1516.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1506|MACETA DECORATIVA N░ 6": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-macetas-decorativas-800-ca885b41-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS DECORATIVAS",
+  "score": 0.92,
+  "local": "productos/1506.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1508|MACETA DECORATIVA N░ 8": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-macetas-decorativas-800-ca885b41-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS DECORATIVAS",
+  "score": 0.92,
+  "local": "productos/1508.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1615|MACETA IBIZA N░ 15": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-ibiza-800-99632e6d-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS IBIZA",
+  "score": 0.92,
+  "local": "productos/1615.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1620|MACETA IBIZA N░ 20": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-ibiza-800-99632e6d-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS IBIZA",
+  "score": 0.92,
+  "local": "productos/1620.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1625|MACETA IBIZA N░ 25": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-ibiza-800-99632e6d-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS IBIZA",
+  "score": 0.92,
+  "local": "productos/1625.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1630|MACETA IBIZA N░ 30": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-ibiza-800-99632e6d-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS IBIZA",
+  "score": 0.92,
+  "local": "productos/1630.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1635|MACETA IBIZA N░ 35": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-ibiza-800-99632e6d-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS IBIZA",
+  "score": 0.92,
+  "local": "productos/1635.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1640|MACETA IBIZA N░ 40": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/products-hq/2024-12-maceta-ibiza-800-99632e6d-hq-v2.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS IBIZA",
+  "score": 0.92,
+  "local": "productos/1640.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1730|MACETA PIRAMIDAL N░ 30": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-piramidales.webp",
+  "slug": "",
+  "nombre_web": "MACETAS PIRAMIDALES",
+  "score": 0.8,
+  "local": "productos/1730.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1740|MACETA PIRAMIDAL N░ 40": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-piramidales.webp",
+  "slug": "",
+  "nombre_web": "MACETAS PIRAMIDALES",
+  "score": 0.8,
+  "local": "productos/1740.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1752|MACETA PIRAMIDAL N░ 52": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-piramidales.webp",
+  "slug": "",
+  "nombre_web": "MACETAS PIRAMIDALES",
+  "score": 0.8,
+  "local": "productos/1752.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1812|MACETA PREMIUM REDONDA N░ 12": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-premium-redondas.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS PREMIUM REDONDAS",
+  "score": 0.92,
+  "local": "productos/1812.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1816|MACETA PREMIUM REDONDA N░ 16": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-premium-redondas.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS PREMIUM REDONDAS",
+  "score": 0.92,
+  "local": "productos/1816.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1818|MACETA PREMIUM REDONDA N░ 18": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-premium-redondas.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS PREMIUM REDONDAS",
+  "score": 0.92,
+  "local": "productos/1818.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1822|MACETA PREMIUM REDONDA N░ 22": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-premium-redondas.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS PREMIUM REDONDAS",
+  "score": 0.92,
+  "local": "productos/1822.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1827|MACETA PREMIUM REDONDA N░ 27": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-premium-redondas.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS PREMIUM REDONDAS",
+  "score": 0.92,
+  "local": "productos/1827.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1808|MACETA PREMIUM REDONDA N░ 8": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-premium-redondas.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS PREMIUM REDONDAS",
+  "score": 0.92,
+  "local": "productos/1808.webp",
+  "origen": "web"
+ },
+ "ACCESORIOS|1830|Maceta Terrina n║12": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/macetas-terrina.jpg",
+  "slug": "",
+  "nombre_web": "MACETAS TERRINA",
+  "score": 0.92,
+  "local": "productos/1830.webp",
+  "origen": "web"
+ },
+ "ALIMENTO PARA GATOS|119|TIERNITO GATITO X 10KG": {
+  "img": "/home/mati/Work/semillero/web-semillero/public/images/wp/tiernitos-gatitos.jpg",
+  "slug": "",
+  "nombre_web": "Tiernitos Gatitos",
+  "score": 0.92,
+  "local": "productos/119.webp",
+  "origen": "web"
  }
 }
