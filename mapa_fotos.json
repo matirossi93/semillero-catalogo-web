@@ -123,7 +123,7 @@
   "slug": "flecky",
   "nombre_web": "FLECKY ADULTO MIX X 20 KG",
   "score": 1.0,
-  "local": "productos/flecky-verde-adulto.webp"
+  "local": "productos/164.webp"
  },
  "ALIMENTO PARA PERROS|130|GRAN CAMPEON AD ROJO Carne y Pollo X 21 KG": {
   "img": "/images/products-hq/gran-campeon-adulto-rojo-carne-y-pollo-f9e4fd80-hq-v2.jpg",
@@ -1614,34 +1614,858 @@
   "slug": "flecky",
   "nombre_web": "FLECKY ADULTO CARNE  X 15 KG",
   "score": 1.0,
-  "local": "productos/flecky-verde-adulto.webp"
+  "local": "productos/165.webp"
  },
  "ALIMENTO PARA PERROS|166|FLECKY ADULTO CARNE  X 20 KG": {
   "img": "2024-11-flecky-fondo-blanco-800-954d0667-hq-v2.jpg",
   "slug": "flecky",
   "nombre_web": "FLECKY ADULTO CARNE  X 20 KG",
   "score": 1.0,
-  "local": "productos/flecky-verde-adulto.webp"
+  "local": "productos/166.webp"
  },
  "ALIMENTO PARA PERROS|167|FLECKY CACHORRO CARNE FRESCA X 15 KG": {
   "img": "(foto Mati 11/08)",
   "slug": "flecky-fresca",
   "nombre_web": "FLECKY CACHORRO CARNE FRESCA X 15 KG",
   "score": 1.0,
-  "local": "productos/flecky-carne-fresca.webp"
+  "local": "productos/167.webp"
  },
  "ALIMENTO PARA PERROS|284|FLECKY AD \"NUEVO\" CARNE  FRESCA X 15 KG": {
   "img": "(foto Mati 11/08)",
   "slug": "flecky-fresca",
   "nombre_web": "FLECKY AD \"NUEVO\" CARNE  FRESCA X 15 KG",
   "score": 1.0,
-  "local": "productos/flecky-carne-fresca.webp"
+  "local": "productos/284.webp"
  },
  "ALIMENTO PARA PERROS|285|FLECKY AD \"NUEVO\" CARNE  FRESCA X 20 KG": {
   "img": "(foto Mati 11/08)",
   "slug": "flecky-fresca",
   "nombre_web": "FLECKY AD \"NUEVO\" CARNE  FRESCA X 20 KG",
   "score": 1.0,
-  "local": "productos/flecky-carne-fresca.webp"
+  "local": "productos/285.webp"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|3|ENGORDE x 25 Kg": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "ENGORDE x 25 Kg",
+  "score": 1.0,
+  "local": "productos/3.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|4|POSTURA x 25 Kg": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "POSTURA x 25 Kg",
+  "score": 1.0,
+  "local": "productos/4.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|2|RECRIA x 25 Kg": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "RECRIA x 25 Kg",
+  "score": 1.0,
+  "local": "productos/2.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|9|FORTALEZA PROFESIONAL X 25 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "FORTALEZA PROFESIONAL X 25 KG",
+  "score": 1.0,
+  "local": "productos/9.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|11|PAJARO 3 mm x 25 kg - GEPSA": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PAJARO 3 mm x 25 kg - GEPSA",
+  "score": 1.0,
+  "local": "productos/11.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|176|BALANCED ADULTO RAZA GRANDE X 20KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "BALANCED ADULTO RAZA GRANDE X 20KG",
+  "score": 1.0,
+  "local": "productos/176.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|181|BALANCED ADULTO RAZA MEDIANA X 20KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "BALANCED ADULTO RAZA MEDIANA X 20KG",
+  "score": 1.0,
+  "local": "productos/181.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|161|COMPINCHE PERRO CARNE X 25 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COMPINCHE PERRO CARNE X 25 KG",
+  "score": 1.0,
+  "local": "productos/161.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|232|EXACT PREMIUM ADULTO 18KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "EXACT PREMIUM ADULTO 18KG",
+  "score": 1.0,
+  "local": "productos/232.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|231|EXACT PREMIUM CACHORRO 15KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "EXACT PREMIUM CACHORRO 15KG",
+  "score": 1.0,
+  "local": "productos/231.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|158|KEN-L RATION PERROS CACHORROS X 15 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "KEN-L RATION PERROS CACHORROS X 15 KG",
+  "score": 1.0,
+  "local": "productos/158.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|159|KEN-L RATION PERROS ADULTOS X 22 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "KEN-L RATION PERROS ADULTOS X 22 KG",
+  "score": 1.0,
+  "local": "productos/159.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|162|KEN-L RATION PERROS ADULTOS X 15 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "KEN-L RATION PERROS ADULTOS X 15 KG",
+  "score": 1.0,
+  "local": "productos/162.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|198|KEN-L RATION PERROS ADULTOS RP  X 7,5 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "KEN-L RATION PERROS ADULTOS RP  X 7,5 KG",
+  "score": 1.0,
+  "local": "productos/198.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|188|KEN-L RATION CACHORRO RP X 7,5 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "KEN-L RATION CACHORRO RP X 7,5 KG",
+  "score": 1.0,
+  "local": "productos/188.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|110|TIERNITO CARNE  x 15 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "TIERNITO CARNE  x 15 KG",
+  "score": 1.0,
+  "local": "productos/110.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|111|TIERNITO CARNE  x 22 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "TIERNITO CARNE  x 22 KG",
+  "score": 1.0,
+  "local": "productos/111.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|115|TIERNITO CARNE Y VEGET x 21 KG+ 3 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "TIERNITO CARNE Y VEGET x 21 KG+ 3 KG",
+  "score": 1.0,
+  "local": "productos/115.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA GATOS|215|9 LIVES CASTRADO x 15 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "9 LIVES CASTRADO x 15 KG",
+  "score": 1.0,
+  "local": "productos/215.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA GATOS|197|KEN-L RATION GATITO X 7,5 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "KEN-L RATION GATITO X 7,5 KG",
+  "score": 1.0,
+  "local": "productos/197.webp",
+  "fuente": "20260822-relleno"
+ },
+ "CEREALES PARA DESAYUNO|378|GRANOLA ARTESANAL TRADICIONAL X 1KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "GRANOLA ARTESANAL TRADICIONAL X 1KG",
+  "score": 1.0,
+  "local": "productos/378.webp",
+  "fuente": "20260822-relleno"
+ },
+ "CEREALES PARA DESAYUNO|379|GRANOLA ARTESANAL C/ ALMENDRAS X 1KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "GRANOLA ARTESANAL C/ ALMENDRAS X 1KG",
+  "score": 1.0,
+  "local": "productos/379.webp",
+  "fuente": "20260822-relleno"
+ },
+ "CEREALES PARA DESAYUNO|380|GRANOLA ARTESANAL C/ PASTA X 1KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "GRANOLA ARTESANAL C/ PASTA X 1KG",
+  "score": 1.0,
+  "local": "productos/380.webp",
+  "fuente": "20260822-relleno"
+ },
+ "CEREALES|410|SALVADO DE TRIGO": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "SALVADO DE TRIGO",
+  "score": 1.0,
+  "local": "productos/410.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FORRAJES|462|MAIZ LEALES 25 PLUS X20KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MAIZ LEALES 25 PLUS X20KG",
+  "score": 1.0,
+  "local": "productos/462.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FORRAJES|463|MAIZ QUEBRADO X30KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MAIZ QUEBRADO X30KG",
+  "score": 1.0,
+  "local": "productos/463.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FORRAJES|471|PELLET DE TRIGO X38KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PELLET DE TRIGO X38KG",
+  "score": 1.0,
+  "local": "productos/471.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FORRAJES|474|VICIA": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "VICIA",
+  "score": 1.0,
+  "local": "productos/474.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FORRAJES|475|VITAMINA": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "VITAMINA",
+  "score": 1.0,
+  "local": "productos/475.webp",
+  "fuente": "20260822-relleno"
+ },
+ "LEGUMBRES|707|CHALAS X BOLSON": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CHALAS X BOLSON",
+  "score": 1.0,
+  "local": "productos/707.webp",
+  "fuente": "20260822-relleno"
+ },
+ "LEGUMBRES|708|CHIA": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CHIA",
+  "score": 1.0,
+  "local": "productos/708.webp",
+  "fuente": "20260822-relleno"
+ },
+ "LEGUMBRES|709|FRANGOLLO": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "FRANGOLLO",
+  "score": 1.0,
+  "local": "productos/709.webp",
+  "fuente": "20260822-relleno"
+ },
+ "CONDIMENTOS|522|PROVENZAL PREMIUM": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PROVENZAL PREMIUM",
+  "score": 1.0,
+  "local": "productos/522.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FRUTOS SECOS|602|CIRUELA": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CIRUELA",
+  "score": 1.0,
+  "local": "productos/602.webp",
+  "fuente": "20260822-relleno"
+ },
+ "SNACKS|662|PASTA DE MANI ORIGINAL X 350GR X 12U - Mani King": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PASTA DE MANI ORIGINAL X 350GR X 12U - Mani King",
+  "score": 1.0,
+  "local": "productos/662.webp",
+  "fuente": "20260822-relleno"
+ },
+ "SNACKS|663|PASTA DE MANI NATURAL X 3K - Mani King": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PASTA DE MANI NATURAL X 3K - Mani King",
+  "score": 1.0,
+  "local": "productos/663.webp",
+  "fuente": "20260822-relleno"
+ },
+ "SNACKS|665|PASTA DE MANI NATURAL X 1kg X 6U- Mani King": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PASTA DE MANI NATURAL X 1kg X 6U- Mani King",
+  "score": 1.0,
+  "local": "productos/665.webp",
+  "fuente": "20260822-relleno"
+ },
+ "SNACKS|679|PASTA DE MANI NATURAL VITA+ 350GR - Mani King": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PASTA DE MANI NATURAL VITA+ 350GR - Mani King",
+  "score": 1.0,
+  "local": "productos/679.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1926|GLEX ACOPIO X 90 GR": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "GLEX ACOPIO X 90 GR",
+  "score": 1.0,
+  "local": "productos/1926.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|800|ANTIBIOTICO X 250 GR": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "ANTIBIOTICO X 250 GR",
+  "score": 1.0,
+  "local": "productos/800.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|801|ANTIBIOTICO X 500 GR": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "ANTIBIOTICO X 500 GR",
+  "score": 1.0,
+  "local": "productos/801.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|802|ANTIBIOTICO X KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "ANTIBIOTICO X KG",
+  "score": 1.0,
+  "local": "productos/802.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|822|COLOR ROJO POTENCIADO X KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COLOR ROJO POTENCIADO X KG",
+  "score": 1.0,
+  "local": "productos/822.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|993|TALQUERA PULGUICIDA WASH": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "TALQUERA PULGUICIDA WASH",
+  "score": 1.0,
+  "local": "productos/993.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|56|PONEDORA 15-17 SEMANAS X 40 KG Nutrimax": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PONEDORA 15-17 SEMANAS X 40 KG Nutrimax",
+  "score": 1.0,
+  "local": "productos/56.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|57|PONEDORA POSTURA X 40 KG Nutrimax": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PONEDORA POSTURA X 40 KG Nutrimax",
+  "score": 1.0,
+  "local": "productos/57.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO BALANCEADO ANIMAL|60|TERMINADOR X 40 KG Nutrimax": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "TERMINADOR X 40 KG Nutrimax",
+  "score": 1.0,
+  "local": "productos/60.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|183|COMPLETE CACHORRO RAZA MED Y GDE X 20KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COMPLETE CACHORRO RAZA MED Y GDE X 20KG",
+  "score": 1.0,
+  "local": "productos/183.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|127|DS CRIAD. ADULTO X 15 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "DS CRIAD. ADULTO X 15 KG",
+  "score": 1.0,
+  "local": "productos/127.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA PERROS|124|DS CRIADORES RAZA PEQUEÐA X 15 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "DS CRIADORES RAZA PEQUEÐA X 15 KG",
+  "score": 1.0,
+  "local": "productos/124.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA GATOS|281|FULLCAT C/ CARNE FRESCA X 10 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "FULLCAT C/ CARNE FRESCA X 10 KG",
+  "score": 1.0,
+  "local": "productos/281.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ALIMENTO PARA GATOS|282|FULLCAT c/ carne fresca X 15 KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "FULLCAT c/ carne fresca X 15 KG",
+  "score": 1.0,
+  "local": "productos/282.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FORRAJES|486|MAIZ BT X20KG": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MAIZ BT X20KG",
+  "score": 1.0,
+  "local": "productos/486.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FORRAJES|461|MAIZ CUARENTIN": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MAIZ CUARENTIN",
+  "score": 1.0,
+  "local": "productos/461.webp",
+  "fuente": "20260822-relleno"
+ },
+ "LEGUMBRES|721|PISINGALLO": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PISINGALLO",
+  "score": 1.0,
+  "local": "productos/721.webp",
+  "fuente": "20260822-relleno"
+ },
+ "CONDIMENTOS|528|CACAO AMARGO": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CACAO AMARGO",
+  "score": 1.0,
+  "local": "productos/528.webp",
+  "fuente": "20260822-relleno"
+ },
+ "CONDIMENTOS|516|OREGANO ESPECIAL": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "OREGANO ESPECIAL",
+  "score": 1.0,
+  "local": "productos/516.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FRUTOS SECOS|612|NUEZ PELADA AMBAR": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "NUEZ PELADA AMBAR",
+  "score": 1.0,
+  "local": "productos/612.webp",
+  "fuente": "20260822-relleno"
+ },
+ "FRUTOS SECOS|617|NUEZ PELADA LIGHT": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "NUEZ PELADA LIGHT",
+  "score": 1.0,
+  "local": "productos/617.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1937|FORMIX CEBO X 250 GR": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "FORMIX CEBO X 250 GR",
+  "score": 1.0,
+  "local": "productos/1937.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1965|TRAMPAS LAUCHA MADERA": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "TRAMPAS LAUCHA MADERA",
+  "score": 1.0,
+  "local": "productos/1965.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1966|TRAMPAS RATAS MADERA": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "TRAMPAS RATAS MADERA",
+  "score": 1.0,
+  "local": "productos/1966.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1928|PULVERIZADOR X 1 LT": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PULVERIZADOR X 1 LT",
+  "score": 1.0,
+  "local": "productos/1928.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1929|PULVERIZADOR X 1,5 LT": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PULVERIZADOR X 1,5 LT",
+  "score": 1.0,
+  "local": "productos/1929.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1932|PULVERIZADOR X 12 LT": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PULVERIZADOR X 12 LT",
+  "score": 1.0,
+  "local": "productos/1932.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1933|PULVERIZADOR X 16 LT": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PULVERIZADOR X 16 LT",
+  "score": 1.0,
+  "local": "productos/1933.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1934|PULVERIZADOR X 20 LT": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PULVERIZADOR X 20 LT",
+  "score": 1.0,
+  "local": "productos/1934.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1930|PULVERIZADOR X 5 LT": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PULVERIZADOR X 5 LT",
+  "score": 1.0,
+  "local": "productos/1930.webp",
+  "fuente": "20260822-relleno"
+ },
+ "VENENOS|1931|PULVERIZADOR X 9 LT": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "PULVERIZADOR X 9 LT",
+  "score": 1.0,
+  "local": "productos/1931.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|914|CEPILLO DOBLE CHICO": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CEPILLO DOBLE CHICO",
+  "score": 1.0,
+  "local": "productos/914.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|915|CEPILLO DOBLE GRANDE": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CEPILLO DOBLE GRANDE",
+  "score": 1.0,
+  "local": "productos/915.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|916|CEPILLO DOBLE MEDIANO": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CEPILLO DOBLE MEDIANO",
+  "score": 1.0,
+  "local": "productos/916.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|925|COLLAR N░ 1 ( 29 cm)": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COLLAR N░ 1 ( 29 cm)",
+  "score": 1.0,
+  "local": "productos/925.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|926|COLLAR N░ 2 (34 cm)": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COLLAR N░ 2 (34 cm)",
+  "score": 1.0,
+  "local": "productos/926.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|927|COLLAR N░ 3 ( 38 cm)": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COLLAR N░ 3 ( 38 cm)",
+  "score": 1.0,
+  "local": "productos/927.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|928|COLLAR N░ 4 ( 43 cm)": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COLLAR N░ 4 ( 43 cm)",
+  "score": 1.0,
+  "local": "productos/928.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|929|COLLAR N░ 5 ( 46 cm)": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COLLAR N░ 5 ( 46 cm)",
+  "score": 1.0,
+  "local": "productos/929.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|930|COLLAR N░ 6 ( 52 cm)": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COLLAR N░ 6 ( 52 cm)",
+  "score": 1.0,
+  "local": "productos/930.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|931|COLLAR N░ 7 ( 58 cm)": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "COLLAR N░ 7 ( 58 cm)",
+  "score": 1.0,
+  "local": "productos/931.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1210|MACETA CLASICA N░ 10": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 10",
+  "score": 1.0,
+  "local": "productos/1210.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1211|MACETA CLASICA N░ 11": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 11",
+  "score": 1.0,
+  "local": "productos/1211.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1212|MACETA CLASICA N░ 12": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 12",
+  "score": 1.0,
+  "local": "productos/1212.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1213|MACETA CLASICA N░ 13": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 13",
+  "score": 1.0,
+  "local": "productos/1213.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1214|MACETA CLASICA N░ 14": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 14",
+  "score": 1.0,
+  "local": "productos/1214.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1215|MACETA CLASICA N░ 15": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 15",
+  "score": 1.0,
+  "local": "productos/1215.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1217|MACETA CLASICA N░ 17": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 17",
+  "score": 1.0,
+  "local": "productos/1217.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1219|MACETA CLASICA N░ 19": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 19",
+  "score": 1.0,
+  "local": "productos/1219.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1221|MACETA CLASICA N░ 21": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 21",
+  "score": 1.0,
+  "local": "productos/1221.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1224|MACETA CLASICA N░ 24": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 24",
+  "score": 1.0,
+  "local": "productos/1224.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1227|MACETA CLASICA N░ 27": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 27",
+  "score": 1.0,
+  "local": "productos/1227.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1229|MACETA CLASICA N░ 29": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 29",
+  "score": 1.0,
+  "local": "productos/1229.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1230|MACETA CLASICA N░ 30": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 30",
+  "score": 1.0,
+  "local": "productos/1230.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1235|MACETA CLASICA N░ 35": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 35",
+  "score": 1.0,
+  "local": "productos/1235.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1240|MACETA CLASICA N░ 40": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 40",
+  "score": 1.0,
+  "local": "productos/1240.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1245|MACETA CLASICA N░ 45": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 45",
+  "score": 1.0,
+  "local": "productos/1245.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1250|MACETA CLASICA N░ 50": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 50",
+  "score": 1.0,
+  "local": "productos/1250.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1206|MACETA CLASICA N░ 6": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 6",
+  "score": 1.0,
+  "local": "productos/1206.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1260|MACETA CLASICA N░ 60": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 60",
+  "score": 1.0,
+  "local": "productos/1260.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1208|MACETA CLASICA N░ 8": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA CLASICA N░ 8",
+  "score": 1.0,
+  "local": "productos/1208.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1220|MACETA LIVIANA N° 14": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA LIVIANA N° 14",
+  "score": 1.0,
+  "local": "productos/1220.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1202|MACETA LIVIANA N║ 10": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA LIVIANA N║ 10",
+  "score": 1.0,
+  "local": "productos/1202.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1203|MACETA LIVIANA N║ 12": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA LIVIANA N║ 12",
+  "score": 1.0,
+  "local": "productos/1203.webp",
+  "fuente": "20260822-relleno"
+ },
+ "ACCESORIOS|1201|MACETA LIVIANA N║ 9": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "MACETA LIVIANA N║ 9",
+  "score": 1.0,
+  "local": "productos/1201.webp",
+  "fuente": "20260822-relleno"
  }
 }
