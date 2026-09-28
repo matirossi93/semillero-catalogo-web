@@ -88,6 +88,27 @@ CODIGOS_IM = {
 }
 
 
+# Productos que NO van en el catálogo aunque sigan en la lista de precios.
+# Ken-L se dejó de ofrecer: se liquida lo que queda sin promocionarlo (Mati, 28/09/2026).
+# Se compara contra el nombre del grupo/marca y contra la descripción, sin mayúsculas.
+EXCLUIR = ("KEN-L",)
+
+
+def excluir_discontinuados(datos):
+    """Saca de {seccion: {grupo: [productos]}} lo que matchea EXCLUIR."""
+    fuera = lambda t: any(e in (t or "").upper() for e in EXCLUIR)
+    limpio = {}
+    for sec, grupos in datos.items():
+        limpio[sec] = {}
+        for g, items in grupos.items():
+            if fuera(g):
+                continue
+            quedan = [it for it in items if not fuera(it.get("desc"))]
+            if quedan:
+                limpio[sec][g] = quedan
+    return limpio
+
+
 def parsear(texto):
     """Sheet -> {seccion: {grupo: [productos]}}.
 
@@ -561,7 +582,7 @@ def pag_indice(indice, actualizado):
   <ul class="lista-indice">{''.join(filas)}</ul>
   {boton_precios(compacto=False)}
   <div class="foot"><span class="nropag">2</span></div>
-  <p class="actualizado">Actualizado el {actualizado} · se sincroniza solo con la lista de precios</p>
+  <p class="actualizado">Actualizado el {actualizado} con la lista de precios</p>
 </section>"""
 
 
@@ -994,9 +1015,11 @@ LOGOS_MARCA = {"MANI KING": "marcas/mani-king.webp"}
 MARCA_SLUG = {"MANI KING": "mani-king"}
 
 
-# Marcas propias primero: son las que conviene mostrar. Ken-L queda listado en la
-# tabla pero nunca destacado en foto (está descontinuado y se repone sin publicidad).
-PRIORIDAD = ("PRODUCCION PROPIA SEMILLERO", "POLAR", "NUTRIMAX")
+# Marca propia primero: es la que conviene mostrar.
+# ⚠️ POLAR y NUTRIMAX NO son marcas propias (Mati, 15/09/2026): POLAR son abrigos
+# para perro y Nutrimax es la línea del proveedor de los núcleos con los que se
+# elabora el alimento. Estaban en esta lista por error.
+PRIORIDAD = ("PRODUCCION PROPIA SEMILLERO",)
 # Productos que queremos mostrar sí o sí cuando compiten por lugar en la página.
 # Las mezclas se arman acá adentro: son lo nuestro y es lo que conviene mostrar.
 DESTACADOS = {"FORRAJES": ("MEZCLA", "CABALLO PREMIUM")}
@@ -1593,7 +1616,8 @@ def js_buscador():
 
 def main():
     usar_cache = "--cache" in sys.argv
-    datos = separar_mani_king(separar_granolas(separar_mezclas(parsear(bajar_csv(usar_cache)))))
+    datos = separar_mani_king(separar_granolas(separar_mezclas(
+        excluir_discontinuados(parsear(bajar_csv(usar_cache))))))
     manifest = json.load(open(os.path.join(BASE, "assets", "manifest.json"), encoding="utf-8"))
     def _carga(n, d):
         p = os.path.join(BASE, n)
@@ -1686,6 +1710,17 @@ def main():
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Catálogo · Semillero El Manantial S.R.L.</title>
 <meta name="description" content="Catálogo mayorista de Semillero El Manantial: balanceados, alimento para perros y gatos, cereales, forrajes, legumbres, condimentos, venenos y accesorios.">
+<link rel="canonical" href="https://www.semilleroelmanantial.com.ar/catalogo/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Semillero El Manantial">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Catálogo · Semillero El Manantial">
+<meta property="og:description" content="Balanceados, alimento para perros y gatos, cereales, forrajes, legumbres y más. Más de 600 productos, con buscador.">
+<meta property="og:url" content="https://www.semilleroelmanantial.com.ar/catalogo/">
+<meta property="og:image" content="https://www.semilleroelmanantial.com.ar/images/wp/2025-03-semillero-el-manantial-opengraph.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/fonts/fuentes.css">
 <style>{css()}</style>
 </head>
