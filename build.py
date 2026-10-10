@@ -1455,6 +1455,26 @@ _JS = r"""
   var WA_SVG = '__SVG_WA__';
   var wa = function (t) { return 'https://wa.me/' + D.tel + '?text=' + encodeURIComponent(t); };
 
+  // Visitas que llegan desde TikTok (link de la bio y de Promote:
+  // /catalogo?utm_source=tiktok): las consultas por WhatsApp salen terminadas en
+  // "(vi TikTok)" para poder contar esos chats. Queda en sessionStorage con la
+  // misma clave que usa la web (src/lib/origen.ts), así sigue aunque la persona
+  // pase por otras páginas.
+  var FIRMA = '';
+  try {
+    if ((new URLSearchParams(location.search).get('utm_source') || '').toLowerCase() === 'tiktok') {
+      sessionStorage.setItem('sem_origen', 'tiktok');
+    }
+    if (sessionStorage.getItem('sem_origen') === 'tiktok') FIRMA = ' (vi TikTok)';
+  } catch (e) {}
+  // Los botones de arriba y del pie vienen armados en el HTML: en la vista REVISTA
+  // son los únicos de WhatsApp, así que también llevan la firma.
+  if (FIRMA) {
+    Array.prototype.forEach.call(document.querySelectorAll('a.wa, a.pie-wa'), function (a) {
+      a.href += encodeURIComponent(FIRMA);
+    });
+  }
+
   // Un solo campo normalizado por producto: se arma una vez y después cada tecla
   // es un indexOf, no un normalize() por fila.
   D.prod.forEach(function (p) { p.b = norm(p.n + ' ' + p.d + ' ' + p.m + ' ' + SEC[p.s].n); });
@@ -1492,7 +1512,7 @@ _JS = r"""
             s.c + ';color:' + s.t + '">' + esc(s.n) + '</button>' +
           '<span class="tar-w">' + esc(p.w) + '</span>' +
           '<a class="tar-wa" target="_blank" rel="noopener" title="Consultar por WhatsApp" href="' +
-            esc(wa('Hola! Quiero consultar por: ' + p.d + ' (' + p.m + ')')) + '">' +
+            esc(wa('Hola! Quiero consultar por: ' + p.d + ' (' + p.m + ')' + FIRMA)) + '">' +
             WA_SVG + 'Consultar</a>' +
         '</div>' +
       '</div>' +
