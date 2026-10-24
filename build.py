@@ -93,6 +93,25 @@ CODIGOS_IM = {
 # Se compara contra el nombre del grupo/marca y contra la descripción, sin mayúsculas.
 EXCLUIR = ("KEN-L",)
 
+# Nutrimax/Nutrimas es la línea del proveedor de los núcleos, no una marca nuestra:
+# la planilla la escribe pegada a 6 productos de producción propia, pero en el
+# catálogo no se nombra (Mati, SEM-53, 24/10/2026). Las claves de mapa_fotos.json
+# siguen con la descripción cruda de la planilla: se limpian con la misma función.
+LINEA_PROVEEDOR = re.compile(r"\s*\bnutrima[sx]\b", re.I)
+
+
+def sin_linea_proveedor(texto):
+    return LINEA_PROVEEDOR.sub("", texto or "").strip()
+
+
+def limpiar_linea_proveedor(datos):
+    """Saca "Nutrimax" de las descripciones de {seccion: {grupo: [productos]}}."""
+    for grupos in datos.values():
+        for items in grupos.values():
+            for it in items:
+                it["desc"] = sin_linea_proveedor(it["desc"])
+    return datos
+
 
 def excluir_discontinuados(datos):
     """Saca de {seccion: {grupo: [productos]}} lo que matchea EXCLUIR."""
@@ -331,7 +350,7 @@ def abreviar_grupo(g):
 ABREV_PROD = [
     ("raza pequeña", "rza. peq"), ("raza mediana", "rza. med"),
     ("raza grande", "rza. gde"), ("cachorro", "cach."),
-    ("nutrimax", "nutrimax"), ("sanitaria", "sanit."),
+    ("sanitaria", "sanit."),
     ("semanas", "sem"), ("unidades", "u"),
 ]
 
@@ -1024,12 +1043,11 @@ PRIORIDAD = ("PRODUCCION PROPIA SEMILLERO",)
 # Las mezclas se arman acá adentro: son lo nuestro y es lo que conviene mostrar.
 DESTACADOS = {"FORRAJES": ("MEZCLA", "CABALLO PREMIUM")}
 # Qué producto representa a una familia cuando la elección automática no es la mejor.
-# En producción propia salía la foto del caballo (una toma de un caballo, no del
-# alimento); la bolsa de Nutrimax muestra lo que en realidad vendemos.
-# Qué producto representa a una familia cuando la elección automática no es la mejor.
 # En producción propia salía la foto de un caballo —una toma de un caballo, no del
-# alimento—; la bolsa de Nutrimax muestra lo que en realidad vendemos.
-REPRESENTANTE = {("ALIMENTO BALANCEADO ANIMAL", "PRODUCCION PROPIA SEMILLERO"): "PREINICIADOR"}
+# alimento—. Hasta el 24/10/2026 la representaba la bolsa del preiniciador, pero era
+# la bolsa NUTRI+ del proveedor (SEM-53): ahora va el iniciador, el alimento más vendido
+# de la línea de aves.
+REPRESENTANTE = {("ALIMENTO BALANCEADO ANIMAL", "PRODUCCION PROPIA SEMILLERO"): "INICIADOR"}
 FOTO_FAMILIA = {}
 SIN_DESTACAR = ("KEN-L RATION",)
 
@@ -1636,13 +1654,13 @@ def js_buscador():
 
 def main():
     usar_cache = "--cache" in sys.argv
-    datos = separar_mani_king(separar_granolas(separar_mezclas(
-        excluir_discontinuados(parsear(bajar_csv(usar_cache))))))
+    datos = separar_mani_king(separar_granolas(separar_mezclas(limpiar_linea_proveedor(
+        excluir_discontinuados(parsear(bajar_csv(usar_cache)))))))
     manifest = json.load(open(os.path.join(BASE, "assets", "manifest.json"), encoding="utf-8"))
     def _carga(n, d):
         p = os.path.join(BASE, n)
         return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else d
-    mapa_fotos = _carga("mapa_fotos.json", {})
+    mapa_fotos = {sin_linea_proveedor(k): v for k, v in _carga("mapa_fotos.json", {}).items()}
     proteinas = {k: v for k, v in _carga("proteinas.json", {}).items() if not k.startswith("_")}
     # Hojas de explicación (las páginas 6-7 del PDF): van después de las tablas de
     # esa sección, sin tabla, contándole al cliente de qué se trata el producto.
