@@ -1643,5 +1643,54 @@
   "nombre_web": "FLECKY AD \"NUEVO\" CARNE  FRESCA X 20 KG",
   "score": 1.0,
   "local": "productos/flecky-carne-fresca.webp"
+ },
+ "CEREALES PARA DESAYUNO|386|CAJA TOSTADA DE ARROZ (120 GR) X 18U": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CAJA TOSTADA DE ARROZ (120 GR) X 18U",
+  "score": 1.0,
+  "local": "productos/386.webp"
+ },
+ "CEREALES PARA DESAYUNO|387|CAJA TUTUCA SUPER DULCE (30 GR) X 24U": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CAJA TUTUCA SUPER DULCE (30 GR) X 24U",
+  "score": 1.0,
+  "local": "productos/387.webp"
+ },
+ "CEREALES PARA DESAYUNO|388|CAJA TUTUCA STEVIA (80 GR) X 36U": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CAJA TUTUCA STEVIA (80 GR) X 36U",
+  "score": 1.0,
+  "local": "productos/388.webp"
+ },
+ "CEREALES PARA DESAYUNO|389|CAJA TUTUCA LIVIANO (80 GR) X 36U": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CAJA TUTUCA LIVIANO (80 GR) X 36U",
+  "score": 1.0,
+  "local": "productos/389.webp"
+ },
+ "CEREALES PARA DESAYUNO|390|CAJA TUTUCA SUPER DULCE (80 GR) X 36U": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CAJA TUTUCA SUPER DULCE (80 GR) X 36U",
+  "score": 1.0,
+  "local": "productos/390.webp"
+ },
+ "CEREALES PARA DESAYUNO|391|CAJA ALMOHADITAS MIX (50 GR) X 36U": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CAJA ALMOHADITAS MIX (50 GR) X 36U",
+  "score": 1.0,
+  "local": "productos/391.webp"
+ },
+ "CEREALES PARA DESAYUNO|392|CAJA ALMOHADITAS MIX (180 GR) X 40U": {
+  "img": "",
+  "slug": "",
+  "nombre_web": "CAJA ALMOHADITAS MIX (180 GR) X 40U",
+  "score": 1.0,
+  "local": "productos/392.webp"
  }
 }
