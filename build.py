@@ -1084,7 +1084,7 @@ def fotos_de(bloques, sec, mapa, prot, reserva=None):
         # Representa a la familia el que tenga % de proteína (así el badge no se
         # desperdicia) y, entre esos, el de match más confiable.
         elegido = REPRESENTANTE.get((sec, marca))
-        candidatos.sort(key=lambda c: (0 if elegido and elegido in c["desc"] else 1,
+        candidatos.sort(key=lambda c: (0 if elegido and c["desc"].startswith(elegido) else 1,
                                        0 if c.get("prot") else 1, -c["score"]))
         jefe = dict(candidatos[0])
         propia = FOTO_FAMILIA.get((sec, marca))
