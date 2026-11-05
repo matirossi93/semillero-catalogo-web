@@ -220,6 +220,35 @@ def separar_granolas(datos):
     return datos
 
 
+# Flor del Norte: la planilla los tiene todos en CEREALES PARA DESAYUNO, pero
+# chizito, tutucas y tostadas de arroz son snacks; las almohaditas se quedan
+# (Mati, SEM-296, 05/11/2026). Va por código para que el cron no lo pise.
+FDN_A_SNACKS = {"10710", "10711", "10712", "386", "387", "388", "389", "390", "732"}
+
+
+def mover_flor_del_norte(datos):
+    """Pasa a SNACKS, grupo FLOR DEL NORTE, los códigos de FDN_A_SNACKS."""
+    sec = datos.get("CEREALES PARA DESAYUNO")
+    if not sec:
+        return datos
+    movidos, resto = [], {}
+    for grupo, items in sec.items():
+        quedan = []
+        for it in items:
+            (movidos if it["cod"] in FDN_A_SNACKS else quedan).append(it)
+        if quedan:
+            resto[grupo] = quedan
+    if movidos:
+        # tutucas primero: las píldoras de la foto son las 4 primeras de la familia
+        orden = lambda it: (0 if "TUTUCA" in it["desc"].upper() else
+                            1 if "CHIZITO" in it["desc"].upper() else 2)
+        movidos.sort(key=orden)
+        datos["CEREALES PARA DESAYUNO"] = resto
+        snacks = datos.setdefault("SNACKS", {})
+        snacks["FLOR DEL NORTE"] = snacks.get("FLOR DEL NORTE", []) + movidos
+    return datos
+
+
 def separar_mezclas(datos):
     """Saca las mezclas de la bolsa de 'VARIEDADES' y les da grupo propio.
 
@@ -1047,7 +1076,10 @@ DESTACADOS = {"FORRAJES": ("MEZCLA", "CABALLO PREMIUM")}
 # alimento—. Hasta el 24/10/2026 la representaba la bolsa del preiniciador, pero era
 # la bolsa NUTRI+ del proveedor (SEM-53): ahora va el iniciador, el alimento más vendido
 # de la línea de aves.
-REPRESENTANTE = {("ALIMENTO BALANCEADO ANIMAL", "PRODUCCION PROPIA SEMILLERO"): "INICIADOR"}
+REPRESENTANTE = {("ALIMENTO BALANCEADO ANIMAL", "PRODUCCION PROPIA SEMILLERO"): "INICIADOR",
+                 # SEM-296: la familia es casi toda tutuca; con la foto de tostadas
+                 # las píldoras «Chizito» y «Tutuca» quedaban debajo de otra bolsa.
+                 ("SNACKS", "FLOR DEL NORTE"): "CAJA TUTUCA SUPER DULCE (80"}
 FOTO_FAMILIA = {}
 SIN_DESTACAR = ("KEN-L RATION",)
 
@@ -1654,8 +1686,8 @@ def js_buscador():
 
 def main():
     usar_cache = "--cache" in sys.argv
-    datos = separar_mani_king(separar_granolas(separar_mezclas(limpiar_linea_proveedor(
-        excluir_discontinuados(parsear(bajar_csv(usar_cache)))))))
+    datos = mover_flor_del_norte(separar_mani_king(separar_granolas(separar_mezclas(
+        limpiar_linea_proveedor(excluir_discontinuados(parsear(bajar_csv(usar_cache))))))))
     manifest = json.load(open(os.path.join(BASE, "assets", "manifest.json"), encoding="utf-8"))
     def _carga(n, d):
         p = os.path.join(BASE, n)
