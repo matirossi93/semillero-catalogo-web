@@ -222,30 +222,36 @@ def separar_granolas(datos):
 
 # Flor del Norte: la planilla los tiene todos en CEREALES PARA DESAYUNO, pero
 # chizito, tutucas y tostadas de arroz son snacks; las almohaditas se quedan
-# (Mati, SEM-296, 05/11/2026). Va por código para que el cron no lo pise.
-FDN_A_SNACKS = {"10710", "10711", "10712", "386", "387", "388", "389", "390", "732"}
+# (Mati, SEM-296, 05/11/2026). Va por palabra dentro del grupo, así una tutuca
+# nueva también pasa, y el cron de las 06:30 no lo pisa.
+FDN_SNACKS = ("TUTUCA", "CHIZITO", "TOSTADA")
 
 
 def mover_flor_del_norte(datos):
-    """Pasa a SNACKS, grupo FLOR DEL NORTE, los códigos de FDN_A_SNACKS."""
+    """Pasa a SNACKS, grupo FLOR DEL NORTE, los snacks del grupo FLOR DEL NORTE."""
     sec = datos.get("CEREALES PARA DESAYUNO")
     if not sec:
         return datos
+    es_snack = lambda it: any(p in limpiar(it["desc"]).upper() for p in FDN_SNACKS)
     movidos, resto = [], {}
     for grupo, items in sec.items():
+        fdn = grupo.replace(" (cont.)", "").upper() == "FLOR DEL NORTE"
         quedan = []
         for it in items:
-            (movidos if it["cod"] in FDN_A_SNACKS else quedan).append(it)
+            (movidos if fdn and es_snack(it) else quedan).append(it)
         if quedan:
             resto[grupo] = quedan
-    if movidos:
-        # tutucas primero: las píldoras de la foto son las 4 primeras de la familia
-        orden = lambda it: (0 if "TUTUCA" in it["desc"].upper() else
-                            1 if "CHIZITO" in it["desc"].upper() else 2)
-        movidos.sort(key=orden)
+    if not movidos:
+        return datos
+    if resto:
         datos["CEREALES PARA DESAYUNO"] = resto
-        snacks = datos.setdefault("SNACKS", {})
-        snacks["FLOR DEL NORTE"] = snacks.get("FLOR DEL NORTE", []) + movidos
+    else:
+        del datos["CEREALES PARA DESAYUNO"]
+    # tutucas primero: las píldoras de la foto son las 4 primeras de la familia
+    orden = lambda it: (0 if "TUTUCA" in it["desc"].upper() else
+                        1 if "CHIZITO" in it["desc"].upper() else 2)
+    snacks = datos.setdefault("SNACKS", {})
+    snacks["FLOR DEL NORTE"] = sorted(snacks.get("FLOR DEL NORTE", []) + movidos, key=orden)
     return datos
 
 
@@ -1079,7 +1085,7 @@ DESTACADOS = {"FORRAJES": ("MEZCLA", "CABALLO PREMIUM")}
 REPRESENTANTE = {("ALIMENTO BALANCEADO ANIMAL", "PRODUCCION PROPIA SEMILLERO"): "INICIADOR",
                  # SEM-296: la familia es casi toda tutuca; con la foto de tostadas
                  # las píldoras «Chizito» y «Tutuca» quedaban debajo de otra bolsa.
-                 ("SNACKS", "FLOR DEL NORTE"): "CAJA TUTUCA SUPER DULCE (80"}
+                 ("SNACKS", "FLOR DEL NORTE"): "CAJA TUTUCA"}
 FOTO_FAMILIA = {}
 SIN_DESTACAR = ("KEN-L RATION",)
 
