@@ -90,8 +90,9 @@ CODIGOS_IM = {
 
 # Productos que NO van en el catálogo aunque sigan en la lista de precios.
 # Ken-L se dejó de ofrecer: se liquida lo que queda sin promocionarlo (Mati, 28/09/2026).
+# Flecky y Full Cat: igual, los reemplaza Gandum (Mati, 12/11/2026, SEM-398).
 # Se compara contra el nombre del grupo/marca y contra la descripción, sin mayúsculas.
-EXCLUIR = ("KEN-L",)
+EXCLUIR = ("KEN-L", "FLECKY", "FULL CAT", "FULLCAT")
 
 # Nutrimax/Nutrimas es la línea del proveedor de los núcleos, no una marca nuestra:
 # la planilla la escribe pegada a 6 productos de producción propia, pero en el
