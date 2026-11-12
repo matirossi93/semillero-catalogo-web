@@ -11,7 +11,7 @@ consume la app precios.semilleroelmanantial.com.ar).
     python build.py            # baja el sheet y genera index.html
     python build.py --cache    # usa mayorista.csv local (sin red)
 """
-import csv, io, json, os, re, sys, unicodedata, urllib.parse, urllib.request
+import csv, hashlib, io, json, os, re, sys, unicodedata, urllib.parse, urllib.request
 from datetime import date
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -362,6 +362,37 @@ def encoger(texto, ancho, size, em, minimo):
     return round(max(minimo, min(size, necesario)), 1)
 
 
+# Ancho real de cada letra de Roboto Condensed 400, en em (medido con canvas sobre
+# la fuente que se sirve, assets/fonts). El promedio EM_ROBOTO se queda corto en
+# nombres largos: "Balanced cachorro raza med x 20 kg" se cortaba con "…" justo en
+# el peso (SEM-400). Con la tabla se detecta el corte y se achica o abrevia más.
+with open(os.path.join(BASE, "assets", "fonts", "anchos_roboto_condensed.json"),
+          encoding="utf-8") as _fh:
+    ANCHOS_ROBOTO = json.load(_fh)
+ANCHO_FILA = 418        # ancho útil (451 medido) menos 7 %: a 360-390 px el texto se
+                        # ensancha hasta 5,5 % por el redondeo de la letra chica
+FS_FILA_MIN = 16        # por debajo de esto se abrevia en vez de achicar
+
+
+def ancho_em(texto):
+    return sum(ANCHOS_ROBOTO.get(ch, 0.5) for ch in texto)
+
+
+def nombre_fila(desc):
+    """Nombre y tamaño de una fila de la tabla, sin que el texto se corte."""
+    nom = abreviar_prod(linda(desc))
+    fs = encoger(nom, 448, 32, EM_ROBOTO, 19)
+    if ancho_em(nom) * fs <= ANCHO_FILA:
+        return nom, fs            # entra: igual que siempre
+    corto = abreviar_prod(nom, limite=0)
+    for n in (nom, corto):
+        fs = min(32, ANCHO_FILA / ancho_em(n))
+        if fs >= FS_FILA_MIN:
+            return n, round(fs, 1)
+    print(f"    ⚠ no entra en la fila ni abreviado: {corto!r}")
+    return corto, FS_FILA_MIN
+
+
 # Abreviaturas que el catálogo original ya usaba, para que el texto entre.
 ABREVIA = [
     ("PRODUCCION PROPIA SEMILLERO", "PROD. PROPIA SEMILLERO"),
@@ -425,7 +456,10 @@ TOPE_TARJETAS = 5
 MAX_PILDORAS = 4      # el original nunca lista más de 4 variedades por foto
 # Secciones donde cada producto se muestra con SU foto en vez de agrupar la familia:
 # son surtidos donde la gracia es justamente ver cada variedad (Mati, 12/08).
-POR_PRODUCTO = {"CEREALES PARA DESAYUNO"}
+# Accesorios y Venenos también: ahí el grupo es una categoría ("PERROS Y GATOS",
+# "RATAS"), no una marca, y agrupar pegaba a la caja de Glacoxan los rótulos
+# "Bandeja sanitaria" y "Blister fino p/ gato" (SEM-400).
+POR_PRODUCTO = {"CEREALES PARA DESAYUNO", "ACCESORIOS", "VENENOS"}
 TOPE_ABSOLUTO = 9     # el máximo que llegó a poner la diseñadora en una página
 DIAM_CIRCULO = 0.86   # diámetro del círculo, en fracción del ancho de la columna
 # Secciones a granel: el original muestra el producto en círculo con aro de color
@@ -746,8 +780,7 @@ def pag_contenido(slug, color, pill, bloques, fotos, nro, ban_ext):
         y += H_GRUPO
         for k, it in enumerate(b["items"]):
             bg = FILA_A if k % 2 else FILA_B
-            nom = abreviar_prod(linda(it["desc"]))
-            fs = encoger(nom, 448, 32, EM_ROBOTO, 19)
+            nom, fs = nombre_fila(it["desc"])
             filas_html.append(
                 f'<div class="fila" style="top:{q(y)};background:{bg};'
                 f'font-size:{q(fs)}"><span>{esc(nom)}</span></div>')
@@ -1096,6 +1129,20 @@ SIN_DESTACAR = ("KEN-L RATION",)
 YA_RELLENO = {}
 
 
+_HUELLAS = {}
+
+
+def huella(local):
+    """md5 del archivo de la foto: detecta productos distintos con la misma imagen."""
+    if local not in _HUELLAS:
+        try:
+            with open(os.path.join(BASE, "assets", local), "rb") as fh:
+                _HUELLAS[local] = hashlib.md5(fh.read()).hexdigest()
+        except OSError:
+            _HUELLAS[local] = local
+    return _HUELLAS[local]
+
+
 def fotos_de(bloques, sec, mapa, prot, reserva=None):
     """Arma la columna de fotos: UNA por familia, con sus variedades al lado.
 
@@ -1161,21 +1208,34 @@ def fotos_de(bloques, sec, mapa, prot, reserva=None):
     # con que una sola familia tuviera fotos y Rosco se desarmaba en 5 fotos sueltas.
     if porgrupo and (sec in POR_PRODUCTO or (len(porgrupo) == 1 and len(bloques) == 1)):
         marca = porgrupo[0][0]
-        todos, vistos = [], set()
+        todos, vistos = [], {}
         for b in bloques:
-            for it in b["items"]:
+            for k_it, it in enumerate(b["items"]):
                 hit = mapa.get(f"{sec}|{it['cod']}|{it['desc']}")
-                if hit and hit["local"] not in vistos:
-                    vistos.add(hit["local"])
-                    todos.append({"img": hit["local"],
-                                  "nom": abreviar_prod(sin_marca(it["desc"], marca), 26),
-                                  "variantes": [abreviar_prod(sin_marca(it["desc"], marca), 26)],
-                                  "prot": proteina_de(sec, marca, it["desc"], prot),
-                                  "desc": it["desc"].upper(),
-                                  "propia": hit.get("slug", "") in MARCA_SLUG.get(marca, "")})
+                if not hit:
+                    continue
+                nom = abreviar_prod(sin_marca(it["desc"], marca), 26)
+                # Dos productos con la MISMA foto (Formix 100 g y 500 g son el mismo
+                # archivo): una sola tarjeta con los dos nombres, no la foto dos veces.
+                clave = huella(hit["local"])
+                if clave in vistos:
+                    previa = vistos[clave]
+                    if len(previa["variantes"]) < MAX_PILDORAS and nom not in previa["variantes"]:
+                        previa["variantes"].append(nom)
+                    continue
+                c = {"img": hit["local"], "nom": nom, "variantes": [nom],
+                     "prot": proteina_de(sec, marca, it["desc"], prot),
+                     "desc": it["desc"].upper(), "orden": k_it,
+                     "propia": hit.get("slug", "") in MARCA_SLUG.get(marca, "")}
+                vistos[clave] = c
+                todos.append(c)
         # las mezclas van primero: son producción nuestra y es lo que queremos mostrar
         destacar = DESTACADOS.get(sec, ())
+        # En las secciones por categoría se alternan los grupos (1ª foto de cada grupo,
+        # después la 2ª…): si no, Hormigas llenaba la columna y Ratas no tenía ninguna.
+        alterna = sec in ("ACCESORIOS", "VENENOS")
         todos.sort(key=lambda c: (0 if any(d in c["desc"] for d in destacar) else 1,
+                                  c["orden"] if alterna else 0,
                                   0 if c.get("propia") else 1))
         elegidas = todos
 
@@ -1198,6 +1258,13 @@ def fotos_de(bloques, sec, mapa, prot, reserva=None):
             if len(elegidas) >= tope_relleno:
                 break
             if c["img"] in usadas or (c.get("claves") or {c.get("clave")}) & ya_nombrados:
+                continue
+            # Mismo contenido con otro nombre de archivo (hay 18 grupos así): tampoco.
+            if huella(c["img"]) in {huella(u) for u in usadas}:
+                continue
+            # Cada foto prestada, una sola vez en todo el catálogo: en Accesorios las
+            # mismas 5 fotos llegaron a aparecer en 7 hojas (SEM-400).
+            if YA_RELLENO.get(c["img"], 0) >= 1:
                 continue
             elegidas.append(dict(c, prestada=True))
             usadas.add(c["img"])
@@ -1335,7 +1402,8 @@ def vista_buscar():
   <div class="grilla" id="res"></div>
   <div class="mas" id="mas" hidden><button id="btn-mas" type="button"></button></div>
   <div class="vacio" id="vacio" hidden>
-    <b>SIN RESULTADOS</b><span>Probá con menos filtros o buscá por marca.</span>
+    <b>SIN RESULTADOS</b><span>Probá con menos palabras, otro nombre o la marca.</span>
+    <div class="vacio-acc" id="vacio-acc"></div>
   </div>
 </main>"""
 
@@ -1370,6 +1438,10 @@ html{scroll-behavior:smooth}
 body{align-items:stretch;gap:0;padding:0;min-height:100vh}
 main.revista{display:flex;flex-direction:column;align-items:center;gap:2.6vw;padding:2.6vw 0 40px}
 .pag{scroll-margin-top:var(--barra,152px)}
+/* Las 48 hojas fuera de pantalla no se dibujan hasta acercarse: el celular se
+   trababa ~1 s al abrir (Lighthouse, TBT 0,7-1,1 s). El alto sale del aspect-ratio,
+   así que los saltos a cada sección caen en el mismo lugar (SEM-400). */
+.pag{content-visibility:auto;contain-intrinsic-size:auto min(1080px,100vw) auto calc(min(1080px,100vw)*16/9)}
 body[data-vista="buscar"] main.revista{display:none}
 body[data-vista="revista"] main.buscar{display:none}
 .empuje{flex:1 1 20px}
@@ -1455,6 +1527,14 @@ main.buscar{max-width:1180px;margin:0 auto;width:100%;padding:20px 16px 70px}
 .vacio b{display:block;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.1em;
   color:var(--verde);font-weight:400}
 .vacio span{font-size:15px;color:#8d7a68}
+.vacio-acc{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+.vacio-acc:empty{display:none}
+.vacio-acc .chip.sug{background:var(--verde);color:#fff;border-color:var(--verde)}
+.sug-wa{display:inline-flex;align-items:center;gap:7px;background:#1FA855;color:#fff;text-decoration:none;
+  border-radius:999px;padding:10px 18px;font-size:15px;font-weight:700}
+.sug-wa svg{width:18px;height:18px;fill:currentColor}
+/* Foco visible para quien navega con teclado (el campo de búsqueda lo tenía apagado). */
+a:focus-visible,button:focus-visible,#q:focus-visible{outline:3px solid #EEC045;outline-offset:2px}
 
 /* ---------- pie y volver arriba ---------- */
 .pie{margin-top:auto;background:#14562A;color:#cfe0d5;padding:26px 16px 34px}
@@ -1533,8 +1613,66 @@ _JS = r"""
   }
 
   // Un solo campo normalizado por producto: se arma una vez y después cada tecla
-  // es un indexOf, no un normalize() por fila.
-  D.prod.forEach(function (p) { p.b = norm(p.n + ' ' + p.d + ' ' + p.m + ' ' + SEC[p.s].n); });
+  // es un indexOf, no un normalize() por fila. Lleva también las palabras con las
+  // que el cliente nombra el rubro ("balanceado", "alimento perro"), que no están
+  // en ningún nombre de producto.
+  var RUBRO = {
+    balanceados: 'balanceado animal', perros: 'balanceado perro', gatos: 'balanceado gato',
+    venenos: 'veneno insecticida', desayuno: 'cereal desayuno', snacks: 'snack golosina',
+    accesorios: 'accesorio'
+  };
+  D.prod.forEach(function (p) {
+    p.b = norm(p.n + ' ' + p.d + ' ' + p.m + ' ' + SEC[p.s].n + ' ' + (RUBRO[p.s] || ''));
+  });
+
+  // La búsqueda va palabra por palabra (tienen que estar todas, en cualquier
+  // orden): "veneno rata" encuentra "RATAS · Ratisada" aunque no estén pegadas.
+  // Las palabras de relleno no cuentan ("alimento para gato" = "gato"), y cada
+  // palabra acepta sus sinónimos y las abreviaturas de la planilla ("rza. gde").
+  // Antes se buscaba la frase entera y "alimento gato" daba 0 de 627 (SEM-400).
+  var RELLENO = ' alimento alimentos comida comidas para p/ de del la el los las y con x un una al ';
+  var SINON = {
+    gallina: ['ponedora', 'postura', 'gallin'], gallinas: ['ponedora', 'postura', 'gallin'],
+    // 'bebe x' y no 'bebe': si no, "pollo" traía los bebederos (code-review SEM-400).
+    pollo: ['pollo', 'iniciador', 'terminador', 'bebe x', 'engorde x', 'recria x'],
+    pollos: ['pollo', 'iniciador', 'terminador', 'bebe x', 'engorde x', 'recria x'],
+    pollito: ['preiniciador', 'iniciador', 'bebe x'], pollitos: ['preiniciador', 'iniciador', 'bebe x'],
+    parrillero: ['iniciador', 'terminador', 'engorde'], parrilleros: ['iniciador', 'terminador', 'engorde'],
+    chancho: ['cerdo', 'lechon'], chanchos: ['cerdo', 'lechon'], porcino: ['cerdo', 'lechon'],
+    equino: ['caballo'], equinos: ['caballo'],
+    rata: ['rata', 'raticida', 'laucha'], ratas: ['rata', 'raticida', 'laucha'],
+    raton: ['rata', 'raticida', 'laucha'], ratones: ['rata', 'raticida', 'laucha'],
+    hormiga: ['hormig'], hormigas: ['hormig'], cucaracha: ['cucarach', 'cucaxan'],
+    mosca: ['mosca', 'mosq'], moscas: ['mosca', 'mosq'],
+    pajaro: ['pajaro', 'aves', 'canario', 'cardenal'], pajaros: ['pajaro', 'aves', 'canario', 'cardenal'],
+    ave: ['aves', 'pajaro'], aves: ['aves', 'pajaro'],
+    perrito: ['perro', 'cachorro', 'cach'], perritos: ['perro', 'cachorro', 'cach'],
+    gatito: ['gatito', 'gato'], gatitos: ['gatito', 'gato'],
+    adulto: ['adulto', 'ad '], adultos: ['adulto', 'ad '],
+    cachorro: ['cachorro', 'cach'], cachorros: ['cachorro', 'cach'],
+    grande: ['grande', 'gde'], mediano: ['mediano', 'mediana', 'med'], mediana: ['mediana', 'mediano', 'med'],
+    pequeno: ['peque', 'peq', 'chic'], pequena: ['peque', 'peq', 'chic'], chico: ['chic', 'peq'],
+    raza: ['raza', 'rza'], pisado: ['pisado', 'molido', 'quebrado', 'partido'],
+    arena: ['arena', 'sanitari'], abono: ['abono', 'fertil'], fertilizante: ['fertil', 'abono']
+  };
+  function palabras(q) {
+    // "15 kg" y "500 gr" van juntas: separadas, "15" y "kg" casi siempre coinciden.
+    // "15kg" (sin espacio, como se escribe en el celular) se lleva a "15 kg".
+    q = q.replace(/(\d)(kg|gr|g|cc|lt|l|ml|u)\b/g, '$1 $2');
+    return (q.match(/\d+(?:[.,]\d+)?\s*(?:kg|gr|g|cc|lt|l|ml|u)\b|\S+/g) || [])
+      .filter(function (w) { return RELLENO.indexOf(' ' + w + ' ') < 0; });
+  }
+  function variantes(w) {
+    var v = (Object.prototype.hasOwnProperty.call(SINON, w) ? SINON[w] : []).concat([w]);
+    if (w.length > 4 && /es$/.test(w)) v.push(w.slice(0, -2));
+    if (w.length > 3 && /s$/.test(w)) v.push(w.slice(0, -1));
+    return v;
+  }
+  function coincide(p, grupos) {
+    return grupos.every(function (vs) {
+      return vs.some(function (v) { return p.b.indexOf(v) >= 0; });
+    });
+  }
 
   var PASO = 180;
   var st = { q: '', sec: 'todas', marca: 'todas', peso: 'todos', tope: PASO, verMarcas: false };
@@ -1578,8 +1716,12 @@ _JS = r"""
 
   function pintar() {
     var q = norm(st.q.trim());
+    var grupos = palabras(q).map(variantes);
     var porSec = st.sec === 'todas' ? D.prod : D.prod.filter(function (p) { return p.s === st.sec; });
-    var porTxt = q ? porSec.filter(function (p) { return p.b.indexOf(q) >= 0; }) : porSec;
+    // Si todas las palabras eran de relleno ("alimento"), se busca la frase tal cual.
+    var porTxt = !q ? porSec
+      : grupos.length ? porSec.filter(function (p) { return coincide(p, grupos); })
+      : porSec.filter(function (p) { return p.b.indexOf(q) >= 0; });
 
     // Las marcas y los pesos salen de lo que quedó filtrado, no de la lista entera:
     // si no, se ofrecen filtros que dan cero resultados.
@@ -1591,8 +1733,19 @@ _JS = r"""
     pesos.sort();
     var res = st.peso === 'todos' ? porMarca : porMarca.filter(function (p) { return p.w === st.peso; });
 
-    // Con foto primero: sólo 235 de los 623 tienen, y el que busca quiere ver.
-    res = res.slice().sort(function (a, b) { return (b.f ? 1 : 0) - (a.f ? 1 : 0); });
+    // Orden: si la búsqueda nombra un rubro ("alimento gato"), primero los de ese
+    // rubro y después lo demás que coincide (collares de "Perros y gatos"); dentro
+    // de cada parte, con foto primero: el que busca quiere ver.
+    var rubros = {};
+    if (grupos.length) {
+      D.sec.forEach(function (s) {
+        var b = norm(s.n + ' ' + (RUBRO[s.id] || ''));
+        if (grupos.some(function (vs) { return vs.some(function (v) { return b.indexOf(v) >= 0; }); })) rubros[s.id] = 1;
+      });
+    }
+    res = res.slice().sort(function (a, b) {
+      return ((rubros[b.s] || 0) - (rubros[a.s] || 0)) || ((b.f ? 1 : 0) - (a.f ? 1 : 0));
+    });
 
     poner($('#f-sec'), [chip('Todas', st.sec === 'todas', function () {
       st.sec = 'todas'; st.marca = 'todas'; st.peso = 'todos'; st.tope = PASO; pintar();
@@ -1625,6 +1778,8 @@ _JS = r"""
 
     $('#res').innerHTML = res.slice(0, st.tope).map(tarjeta).join('');
     $('#vacio').hidden = res.length > 0;
+    if (res.length) $('#vacio-acc').textContent = ''; else vacio(q, grupos);
+    guardarUrl();
     var faltan = res.length - st.tope;
     $('#mas').hidden = faltan <= 0;
     if (faltan > 0) {
@@ -1635,8 +1790,56 @@ _JS = r"""
       : res.length + ' DE ' + D.prod.length;
   }
 
+  // Sin resultados: se ofrece el rubro que nombró el cliente (si nombró alguno) y
+  // preguntar por WhatsApp con lo que escribió, en vez de un callejón sin salida.
+  function vacio(q, grupos) {
+    var secs = D.sec.filter(function (s) {
+      var b = norm(s.n + ' ' + (RUBRO[s.id] || ''));
+      return grupos.some(function (vs) { return vs.some(function (v) { return b.indexOf(v) >= 0; }); });
+    });
+    var cont = $('#vacio-acc');
+    cont.textContent = '';
+    secs.slice(0, 3).forEach(function (s) {
+      cont.appendChild(chip('Ver ' + s.n, false, function () {
+        st.q = ''; $('#q').value = ''; st.sec = s.id; st.marca = 'todas'; st.peso = 'todos';
+        st.tope = PASO; pintar();
+      }, 'sug'));
+    });
+    if (q) {
+      var a = document.createElement('a');
+      a.className = 'sug-wa'; a.target = '_blank'; a.rel = 'noopener';
+      a.href = wa('Hola! Busco: ' + st.q.trim() + FIRMA);
+      a.innerHTML = WA_SVG + 'Preguntanos por WhatsApp';
+      cont.appendChild(a);
+    }
+  }
+
+  // La búsqueda y el rubro quedan en la dirección (?q=gandum&sec=perros): así se
+  // puede mandar un link que abre el buscador ya filtrado. Se respetan los demás
+  // parámetros (utm_source de TikTok).
+  function guardarUrl() {
+    if (document.body.dataset.vista !== 'buscar') return;
+    try {
+      var u = new URL(location.href);
+      if (st.q.trim()) u.searchParams.set('q', st.q.trim()); else u.searchParams.delete('q');
+      if (st.sec !== 'todas') u.searchParams.set('sec', st.sec); else u.searchParams.delete('sec');
+      u.hash = '#buscar';
+      if (u.href !== location.href) history.replaceState(null, '', u.href);
+    } catch (e) {}
+  }
+
   function vista(v) {
     document.body.dataset.vista = v;
+    // Al volver a la revista la búsqueda sale de la dirección: si no, al recargar
+    // o copiar el link se abría otra vez el buscador con la búsqueda vieja.
+    if (v === 'revista') {
+      try {
+        var u = new URL(location.href);
+        u.searchParams.delete('q'); u.searchParams.delete('sec');
+        if (u.hash === '#buscar') u.hash = '';
+        if (u.href !== location.href) history.replaceState(null, '', u.href);
+      } catch (e) {}
+    }
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       t.classList.toggle('on', t.dataset.vista === v);
     });
@@ -1681,6 +1884,12 @@ _JS = r"""
     arriba.hidden = window.scrollY < 600;
   }, { passive: true });
 
+  try {
+    var pu = new URLSearchParams(location.search);
+    if (pu.get('q')) { st.q = pu.get('q'); $('#q').value = st.q; }
+    if (pu.get('sec') && Object.prototype.hasOwnProperty.call(SEC, pu.get('sec'))) st.sec = pu.get('sec');
+    if (pu.get('q') || pu.get('sec')) location.hash = '#buscar';
+  } catch (e) {}
   if (location.hash === '#buscar') vista('buscar');
   pintar();
 })();
