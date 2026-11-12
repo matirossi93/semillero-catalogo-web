@@ -51,9 +51,32 @@ async def main():
         pg.on("pageerror", lambda e: errores.append(str(e)))
         await pg.goto("file://" + RUTA)
         await pg.wait_for_timeout(1200)
-        cortados = await pg.evaluate("""() => [...document.querySelectorAll('.fila span')]
+        # A 390 px se ve la vista de celular (SEM-402): letra ≥ 12 px, sin desborde,
+        # y todos los productos tienen su renglón.
+        cel = await pg.evaluate("""() => ({
+            chicos: [...document.querySelectorAll('.cel *, .cel-ini *')].filter(e => e.offsetParent &&
+              [...e.childNodes].some(n => n.nodeType == 3 && n.textContent.trim()) &&
+              parseFloat(getComputedStyle(e).fontSize) < 12).length,
+            ancho: document.documentElement.scrollWidth,
+            filas: document.querySelectorAll('.cel-fam li').length,
+            prods: window.CAT.prod.length })""")
+        ok(cel["chicos"] == 0, f"{cel['chicos']} textos de menos de 12 px en la vista de celular")
+        ok(cel["ancho"] <= 390, f"la página se desborda a 390 px ({cel['ancho']})")
+        ok(cel["filas"] == cel["prods"], f"vista de celular: {cel['filas']} renglones para {cel['prods']} productos")
+        for ancho in (320, 360):
+            ctx = await b.new_context(viewport={"width": ancho, "height": 780})
+            pa = await ctx.new_page()
+            await pa.goto("file://" + RUTA)
+            await pa.wait_for_timeout(600)
+            sw = await pa.evaluate("document.documentElement.scrollWidth")
+            ok(sw <= ancho, f"la página se desborda a {ancho} px ({sw})")
+            await ctx.close()
+        pc = await (await b.new_context(viewport={"width": 1080, "height": 1920})).new_page()
+        await pc.goto("file://" + RUTA)
+        await pc.wait_for_timeout(1200)
+        cortados = await pc.evaluate("""() => [...document.querySelectorAll('.fila span')]
             .filter(x => x.scrollWidth > x.clientWidth + 1).map(x => x.textContent)""")
-        ok(not cortados, f"nombres cortados a 390 px: {cortados[:5]}")
+        ok(not cortados, f"nombres cortados en la revista a 1080 px: {cortados[:5]}")
         await pg.click("button.tab[data-vista=buscar]")
         for q, (minimo, prohibido) in BUSQUEDAS.items():
             await pg.fill("#q", q)

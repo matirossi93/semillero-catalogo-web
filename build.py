@@ -665,7 +665,7 @@ def pag_indice(indice, actualizado):
             f'<b>{indice[nombre]:02d}</b></a></li>')
     return f"""
 <section class="pag indice" id="p2">
-  <img class="foto-indice" src="assets/hero/cereales.webp" alt="">
+  <img class="foto-indice" src="assets/hero/cereales.webp" alt="" loading="lazy">
   <img class="logo-indice" src="assets/iconos/logo.webp" alt="Semillero El Manantial">
   <h2>ÍNDICE</h2>
   <ul class="lista-indice">{''.join(filas)}</ul>
@@ -678,10 +678,10 @@ def pag_indice(indice, actualizado):
 def pag_seccion(slug, color, titulo, nro, ext):
     return f"""
 <section class="pag sec-portada" id="{slug}" style="--c:{color}">
-  <img class="hero" src="assets/hero/{slug}.{ext}" alt="">
-  <img class="logo-chip" src="assets/iconos/logo_chip.webp" alt="Semillero El Manantial">
+  <img class="hero" src="assets/hero/{slug}.{ext}" alt="" loading="lazy">
+  <img class="logo-chip" src="assets/iconos/logo_chip.webp" alt="Semillero El Manantial" loading="lazy">
   <div class="sec-pie">
-    <img class="ico-grande" src="assets/iconos/{slug}.webp" alt="">
+    <img class="ico-grande" src="assets/iconos/{slug}.webp" alt="" loading="lazy">
     <div class="barra"></div>
     <h1>{esc(titulo)}</h1>
   </div>
@@ -1376,7 +1376,7 @@ def barra_top(indice):
       </div>
       <a class="wa" href="{wa_url(WA_SALUDO)}" target="_blank" rel="noopener">
         {SVG_WA}<span>{WA_ROTULO}</span></a>
-      <a class="tapa-precios" href="{URL_PRECIOS}" target="_blank" rel="noopener">
+      <a class="tapa-precios" href="{URL_PRECIOS}" target="_blank" rel="noopener" aria-label="Ver los precios">
         <i>$</i><span>VER LOS PRECIOS</span></a>
     </div>
   </header>
@@ -1406,6 +1406,107 @@ def vista_buscar():
     <div class="vacio-acc" id="vacio-acc"></div>
   </div>
 </main>"""
+
+
+# ---------------------------------------------------------------- celular (SEM-402)
+# En pantallas de menos de 600 px la hoja de 1080 px se achicaba entera y los
+# nombres quedaban en 7-12 px. Ahí se muestran, EN LUGAR de las hojas, estas dos
+# piezas armadas con los mismos datos: una pantalla de inicio y la revista en
+# renglones. En la compu las hojas siguen siendo la réplica exacta del PDF.
+SUGERENCIAS = ("Gandum", "Dog Selection", "Ponedora", "Alpiste")
+
+
+def inicio_celular(datos, hoy):
+    rubros = []
+    for nombre, slug, color, _p, _t, corto in SECCIONES:
+        if not datos.get(nombre):
+            continue
+        n = sum(len(v) for v in datos[nombre].values())
+        rubros.append(f'<a class="ini-rub" href="#{slug}" style="--c:{color}">'
+                      f'<img src="assets/iconos/{slug}.webp" alt="" width="44" height="44">'
+                      f'<b>{esc(corto)}</b><small>{n} productos</small></a>')
+    total = sum(len(v) for g in datos.values() for v in g.values())
+    # Una sugerencia que ya no está en la planilla abriría "SIN RESULTADOS": se saca.
+    nombres = [limpiar(f"{abreviar_grupo(g)} {it['desc']}").lower() for gs in datos.values()
+               for g, its in gs.items() for it in its]
+    vivas = [q for q in SUGERENCIAS if any(q.lower() in n for n in nombres)]
+    for q in SUGERENCIAS:
+        if q not in vivas:
+            print(f"    ⚠ sugerencia sin productos, no se muestra: {q}")
+    sug = "".join(f'<button type="button" class="ini-sug" data-q="{esc(q)}">{esc(q)}</button>'
+                  for q in vivas)
+    return f"""
+<section class="cel-ini" aria-label="Inicio del catálogo">
+  <h1>Catálogo mayorista</h1>
+  <p>{total} productos para tu negocio. Buscá, mirá la foto y consultá por WhatsApp.</p>
+  <button type="button" class="ini-q" id="ini-q">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <span>Buscá: alimento gato, maíz, raticida…</span></button>
+  <div class="ini-sugs">{sug}</div>
+  <nav class="ini-rubs" aria-label="Rubros">{''.join(rubros)}</nav>
+  <p class="ini-act">Actualizado el {hoy} con la lista de precios</p>
+</section>"""
+
+
+def vista_celular(plan, datos, mapa_fotos, proteinas, descripciones, manifest):
+    from PIL import Image
+    secs = []
+    for nombre, slug, color, pill, titulo, _n0, _pags, _hojas in plan:
+        ban_ext = (manifest[slug]["banner"] or "x.jpeg").split(".")[-1]
+        franja = f"banner/{slug}.{ban_ext}"
+        # La franja del celular es apaisada (390x96). Si el banner es vertical
+        # (Animales: 515x1715) se veía estirado al triple: va la foto de la portada.
+        try:
+            with Image.open(os.path.join(BASE, "assets", franja)) as _im:
+                if _im.height > _im.width:
+                    franja = f"hero/{slug}.{manifest[slug]['hero'].split('.')[-1]}"
+        except OSError:
+            pass
+        categorias = nombre in ("ACCESORIOS", "VENENOS")
+        fams = []
+        for grupo, items in datos[nombre].items():
+            marca = grupo.replace(" (cont.)", "")
+            hits = [(it, mapa_fotos.get(f"{nombre}|{it['cod']}|{it['desc']}")) for it in items]
+            foto = ""
+            if not categorias and marca not in SIN_DESTACAR:
+                con = [(it, h) for it, h in hits if h]
+                if con:
+                    elegido = REPRESENTANTE.get((nombre, marca))
+                    con.sort(key=lambda par: (
+                        0 if elegido and limpiar(par[0]["desc"]).upper().startswith(elegido) else 1,
+                        0 if proteina_de(nombre, marca, par[0]["desc"], proteinas) else 1,
+                        -par[1].get("score", 0)))
+                    img = FOTO_FAMILIA.get((nombre, marca)) or con[0][1]["local"]
+                    foto = f'<span class="cf-ph"><img src="assets/{img}" alt="" loading="lazy"></span>'
+            filas = []
+            for it, h in hits:
+                d = linda(it["desc"])
+                pr = proteina_de(nombre, marca, it["desc"], proteinas)
+                chip = f'<i class="cf-pt">{pr}% prot.</i>' if pr else ""
+                mini = (f'<span class="cf-mini"><img src="assets/{h["local"]}" alt="" loading="lazy"></span>'
+                        if categorias and h and marca not in SIN_DESTACAR else "")
+                txt = f"Hola! Quiero consultar por: {d} ({abreviar_grupo(grupo)})"
+                filas.append(f'<li>{mini}<span class="cf-n">{esc(d)}{chip}</span>'
+                             f'<a class="cel-wa" href="{wa_url(txt)}" target="_blank" rel="noopener" '
+                             f'aria-label="Consultar {esc(d)} por WhatsApp">{SVG_WA}</a></li>')
+            fams.append(f'<div class="cel-fam">'
+                        f'<div class="cf-h">{foto}<h3>{esc(abreviar_grupo(grupo))}</h3></div>'
+                        f'<ul>{"".join(filas)}</ul></div>')
+        desc = ""
+        prods = [pr for pag in descripciones.get(nombre, {}).get("paginas", []) for pr in pag]
+        if prods:
+            desc = '<div class="cel-desc"><h3>Sobre nuestra producción</h3>' + "".join(
+                f'<details><summary>{esc(pr["nombre"])}</summary><p>{esc(pr["texto"])}</p>'
+                + ("<ul>" + "".join(f"<li>{esc(b)}</li>" for b in pr.get("bullets", [])) + "</ul>"
+                   if pr.get("bullets") else "") + "</details>" for pr in prods) + "</div>"
+        secs.append(f"""
+<section class="cel-sec" id="cel-{slug}" style="--c:{color}">
+  <div class="cel-ban"><img src="assets/{franja}" alt="" loading="lazy">
+    <h2><i></i>{esc(titulo)}</h2></div>
+  <a class="cel-precios" href="{URL_PRECIOS}" target="_blank" rel="noopener"><i>$</i>Ver los precios</a>
+  {''.join(fams)}{desc}
+</section>""")
+    return '<div class="cel">' + "".join(secs) + "</div>"
 
 
 def pie():
@@ -1502,7 +1603,6 @@ main.buscar{max-width:1180px;margin:0 auto;width:100%;padding:20px 16px 70px}
   border-bottom:1px solid var(--marco)}
 .tar-foto img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);
   object-fit:contain;display:block}
-.tar-foto img.ico{inset:0;width:100%;height:100%;padding:30%;opacity:.28}
 .prot-mini{position:absolute;left:8px;top:8px;width:46px;height:46px;border-radius:50%;
   background:#2B2B2B;color:var(--crema);display:grid;place-items:center;
   font-family:'Bebas Neue',sans-serif;font-size:20px;line-height:1}
@@ -1535,6 +1635,7 @@ main.buscar{max-width:1180px;margin:0 auto;width:100%;padding:20px 16px 70px}
 .sug-wa svg{width:18px;height:18px;fill:currentColor}
 /* Foco visible para quien navega con teclado (el campo de búsqueda lo tenía apagado). */
 a:focus-visible,button:focus-visible,#q:focus-visible{outline:3px solid #EEC045;outline-offset:2px}
+
 
 /* ---------- pie y volver arriba ---------- */
 .pie{margin-top:auto;background:#14562A;color:#cfe0d5;padding:26px 16px 34px}
@@ -1572,6 +1673,88 @@ a:focus-visible,button:focus-visible,#q:focus-visible{outline:3px solid #EEC045;
   .grilla{grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px}
   .tar-foto{padding:8px}
 }
+/* Va DESPUÉS del bloque de 760 px: con la misma especificidad, el último gana
+   (antes la barra medía 346 px a 320 de ancho; code-review SEM-402). */
+/* ================== celular: inicio + revista en renglones (SEM-402) ================== */
+.cel-ini,.cel{display:none}
+@media (max-width:599px){
+  main.revista{padding:0 0 40px;gap:0}
+  main.revista>.pag{display:none}
+  .cel-ini,.cel{display:block;width:100%}
+  .cel-ini{padding:18px 16px 22px;background:var(--crema)}
+  .cel-ini h1{font:400 34px/1 'Bebas Neue',sans-serif;color:#06652F;letter-spacing:.02em}
+  .cel-ini>p{font-size:16px;line-height:1.35;color:#4a3b33;margin:6px 0 14px}
+  .ini-q{display:flex;align-items:center;gap:10px;width:100%;background:#fff;border:2px solid #06652F;
+    border-radius:14px;height:52px;padding:0 14px;font:inherit;font-size:17px;color:#7a6a60;text-align:left;cursor:text}
+  .ini-q svg{width:22px;height:22px;flex:none;fill:none;stroke:#06652F;stroke-width:2.4}
+  .ini-sugs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}
+  .ini-sug{font:inherit;font-size:14px;background:var(--marco);color:#1E120C;border:0;border-radius:20px;padding:8px 13px}
+  .ini-rubs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .ini-rub{background:#fff;border-radius:14px;padding:12px 6px 10px;text-align:center;text-decoration:none;
+    color:#1E120C;border-bottom:4px solid var(--c);box-shadow:0 1px 3px #0001;min-height:96px}
+  .ini-rub img{width:44px;height:44px;border-radius:50%;display:block;margin:0 auto}
+  .ini-rub b{display:block;font-size:14px;line-height:1.1;margin-top:6px}
+  .ini-rub small{display:block;font-size:12px;color:#7a6a60;margin-top:2px}
+  .ini-act{font-size:13px;color:#7a6a60;text-align:center;margin-top:14px}
+  .cel-sec{scroll-margin-top:var(--barra,120px);padding-bottom:10px}
+  .cel-ban{position:relative;height:96px;overflow:hidden;background:var(--c)}
+  .cel-ban img{width:100%;height:100%;object-fit:cover;filter:brightness(.55);display:block}
+  .cel-ban h2{position:absolute;left:16px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;
+    font:400 30px/1 'Bebas Neue',sans-serif;color:#fff;letter-spacing:.03em}
+  .cel-ban h2 i{width:10px;height:26px;border-radius:3px;background:var(--c);flex:none}
+  .cel-precios{display:flex;align-items:center;gap:8px;margin:12px 12px 0;justify-content:center;background:#06652F;
+    color:#EEC045;border-radius:25px;padding:11px;text-decoration:none;font:400 18px 'Bebas Neue',sans-serif;letter-spacing:.06em}
+  .cel-precios i{font-style:normal}
+  .cel-fam{margin:12px 12px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px #0001}
+  .cf-h{display:flex;gap:12px;align-items:center;padding:12px;border-bottom:1px solid var(--marco)}
+  .cf-ph{width:76px;height:76px;flex:none;display:grid;place-items:center;background:var(--crema);border-radius:12px;overflow:hidden}
+  .cf-ph img{max-width:70px;max-height:70px;object-fit:contain}
+  .cf-h h3{font:400 23px/1.05 'Bebas Neue',sans-serif;color:#1E120C;letter-spacing:.03em}
+  .cel-fam ul{list-style:none;margin:0;padding:0}
+  .cel-fam li{display:flex;align-items:center;gap:10px;min-height:52px;padding:6px 8px 6px 14px;border-top:1px solid #f1e6da}
+  .cel-fam li:first-child{border-top:0}
+  .cf-mini{width:44px;height:44px;flex:none;border-radius:8px;background:var(--crema);display:grid;place-items:center;overflow:hidden}
+  .cf-mini img{max-width:40px;max-height:40px;object-fit:contain}
+  .cf-n{flex:1;min-width:0;font-size:16.5px;line-height:1.25;color:#1f4d2e}
+  .cf-pt{display:inline-block;margin-left:6px;font-style:normal;font-size:12px;font-weight:700;background:#1E120C;
+    color:#EEC045;border-radius:10px;padding:1px 7px;vertical-align:2px;white-space:nowrap}
+  .cel-wa{width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:#eaf7ef}
+  .cel-wa svg{width:22px;height:22px;fill:#1FA855}
+  .cel-desc{margin:12px 12px 0;background:#fff;border-radius:16px;padding:12px 14px}
+  .cel-desc h3{font:400 22px 'Bebas Neue',sans-serif;color:#06652F}
+  .cel-desc details{border-top:1px solid #f1e6da;padding:10px 0}
+  .cel-desc summary{font-size:16px;color:#1E120C;cursor:pointer}
+  .cel-desc p,.cel-desc li{font-size:15px;line-height:1.45;color:#4a3b33;margin-top:6px}
+  /* barra de arriba compacta: una sola fila */
+  .tapa-in{flex-wrap:nowrap;gap:4px;padding:8px 5px}
+  .tapa-logo{padding:4px 5px;flex:none}
+  .tapa-logo img{height:17px}
+  .empuje{display:none}
+  .tabs{flex:none;margin-left:auto}
+  .tab{padding:7px 7px;font-size:14px;letter-spacing:.06em}
+  .wa,.tapa-precios{flex:none}
+  .tapa-precios span{display:none}
+  .tapa-precios{padding:5px}
+  .navchip b{display:none}
+  body[data-vista="buscar"] .secnav{display:none}
+  /* buscador en lista */
+  main.buscar .grilla{grid-template-columns:1fr;gap:8px}
+  main.buscar .tar{flex-direction:row;align-items:center;gap:12px;padding:8px;border-radius:14px;background:#fff}
+  main.buscar .tar-foto{width:72px;height:72px;flex:none;aspect-ratio:auto;border:0;border-radius:10px;background:var(--crema);padding:0}
+  .tar-foto img{inset:5px;width:calc(100% - 10px);height:calc(100% - 10px)}
+  .prot-mini{left:auto;right:-4px;top:-4px;width:30px;height:30px;font-size:13px}
+  .tar-txt{padding:0;gap:2px;flex-direction:row;flex-wrap:wrap;align-items:center}
+  .tar-m{order:1;flex:1 0 100%;font-size:12px}
+  .tar-n{order:2;flex:1 0 100%;font-size:16px}
+  .tar-pie{order:3;flex:1 0 100%;margin-top:2px}
+  .tar-sec{display:none}
+  .tar-w{font-size:12.5px}
+  .tar-wa{width:44px;height:44px;padding:0;border-radius:50%;justify-content:center;font-size:0;margin-top:-30px}
+  .tar-wa svg{width:22px;height:22px}
+}
+/* Sin foto: iniciales de la marca en el color del rubro (antes, el ícono gris
+   del rubro: los collares salían con una maceta). */
+.tar-foto .ini{position:absolute;inset:0;display:grid;place-items:center;font:400 30px 'Bebas Neue',sans-serif;letter-spacing:.04em}
 """
 
 
@@ -1607,7 +1790,7 @@ _JS = r"""
   // Los botones de arriba y del pie vienen armados en el HTML: en la vista REVISTA
   // son los únicos de WhatsApp, así que también llevan la firma.
   if (FIRMA) {
-    Array.prototype.forEach.call(document.querySelectorAll('a.wa, a.pie-wa'), function (a) {
+    Array.prototype.forEach.call(document.querySelectorAll('a.wa, a.pie-wa, a.cel-wa'), function (a) {
       a.href += encodeURIComponent(FIRMA);
     });
   }
@@ -1691,11 +1874,19 @@ _JS = r"""
     botones.forEach(function (b) { cont.appendChild(b); });
   }
 
+  // En Accesorios y Venenos el "grupo" es una categoría ("PERROS Y GATOS"): ahí
+  // las iniciales salen del producto (Collar -> CO), en el resto, de la marca.
+  function iniciales(p) {
+    var base = (p.s === 'accesorios' || p.s === 'venenos') ? p.n.split(/\s+/)[0] : p.m;
+    var w = base.split(/\s+/);
+    return (w.length > 1 ? w[0].charAt(0) + w[1].charAt(0) : base.slice(0, 2)).toUpperCase();
+  }
+
   function tarjeta(p) {
     var s = SEC[p.s];
     var foto = p.f
       ? '<img src="assets/' + esc(p.f) + '" alt="' + esc(p.n) + '" loading="lazy">'
-      : '<img class="ico" src="assets/iconos/' + esc(p.s) + '.webp" alt="" loading="lazy">';
+      : '<span class="ini" style="background:' + s.c + ';color:' + s.t + '">' + esc(iniciales(p)) + '</span>';
     var prot = p.p ? '<span class="prot-mini">' + esc(p.p) + '<u>%</u></span>' : '';
     return '<article class="tar">' +
       '<div class="tar-foto">' + foto + prot + '</div>' +
@@ -1884,6 +2075,32 @@ _JS = r"""
     arriba.hidden = window.scrollY < 600;
   }, { passive: true });
 
+  // En el celular las hojas están ocultas: los saltos a una sección (#perros)
+  // van a su versión en renglones (#cel-perros).
+  var CEL = window.matchMedia('(max-width:599px)');
+  function irSeccion(id, suave) {
+    var el = CEL.matches && document.getElementById('cel-' + id);
+    if (el) { el.scrollIntoView({ behavior: suave ? 'smooth' : 'instant' }); return true; }
+    return false;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a || a.getAttribute('href').length < 2) return;
+    var id = a.getAttribute('href').slice(1);
+    if (CEL.matches && document.getElementById('cel-' + id)) {
+      e.preventDefault(); vista('revista'); history.replaceState(null, '', '#' + id); irSeccion(id, true);
+    }
+  });
+  window.addEventListener('hashchange', function () { irSeccion(location.hash.slice(1), true); });
+  var iq = $('#ini-q');
+  if (iq) iq.onclick = function () { vista('buscar'); };
+  Array.prototype.forEach.call(document.querySelectorAll('.ini-sug'), function (b) {
+    b.onclick = function () {
+      st.q = b.dataset.q; $('#q').value = st.q; st.sec = 'todas'; st.marca = 'todas'; st.peso = 'todos';
+      st.tope = PASO; vista('buscar'); pintar();
+    };
+  });
+
   try {
     var pu = new URLSearchParams(location.search);
     if (pu.get('q')) { st.q = pu.get('q'); $('#q').value = st.q; }
@@ -1891,6 +2108,12 @@ _JS = r"""
     if (pu.get('q') || pu.get('sec')) location.hash = '#buscar';
   } catch (e) {}
   if (location.hash === '#buscar') vista('buscar');
+  else if (location.hash.length > 1) {
+    // Después de que carguen letra y fotos, con la barra ya medida: si no, en un
+    // celular lento la sección quedaba debajo de la barra.
+    var alCargar = function () { medir(); irSeccion(location.hash.slice(1), false); };
+    if (document.readyState === 'complete') alCargar(); else window.addEventListener('load', alCargar);
+  }
   pintar();
 })();
 """
@@ -2013,7 +2236,9 @@ def main():
 <body data-vista="revista">
 {barra_top(indice)}
 <main class="revista">
+{inicio_celular(datos, hoy)}
 {''.join(html)}
+{vista_celular(plan, datos, mapa_fotos, proteinas, descripciones, manifest)}
 </main>
 {vista_buscar()}
 {pie()}
