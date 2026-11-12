@@ -366,8 +366,9 @@ def encoger(texto, ancho, size, em, minimo):
 # la fuente que se sirve, assets/fonts). El promedio EM_ROBOTO se queda corto en
 # nombres largos: "Balanced cachorro raza med x 20 kg" se cortaba con "…" justo en
 # el peso (SEM-400). Con la tabla se detecta el corte y se achica o abrevia más.
-ANCHOS_ROBOTO = json.load(open(os.path.join(BASE, "assets", "fonts",
-                                            "anchos_roboto_condensed.json"), encoding="utf-8"))
+with open(os.path.join(BASE, "assets", "fonts", "anchos_roboto_condensed.json"),
+          encoding="utf-8") as _fh:
+    ANCHOS_ROBOTO = json.load(_fh)
 ANCHO_FILA = 418        # ancho útil (451 medido) menos 7 %: a 360-390 px el texto se
                         # ensancha hasta 5,5 % por el redondeo de la letra chica
 FS_FILA_MIN = 16        # por debajo de esto se abrevia en vez de achicar
@@ -388,6 +389,7 @@ def nombre_fila(desc):
         fs = min(32, ANCHO_FILA / ancho_em(n))
         if fs >= FS_FILA_MIN:
             return n, round(fs, 1)
+    print(f"    ⚠ no entra en la fila ni abreviado: {corto!r}")
     return corto, FS_FILA_MIN
 
 
@@ -1257,6 +1259,9 @@ def fotos_de(bloques, sec, mapa, prot, reserva=None):
                 break
             if c["img"] in usadas or (c.get("claves") or {c.get("clave")}) & ya_nombrados:
                 continue
+            # Mismo contenido con otro nombre de archivo (hay 18 grupos así): tampoco.
+            if huella(c["img"]) in {huella(u) for u in usadas}:
+                continue
             # Cada foto prestada, una sola vez en todo el catálogo: en Accesorios las
             # mismas 5 fotos llegaron a aparecer en 7 hojas (SEM-400).
             if YA_RELLENO.get(c["img"], 0) >= 1:
@@ -1628,9 +1633,10 @@ _JS = r"""
   var RELLENO = ' alimento alimentos comida comidas para p/ de del la el los las y con x un una al ';
   var SINON = {
     gallina: ['ponedora', 'postura', 'gallin'], gallinas: ['ponedora', 'postura', 'gallin'],
-    pollo: ['pollo', 'iniciador', 'terminador', 'bebe', 'engorde', 'recria'],
-    pollos: ['pollo', 'iniciador', 'terminador', 'bebe', 'engorde', 'recria'],
-    pollito: ['preiniciador', 'iniciador', 'bebe'], pollitos: ['preiniciador', 'iniciador', 'bebe'],
+    // 'bebe x' y no 'bebe': si no, "pollo" traía los bebederos (code-review SEM-400).
+    pollo: ['pollo', 'iniciador', 'terminador', 'bebe x', 'engorde x', 'recria x'],
+    pollos: ['pollo', 'iniciador', 'terminador', 'bebe x', 'engorde x', 'recria x'],
+    pollito: ['preiniciador', 'iniciador', 'bebe x'], pollitos: ['preiniciador', 'iniciador', 'bebe x'],
     parrillero: ['iniciador', 'terminador', 'engorde'], parrilleros: ['iniciador', 'terminador', 'engorde'],
     chancho: ['cerdo', 'lechon'], chanchos: ['cerdo', 'lechon'], porcino: ['cerdo', 'lechon'],
     equino: ['caballo'], equinos: ['caballo'],
@@ -1647,15 +1653,17 @@ _JS = r"""
     grande: ['grande', 'gde'], mediano: ['mediano', 'mediana', 'med'], mediana: ['mediana', 'mediano', 'med'],
     pequeno: ['peque', 'peq', 'chic'], pequena: ['peque', 'peq', 'chic'], chico: ['chic', 'peq'],
     raza: ['raza', 'rza'], pisado: ['pisado', 'molido', 'quebrado', 'partido'],
-    arena: ['arena', 'sanitari', 'piedras'], abono: ['abono', 'fertil'], fertilizante: ['fertil', 'abono']
+    arena: ['arena', 'sanitari'], abono: ['abono', 'fertil'], fertilizante: ['fertil', 'abono']
   };
   function palabras(q) {
     // "15 kg" y "500 gr" van juntas: separadas, "15" y "kg" casi siempre coinciden.
+    // "15kg" (sin espacio, como se escribe en el celular) se lleva a "15 kg".
+    q = q.replace(/(\d)(kg|gr|g|cc|lt|l|ml|u)\b/g, '$1 $2');
     return (q.match(/\d+(?:[.,]\d+)?\s*(?:kg|gr|g|cc|lt|l|ml|u)\b|\S+/g) || [])
       .filter(function (w) { return RELLENO.indexOf(' ' + w + ' ') < 0; });
   }
   function variantes(w) {
-    var v = (SINON[w] || []).concat([w]);
+    var v = (Object.prototype.hasOwnProperty.call(SINON, w) ? SINON[w] : []).concat([w]);
     if (w.length > 4 && /es$/.test(w)) v.push(w.slice(0, -2));
     if (w.length > 3 && /s$/.test(w)) v.push(w.slice(0, -1));
     return v;
@@ -1822,6 +1830,16 @@ _JS = r"""
 
   function vista(v) {
     document.body.dataset.vista = v;
+    // Al volver a la revista la búsqueda sale de la dirección: si no, al recargar
+    // o copiar el link se abría otra vez el buscador con la búsqueda vieja.
+    if (v === 'revista') {
+      try {
+        var u = new URL(location.href);
+        u.searchParams.delete('q'); u.searchParams.delete('sec');
+        if (u.hash === '#buscar') u.hash = '';
+        if (u.href !== location.href) history.replaceState(null, '', u.href);
+      } catch (e) {}
+    }
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       t.classList.toggle('on', t.dataset.vista === v);
     });
@@ -1869,7 +1887,7 @@ _JS = r"""
   try {
     var pu = new URLSearchParams(location.search);
     if (pu.get('q')) { st.q = pu.get('q'); $('#q').value = st.q; }
-    if (pu.get('sec') && SEC[pu.get('sec')]) st.sec = pu.get('sec');
+    if (pu.get('sec') && Object.prototype.hasOwnProperty.call(SEC, pu.get('sec'))) st.sec = pu.get('sec');
     if (pu.get('q') || pu.get('sec')) location.hash = '#buscar';
   } catch (e) {}
   if (location.hash === '#buscar') vista('buscar');
