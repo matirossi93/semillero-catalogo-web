@@ -665,7 +665,7 @@ def pag_indice(indice, actualizado):
             f'<b>{indice[nombre]:02d}</b></a></li>')
     return f"""
 <section class="pag indice" id="p2">
-  <img class="foto-indice" src="assets/hero/cereales.webp" alt="">
+  <img class="foto-indice" src="assets/hero/cereales.webp" alt="" loading="lazy">
   <img class="logo-indice" src="assets/iconos/logo.webp" alt="Semillero El Manantial">
   <h2>ÍNDICE</h2>
   <ul class="lista-indice">{''.join(filas)}</ul>
@@ -678,10 +678,10 @@ def pag_indice(indice, actualizado):
 def pag_seccion(slug, color, titulo, nro, ext):
     return f"""
 <section class="pag sec-portada" id="{slug}" style="--c:{color}">
-  <img class="hero" src="assets/hero/{slug}.{ext}" alt="">
-  <img class="logo-chip" src="assets/iconos/logo_chip.webp" alt="Semillero El Manantial">
+  <img class="hero" src="assets/hero/{slug}.{ext}" alt="" loading="lazy">
+  <img class="logo-chip" src="assets/iconos/logo_chip.webp" alt="Semillero El Manantial" loading="lazy">
   <div class="sec-pie">
-    <img class="ico-grande" src="assets/iconos/{slug}.webp" alt="">
+    <img class="ico-grande" src="assets/iconos/{slug}.webp" alt="" loading="lazy">
     <div class="barra"></div>
     <h1>{esc(titulo)}</h1>
   </div>
@@ -1376,7 +1376,7 @@ def barra_top(indice):
       </div>
       <a class="wa" href="{wa_url(WA_SALUDO)}" target="_blank" rel="noopener">
         {SVG_WA}<span>{WA_ROTULO}</span></a>
-      <a class="tapa-precios" href="{URL_PRECIOS}" target="_blank" rel="noopener">
+      <a class="tapa-precios" href="{URL_PRECIOS}" target="_blank" rel="noopener" aria-label="Ver los precios">
         <i>$</i><span>VER LOS PRECIOS</span></a>
     </div>
   </header>
@@ -1426,8 +1426,15 @@ def inicio_celular(datos, hoy):
                       f'<img src="assets/iconos/{slug}.webp" alt="" width="44" height="44">'
                       f'<b>{esc(corto)}</b><small>{n} productos</small></a>')
     total = sum(len(v) for g in datos.values() for v in g.values())
+    # Una sugerencia que ya no está en la planilla abriría "SIN RESULTADOS": se saca.
+    nombres = [limpiar(f"{abreviar_grupo(g)} {it['desc']}").lower() for gs in datos.values()
+               for g, its in gs.items() for it in its]
+    vivas = [q for q in SUGERENCIAS if any(q.lower() in n for n in nombres)]
+    for q in SUGERENCIAS:
+        if q not in vivas:
+            print(f"    ⚠ sugerencia sin productos, no se muestra: {q}")
     sug = "".join(f'<button type="button" class="ini-sug" data-q="{esc(q)}">{esc(q)}</button>'
-                  for q in SUGERENCIAS)
+                  for q in vivas)
     return f"""
 <section class="cel-ini" aria-label="Inicio del catálogo">
   <h1>Catálogo mayorista</h1>
@@ -1596,7 +1603,6 @@ main.buscar{max-width:1180px;margin:0 auto;width:100%;padding:20px 16px 70px}
   border-bottom:1px solid var(--marco)}
 .tar-foto img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);
   object-fit:contain;display:block}
-.tar-foto img.ico{inset:0;width:100%;height:100%;padding:30%;opacity:.28}
 .prot-mini{position:absolute;left:8px;top:8px;width:46px;height:46px;border-radius:50%;
   background:#2B2B2B;color:var(--crema);display:grid;place-items:center;
   font-family:'Bebas Neue',sans-serif;font-size:20px;line-height:1}
@@ -1631,6 +1637,44 @@ main.buscar{max-width:1180px;margin:0 auto;width:100%;padding:20px 16px 70px}
 a:focus-visible,button:focus-visible,#q:focus-visible{outline:3px solid #EEC045;outline-offset:2px}
 
 
+/* ---------- pie y volver arriba ---------- */
+.pie{margin-top:auto;background:#14562A;color:#cfe0d5;padding:26px 16px 34px}
+.pie-in{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.pie-logo{background:var(--crema);border-radius:3px;padding:10px 14px;display:flex}
+.pie-logo img{height:38px;width:auto;display:block}
+.pie-datos{display:flex;flex-direction:column;gap:4px;font-size:14px}
+.pie-datos b{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.1em;color:#fff;font-weight:400}
+.pie-datos a{color:#a9c6b4;text-decoration:none;letter-spacing:.04em}
+.pie-wa{display:inline-flex;align-items:center;gap:6px;color:#7CE8A5}
+.pie-wa svg{width:15px;height:15px;flex:none;fill:#25D366;background:#fff;border-radius:50%;padding:1px}
+.pie-precios{background:#F5A63C;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.1em;
+  padding:12px 18px;border-radius:4px;white-space:nowrap;text-decoration:none}
+.pie-in .pie-precios{color:#14562A}
+.btn-arriba{position:fixed;right:18px;bottom:18px;z-index:40;width:46px;height:46px;border-radius:50%;
+  border:0;cursor:pointer;background:#14562A;box-shadow:0 4px 14px #0005;display:grid;place-items:center}
+.btn-arriba[hidden]{display:none}
+.btn-arriba:hover{background:#0d3d1e}
+.btn-arriba svg{width:20px;height:20px;fill:none;stroke:var(--crema);stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:760px){
+  .tapa-in{padding:8px 10px;gap:9px}
+  .tapa-tit{display:none}
+  .wa{padding:7px 10px}
+  .wa span{display:none}
+  .tapa-precios{padding:5px 12px 5px 5px}
+  .tapa-precios span{font-size:13px}
+  main.buscar{padding:14px 10px 60px}
+  .rot{flex:0 0 100%}
+  /* En el celular los chips envueltos comían media pantalla antes del primer
+     producto: acá se deslizan de costado, como la barra de secciones. */
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:3px}
+  .chip{flex:0 0 auto}
+  .grilla{grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px}
+  .tar-foto{padding:8px}
+}
+/* Va DESPUÉS del bloque de 760 px: con la misma especificidad, el último gana
+   (antes la barra medía 346 px a 320 de ancho; code-review SEM-402). */
 /* ================== celular: inicio + revista en renglones (SEM-402) ================== */
 .cel-ini,.cel{display:none}
 @media (max-width:599px){
@@ -1682,12 +1726,12 @@ a:focus-visible,button:focus-visible,#q:focus-visible{outline:3px solid #EEC045;
   .cel-desc summary{font-size:16px;color:#1E120C;cursor:pointer}
   .cel-desc p,.cel-desc li{font-size:15px;line-height:1.45;color:#4a3b33;margin-top:6px}
   /* barra de arriba compacta: una sola fila */
-  .tapa-in{flex-wrap:nowrap;gap:5px;padding:8px 6px}
+  .tapa-in{flex-wrap:nowrap;gap:4px;padding:8px 5px}
   .tapa-logo{padding:4px 5px;flex:none}
   .tapa-logo img{height:17px}
   .empuje{display:none}
   .tabs{flex:none;margin-left:auto}
-  .tab{padding:7px 8px;font-size:14.5px;letter-spacing:.08em}
+  .tab{padding:7px 7px;font-size:14px;letter-spacing:.06em}
   .wa,.tapa-precios{flex:none}
   .tapa-precios span{display:none}
   .tapa-precios{padding:5px}
@@ -1711,42 +1755,6 @@ a:focus-visible,button:focus-visible,#q:focus-visible{outline:3px solid #EEC045;
 /* Sin foto: iniciales de la marca en el color del rubro (antes, el ícono gris
    del rubro: los collares salían con una maceta). */
 .tar-foto .ini{position:absolute;inset:0;display:grid;place-items:center;font:400 30px 'Bebas Neue',sans-serif;letter-spacing:.04em}
-/* ---------- pie y volver arriba ---------- */
-.pie{margin-top:auto;background:#14562A;color:#cfe0d5;padding:26px 16px 34px}
-.pie-in{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
-.pie-logo{background:var(--crema);border-radius:3px;padding:10px 14px;display:flex}
-.pie-logo img{height:38px;width:auto;display:block}
-.pie-datos{display:flex;flex-direction:column;gap:4px;font-size:14px}
-.pie-datos b{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.1em;color:#fff;font-weight:400}
-.pie-datos a{color:#a9c6b4;text-decoration:none;letter-spacing:.04em}
-.pie-wa{display:inline-flex;align-items:center;gap:6px;color:#7CE8A5}
-.pie-wa svg{width:15px;height:15px;flex:none;fill:#25D366;background:#fff;border-radius:50%;padding:1px}
-.pie-precios{background:#F5A63C;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.1em;
-  padding:12px 18px;border-radius:4px;white-space:nowrap;text-decoration:none}
-.pie-in .pie-precios{color:#14562A}
-.btn-arriba{position:fixed;right:18px;bottom:18px;z-index:40;width:46px;height:46px;border-radius:50%;
-  border:0;cursor:pointer;background:#14562A;box-shadow:0 4px 14px #0005;display:grid;place-items:center}
-.btn-arriba[hidden]{display:none}
-.btn-arriba:hover{background:#0d3d1e}
-.btn-arriba svg{width:20px;height:20px;fill:none;stroke:var(--crema);stroke-width:2.6;
-  stroke-linecap:round;stroke-linejoin:round}
-
-@media (max-width:760px){
-  .tapa-in{padding:8px 10px;gap:9px}
-  .tapa-tit{display:none}
-  .wa{padding:7px 10px}
-  .wa span{display:none}
-  .tapa-precios{padding:5px 12px 5px 5px}
-  .tapa-precios span{font-size:13px}
-  main.buscar{padding:14px 10px 60px}
-  .rot{flex:0 0 100%}
-  /* En el celular los chips envueltos comían media pantalla antes del primer
-     producto: acá se deslizan de costado, como la barra de secciones. */
-  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:3px}
-  .chip{flex:0 0 auto}
-  .grilla{grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px}
-  .tar-foto{padding:8px}
-}
 """
 
 
@@ -2100,7 +2108,12 @@ _JS = r"""
     if (pu.get('q') || pu.get('sec')) location.hash = '#buscar';
   } catch (e) {}
   if (location.hash === '#buscar') vista('buscar');
-  else if (location.hash.length > 1) setTimeout(function () { irSeccion(location.hash.slice(1), false); }, 60);
+  else if (location.hash.length > 1) {
+    // Después de que carguen letra y fotos, con la barra ya medida: si no, en un
+    // celular lento la sección quedaba debajo de la barra.
+    var alCargar = function () { medir(); irSeccion(location.hash.slice(1), false); };
+    if (document.readyState === 'complete') alCargar(); else window.addEventListener('load', alCargar);
+  }
   pintar();
 })();
 """
