@@ -32,15 +32,16 @@ CREMA_BG, CREMA_MARCO = "#F8EEE2", "#F0DFCB"
 FILA_A, FILA_B = "#EFDFCA", "#F3E7D7"   # zebra
 VERDE_TXT, GRIS_TXT = "#236B3E", "#584845"
 
-# (nombre en el sheet, slug de assets, color, título que va en la píldora)
+# (nombre en el sheet, slug de assets, color, píldora, título de portada, nombre corto del índice)
+# SEM-479: Cereales y Legumbres se muestran con el nombre nuevo del rubro; la planilla sigue igual.
 SECCIONES = [
     ("ALIMENTO BALANCEADO ANIMAL", "balanceados", "#DB2525", "ALIMENTO BALANCEADO ANIMAL", "ALIMENTO P/ ANIMALES", "Animales"),
     ("ALIMENTO PARA PERROS",       "perros",      "#FFA500", "ALIMENTO P/ PERROS",         "ALIMENTO P/ PERROS", "Perros"),
     ("ALIMENTO PARA GATOS",        "gatos",       "#E0E055", "ALIMENTO P/ GATOS",          "ALIMENTO P/ GATOS", "Gatos"),
     ("CEREALES PARA DESAYUNO",     "desayuno",    "#82FF82", "CEREALES P/ DESAYUNO",       "CEREALES P/ DESAYUNO", "Cereales p/ desayuno"),
-    ("CEREALES",                   "cereales",    "#2FD482", "CEREALES",                   "CEREALES", "Cereales"),
+    ("CEREALES",                   "cereales",    "#2FD482", "SEMILLAS Y GRANOS",          "SEMILLAS Y GRANOS", "Semillas y Granos"),
     ("FORRAJES",                   "forrajes",    "#00BEE0", "FORRAJES",                   "FORRAJES", "Forrajes"),
-    ("LEGUMBRES",                  "legumbres",   "#2B2BD6", "LEGUMBRES",                  "LEGUMBRES", "Legumbres"),
+    ("LEGUMBRES",                  "legumbres",   "#2B2BD6", "LEGUMBRES Y HARINAS",        "LEGUMBRES Y HARINAS", "Legumbres y Harinas"),
     ("CONDIMENTOS",                "condimentos", "#FF69B4", "CONDIMENTOS",                "CONDIMENTOS", "Condimentos"),
     ("FRUTOS SECOS",               "frutos",      "#FF00FF", "FRUTOS SECOS",               "FRUTOS SECOS", "Frutos Secos"),
     ("SNACKS",                     "snacks",      "#A17C0D", "SNACKS",                     "SNACKS", "Snacks"),
