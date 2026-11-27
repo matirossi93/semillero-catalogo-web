@@ -1410,6 +1410,10 @@ def vista_buscar():
 
 
 # ---------------------------------------------------------------- celular (SEM-402)
+# 🔸 SIN USO desde SEM-734 (27/11/2026). Mati: en el celu quiere ver las hojas de la
+# revista, como en la compu; el inicio con tarjetas tapaba el catálogo y el botón
+# REVISTA «no hacía nada». inicio_celular/vista_celular ya no se insertan en la
+# página; se dejan para volver atrás rápido si hiciera falta.
 # En pantallas de menos de 600 px la hoja de 1080 px se achicaba entera y los
 # nombres quedaban en 7-12 px. Ahí se muestran, EN LUGAR de las hojas, estas dos
 # piezas armadas con los mismos datos: una pantalla de inicio y la revista en
@@ -1679,8 +1683,6 @@ a:focus-visible,button:focus-visible,#q:focus-visible{outline:3px solid #EEC045;
 /* ================== celular: inicio + revista en renglones (SEM-402) ================== */
 .cel-ini,.cel{display:none}
 @media (max-width:599px){
-  main.revista{padding:0 0 40px;gap:0}
-  main.revista>.pag{display:none}
   .cel-ini,.cel{display:block;width:100%}
   .cel-ini{padding:18px 16px 22px;background:var(--crema)}
   .cel-ini h1{font:400 34px/1 'Bebas Neue',sans-serif;color:#06652F;letter-spacing:.02em}
@@ -2237,9 +2239,7 @@ def main():
 <body data-vista="revista">
 {barra_top(indice)}
 <main class="revista">
-{inicio_celular(datos, hoy)}
 {''.join(html)}
-{vista_celular(plan, datos, mapa_fotos, proteinas, descripciones, manifest)}
 </main>
 {vista_buscar()}
 {pie()}
