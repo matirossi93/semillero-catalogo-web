@@ -51,18 +51,43 @@ async def main():
         pg.on("pageerror", lambda e: errores.append(str(e)))
         await pg.goto("file://" + RUTA)
         await pg.wait_for_timeout(1200)
-        # A 390 px se ve la vista de celular (SEM-402): letra ≥ 12 px, sin desborde,
-        # y todos los productos tienen su renglón.
-        cel = await pg.evaluate("""() => ({
-            chicos: [...document.querySelectorAll('.cel *, .cel-ini *')].filter(e => e.offsetParent &&
-              [...e.childNodes].some(n => n.nodeType == 3 && n.textContent.trim()) &&
-              parseFloat(getComputedStyle(e).fontSize) < 12).length,
-            ancho: document.documentElement.scrollWidth,
-            filas: document.querySelectorAll('.cel-fam li').length,
-            prods: window.CAT.prod.length })""")
-        ok(cel["chicos"] == 0, f"{cel['chicos']} textos de menos de 12 px en la vista de celular")
+        # A 390 px se ven las hojas de la revista, como en la compu (SEM-734, Mati 27/11:
+        # «aprieto el botón de revista, no hace nada… no se ve el catálogo»).
+        hojas = """() => {
+            const v = [...document.querySelectorAll('main.revista>.pag')]
+              .filter(e => getComputedStyle(e).display != 'none' && e.getBoundingClientRect().height > 100);
+            return { visibles: v.length, total: document.querySelectorAll('main.revista>.pag').length,
+              ancho: document.documentElement.scrollWidth };
+        }"""
+        cel = await pg.evaluate(hojas)
+        ok(cel["total"] > 40 and cel["visibles"] == cel["total"],
+           f"celu al abrir: {cel['visibles']} de {cel['total']} hojas visibles")
         ok(cel["ancho"] <= 390, f"la página se desborda a 390 px ({cel['ancho']})")
-        ok(cel["filas"] == cel["prods"], f"vista de celular: {cel['filas']} renglones para {cel['prods']} productos")
+        # El botón REVISTA, después de BUSCAR, vuelve a mostrar las hojas
+        await pg.click("button.tab[data-vista=buscar]")
+        await pg.wait_for_timeout(300)
+        await pg.click("button.tab[data-vista=revista]")
+        await pg.wait_for_timeout(300)
+        cel = await pg.evaluate(hojas)
+        ok(cel["visibles"] == cel["total"], f"celu tras tocar REVISTA: {cel['visibles']} de {cel['total']} hojas visibles")
+        # Saltar a una sección desde la barra lleva a su hoja
+        await pg.click(".secnav a[href='#perros']")
+        await pg.wait_for_timeout(1200)
+        y, barra = await pg.evaluate("""() => [document.getElementById('perros').getBoundingClientRect().top,
+            document.querySelector('.secnav').getBoundingClientRect().bottom]""")
+        ok(barra - 5 <= y <= barra + 60, f"celu: el salto a Perros dejó la hoja en y={y:.0f} (barra {barra:.0f})")
+        ph = await (await b.new_context(viewport={"width": 390, "height": 844})).new_page()
+        await ph.goto("file://" + RUTA + "#gatos")
+        await ph.wait_for_timeout(2500)
+        y, barra = await ph.evaluate("""() => [document.getElementById('gatos').getBoundingClientRect().top,
+            document.querySelector('.secnav').getBoundingClientRect().bottom]""")
+        ok(barra - 5 <= y <= barra + 60, f"celu: abrir con #gatos dejó la hoja en y={y:.0f} (barra {barra:.0f})")
+        # Las hojas achicadas dejan la letra chica (por eso existió SEM-402). Mati eligió
+        # ver las hojas igual (27/11) y se puede hacer zoom; esto sólo frena que empeore.
+        med = await pg.evaluate("""() => { const f = [...document.querySelectorAll('.pag .fila span')]
+            .map(e => parseFloat(getComputedStyle(e).fontSize)).sort((a, b) => a - b);
+            return f[Math.floor(f.length / 2)]; }""")
+        ok(med >= 10, f"celu: letra de los nombres en las hojas, mediana {med:.1f} px (< 10)")
         for ancho in (320, 360):
             ctx = await b.new_context(viewport={"width": ancho, "height": 780})
             pa = await ctx.new_page()
