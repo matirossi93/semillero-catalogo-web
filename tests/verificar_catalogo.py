@@ -73,8 +73,21 @@ async def main():
         # Saltar a una sección desde la barra lleva a su hoja
         await pg.click(".secnav a[href='#perros']")
         await pg.wait_for_timeout(1200)
-        y = await pg.evaluate("() => document.getElementById('perros').getBoundingClientRect().top")
-        ok(-50 < y < 400, f"celu: el salto a Perros dejó la hoja en y={y:.0f}")
+        y, barra = await pg.evaluate("""() => [document.getElementById('perros').getBoundingClientRect().top,
+            document.querySelector('.secnav').getBoundingClientRect().bottom]""")
+        ok(barra - 5 <= y <= barra + 60, f"celu: el salto a Perros dejó la hoja en y={y:.0f} (barra {barra:.0f})")
+        ph = await (await b.new_context(viewport={"width": 390, "height": 844})).new_page()
+        await ph.goto("file://" + RUTA + "#gatos")
+        await ph.wait_for_timeout(2500)
+        y, barra = await ph.evaluate("""() => [document.getElementById('gatos').getBoundingClientRect().top,
+            document.querySelector('.secnav').getBoundingClientRect().bottom]""")
+        ok(barra - 5 <= y <= barra + 60, f"celu: abrir con #gatos dejó la hoja en y={y:.0f} (barra {barra:.0f})")
+        # Las hojas achicadas dejan la letra chica (por eso existió SEM-402). Mati eligió
+        # ver las hojas igual (27/11) y se puede hacer zoom; esto sólo frena que empeore.
+        med = await pg.evaluate("""() => { const f = [...document.querySelectorAll('.pag .fila span')]
+            .map(e => parseFloat(getComputedStyle(e).fontSize)).sort((a, b) => a - b);
+            return f[Math.floor(f.length / 2)]; }""")
+        ok(med >= 10, f"celu: letra de los nombres en las hojas, mediana {med:.1f} px (< 10)")
         for ancho in (320, 360):
             ctx = await b.new_context(viewport={"width": ancho, "height": 780})
             pa = await ctx.new_page()
